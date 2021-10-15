@@ -50,6 +50,27 @@ v2= Solution for b
 
 
 (* ::Input::Initialization:: *)
+findPrevNext[p0_,{dfline1_,dfline2_}]:=Block[{continue,notcontinue, resFunc, sumFunc,r1left,rleft,r2left,r1right,r2right,rright},(
+
+continue[p_]:=Sign[dfline1[p]*dfline2[p]]==-1;
+notcontinue[p_]:=Sign[dfline1[p]*dfline2[p]]==1;
+resFunc[p_]:=p-0.1;
+sumFunc[p_]:=p+0.1;
+
+r1left=NestWhile[resFunc,p0,continue,1,100];
+r2left=NestWhile[resFunc,r1left,notcontinue,1,100];
+rleft=(r2left+r1left)/2;
+
+r1right=NestWhile[sumFunc,p0,continue,1,40];
+r2right=NestWhile[sumFunc,r1right,notcontinue,1,100];
+rright=(r2right+r1right)/2;
+
+If[p0-rleft<rright-p0,rleft,rright]
+
+)];
+
+
+(* ::Input::Initialization:: *)
 (* Input\[Rule] {{initial values for v1, v2 and status}, pixel of interest, {functions f1, df1, f2, df2}, threshold for magnitude error}*)
 (* Output\[Rule] {new values for v1, v2 and status} *)
 PyrUpgrade1D[{v1_,v2_,status_,e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_]:=Block[{p1, p2, c,d1,d2,dv1,dv2},(
@@ -62,7 +83,7 @@ d1=dfline1[p1];
 d2=dfline2[p2];
 
 (* d1 and d2 have to be the same sign in every iteration *)
-If[d1*d2 <0, If[e<2,Return[{v1,v2,"sign",e+1}],Return[{0,0,"sign",e}]]];
+If[d1*d2 <0, If[e<2,Return[PyrUpgrade1D[{v1,v2,"oksign",e},p0, {{fline1,dfline1} ,{fline2,dfline2}}, threshold]],Return[{0,0,"sign",e}]]];
 
 (* Change of sign during iteration *)
 If[(Abs[d1]<threshold||Abs[d2]<threshold ),If[e<2,Return[{v1,v2,"mag",e+1}],Return[{0,0,"mag",e}]]];
@@ -73,13 +94,43 @@ If[(dfline1[p0]*d1<0||dfline2[p0]*d2<0),If[e<2,Return[{v1,v2,"flip",e+1}],Return
 (* dv1,dv2 : step from last {v1,v2} to new {v1,v2} *)
 {dv1,dv2}= {(fline1[p1]-c)/d1,(c-fline2[p2])/d2};
 
-If[e<2,{v1+dv1,v2+dv2,If[Norm[{dv1,dv2}]<0.001,"converged","ok"],e},{0,0,"ok",2}]
+If[e<2,{v1+dv1,v2+dv2,If[Norm[{dv1,dv2}]<0.001,"converged","ok"],e},{0,0,status,2}]
 )];
 
 (* status: "OK" -> solution respects constraints,  errors: "sign", "mag", "flip" *)
 (* status: "converged" -> we converged!! *)
 
-PyrUpgrade1D[{v1_,v2_,"status",2},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_]:=Return[{0,0,status,2}];
+PyrUpgrade1D[{v1_,v2_,"oksign",e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_]:=Block[{p1,p2,c,d1,d2,dv1,dv2,r0},(
+
+r0=findPrevNext[p0,{dfline1,dfline2}];
+(*Print[r0];*)
+p1=r0-v1;
+p2=r0+v2;
+
+c = (fline1[r0]+fline2[r0])/2;
+d1=dfline1[p1];
+d2=dfline2[p2];
+
+(*{Null,Null}*)
+(* d1 and d2 have to be the same sign *)
+ If[d1*d2 <0, If[e<2,Return[{v1,v2,"sign",e+1}],Return[{0,0,"sign",e}]]]; 
+
+(*{Null,Null}*)
+(* magnitude *)
+If[(Abs[d1]<threshold||Abs[d2]<threshold ),If[e<2,Return[{v1,v2,"mag",e+1}],Return[{0,0,"mag",e}]]];
+
+(*{v1,v2}*)
+(* Change of sign during iteration *)
+If[(dfline1[r0]*d1<0||dfline2[r0]*d2<0),If[e<2,Return[{v1,v2,"flip",e+1}],Return[{0,0,"flip",e}]]];
+
+(* dv1,dv2 : step from last {v1,v2} to new {v1,v2} *)
+{dv1,dv2}= {(fline1[p1]-c)/d1,(c-fline2[p2])/d2};
+
+If[e<2,{v1+dv1,v2+dv2,If[Norm[{dv1,dv2}]<0.001,"converged","oksign"],e},{0,0,"sign",2}]
+
+)];
+
+PyrUpgrade1D[{v1_,v2_,status_,2},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_]:=Return[{0,0,status,2}];
 PyrUpgrade1D[{v1_,v2_,"sign",e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_]:=Return[{v1,v2,"sign",e}];
 PyrUpgrade1D[{v1_,v2_,"mag",e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_]:=Return[{v1,v2,"mag",e}];
 PyrUpgrade1D[{v1_,v2_,"flip",e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_]:=Return[{v1,v2,"flip",e}];
