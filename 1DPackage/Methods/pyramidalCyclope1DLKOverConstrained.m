@@ -200,13 +200,14 @@ If[iter[[i,3]]=="flip",Orange,Black]]
 ],
 (* c point *)
 Point[{p0,c}],
-{Arrowheads->Small,Arrow[{{p0-iter[[i,1]],c},{p0+iter[[i,2]],c}}]}
+{Arrowheads->Small,Arrow[{{p0-iter[[i,1]],c},{p0+iter[[i,2]],c}}]},
 }],
 ImageSize->Scaled[0.5]
 ],
 (* Label *)
 Style[Framed[GraphicsColumn[{
-Row[{"Current dv= ", Total[{iter[[i,1;;2]]}]}],
+Row[{"Initial df= ", {NumberForm[dflineia[p0],3],NumberForm[dflineib[p0],3]}}],
+Row[{"Current dv= ", {iter[[i,1]],iter[[i,2]]}}],
 Row[{"Current iteration= ",i}],Row[{"Current level= ",lvl}]}]]]]
 ,{i,1,Length[iter]}]
 
@@ -227,13 +228,13 @@ prange= range for plot from p0
 (* ::Input::Initialization:: *)
 (* Makes graphics for all levels*)
 (* iterations, pixel of interest, plot range from pixel, max lvl,lvl's functions, threshold}*)
-pixelIterGraphics[i_, p0_,prange_, maxlvl_,pyrfunctions_,threshold_]:=Block[{iter},(
+pixelIterGraphics[i_, p0_,prange_,lvlmax_,pyrfunctions_,threshold_]:=Block[{iter},(
 (* Makes iterations by saving all the values *)
 iter=pixelIter[i,p0, pyrfunctions,threshold];
 
 Flatten[Table[
 (* Makes plots only for one level *)
-oneLevelPixelIterGraphics[maxlvl-j+1,iter[[j]], p0,prange,  pyrfunctions[[-j ;;-j]][[1]]]
+oneLevelPixelIterGraphics[lvlmax-j+1,iter[[j]], p0,prange,  pyrfunctions[[-j ;;-j]][[1]]]
 ,{j,1,Length[iter]}]]
 )]
 
@@ -259,12 +260,12 @@ Output-> {rangex, {v1,v2,status}}
 
 
 (* ::Input::Initialization:: *)
-seeAllLine[rangex_, {lvlmin_,lvlmax_},pyrab_,threshold_]:=Block[{tRun,lineia,dlineia,lineib,dlineib,cTable,c,g0},(
+seeAllLine[rangex_, pyrab_,threshold_]:=Block[{tRun,lineia,dlineia,lineib,dlineib,cTable,c,g0,i},(
 
-tRun=lineTest[rangex,pyrab[[lvlmin;;lvlmax]],threshold];
+tRun=lineTest[rangex,pyrab,threshold];
 
-{lineia,dlineia}=pyrab[[lvlmin,1]];
-{lineib,dlineib}=pyrab[[lvlmin,2]];
+{lineia,dlineia}=pyrab[[1,1]];
+{lineib,dlineib}=pyrab[[1,2]];
 
 i=1;
 cTable=Table[

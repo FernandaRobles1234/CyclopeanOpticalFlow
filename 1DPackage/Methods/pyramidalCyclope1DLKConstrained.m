@@ -73,13 +73,13 @@ If[(dfline1[p0]*d1<0||dfline2[p0]*d2<0),If[e<2,Return[{v1,v2,"flip",e+1}],Return
 (* dv1,dv2 : step from last {v1,v2} to new {v1,v2} *)
 {dv1,dv2}= {(fline1[p1]-c)/d1,(c-fline2[p2])/d2};
 
-{v1+dv1,v2+dv2,If[Norm[{dv1,dv2}]<0.001,"converged","ok"],e}
+If[e<2,{v1+dv1,v2+dv2,If[Norm[{dv1,dv2}]<0.001,"converged","ok"],e},{0,0,"ok",2}]
 )];
 
 (* status: "OK" -> solution respects constraints,  errors: "sign", "mag", "flip" *)
 (* status: "converged" -> we converged!! *)
 
-PyrUpgrade1D[{v1_,v2_,status_,2},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_]:=Return[{0,0,status,2}];
+PyrUpgrade1D[{v1_,v2_,"status",2},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_]:=Return[{0,0,status,2}];
 PyrUpgrade1D[{v1_,v2_,"sign",e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_]:=Return[{v1,v2,"sign",e}];
 PyrUpgrade1D[{v1_,v2_,"mag",e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_]:=Return[{v1,v2,"mag",e}];
 PyrUpgrade1D[{v1_,v2_,"flip",e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_]:=Return[{v1,v2,"flip",e}];
@@ -201,7 +201,8 @@ ImageSize->Scaled[0.5]
 ],
 (* Label *)
 Style[Framed[GraphicsColumn[{
-Row[{"Current dv= ", Total[{iter[[i,1;;2]]}]}],
+Row[{"Initial df= ", {NumberForm[dflineia[p0],3],NumberForm[dflineib[p0],3]}}],
+Row[{"Current dv= ", {iter[[i,1]],iter[[i,2]]}}],
 Row[{"Current iteration= ",i}],Row[{"Current level= ",lvl}]}]]]]
 ,{i,1,Length[iter]}]
 
@@ -222,12 +223,12 @@ prange= range for plot from p0
 (* ::Input::Initialization:: *)
 (* Makes graphics for all levels*)
 (* iterations, pixel of interest, plot range from pixel, max lvl,lvl's functions, threshold}*)
-pixelIterGraphics[i_, p0_,prange_, maxlvl_,pyrfunctions_,threshold_]:=Block[{},(
+pixelIterGraphics[i_, p0_,prange_, lvlmax_,pyrfunctions_,threshold_]:=Block[{},(
 (* Makes iterations by saving all the values *)
 iter=pixelIter[i,p0, pyrfunctions,threshold];
 Flatten[Table[
 (* Makes plots only for one level *)
-oneLevelPixelIterGraphics[maxlvl-j+1,iter[[j]], p0,prange,  pyrfunctions[[-j ;;-j]][[1]]]
+oneLevelPixelIterGraphics[lvlmax-j+1,iter[[j]], p0,prange,  pyrfunctions[[-j ;;-j]][[1]]]
 ,{j,1,Length[iter]}]]
 )]
 
@@ -252,12 +253,12 @@ Output-> {rangex, {v1,v2,status,e}}
 
 
 (* ::Input::Initialization:: *)
-seeAllLine[rangex_, {lvlmin_,lvlmax_},pyrab_,threshold_]:=Block[{tRun,lineia,dlineia,lineib,dlineib,cTable,c,g0},(
+seeAllLine[rangex_,pyrab_,threshold_]:=Block[{tRun,lineia,dlineia,lineib,dlineib,cTable,c,g0,i},(
 
-tRun=lineTest[rangex,pyrab[[lvlmin;;lvlmax]],threshold];
+tRun=lineTest[rangex,pyrab,threshold];
 
-{lineia,dlineia}=pyrab[[lvlmin,1]];
-{lineib,dlineib}=pyrab[[lvlmin,2]];
+{lineia,dlineia}=pyrab[[1,1]];
+{lineib,dlineib}=pyrab[[1,2]];
 
 i=1;
 cTable=Table[
