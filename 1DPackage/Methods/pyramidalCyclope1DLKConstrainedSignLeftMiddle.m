@@ -330,7 +330,9 @@ g0
 ,{p,rangex}];
 
 Show[
-Plot[{lineia[x],lineib[x]},{x,rangex[[1]],rangex[[-1]]},PlotLegends->{"ia","ib"}],
+(*Plot[{lineia[x],lineib[x]},{x,rangex[[1]],rangex[[-1]]},PlotLegends\[Rule]{"ia","ib"}],*)
+Block[{x},(signConditionalPlot[{lineia[x],lineib[x]},{x,rangex[[1]],rangex[[-1]]},All,All,{Filling->Axis,FillingStyle->LightGreen},{Filling->Axis,FillingStyle->LightRed}])],
+
 cTable,
 (*,
 PlotLabel\[Rule]info,*)
