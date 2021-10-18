@@ -79,7 +79,7 @@ If[e<2,{v1+dv1,v2+dv2,If[Norm[{dv1,dv2}]<0.001,"converged","ok"],e},{0,0,"ok",2}
 (* status: "OK" -> solution respects constraints,  errors: "sign", "mag", "flip" *)
 (* status: "converged" -> we converged!! *)
 
-PyrUpgrade1D[{v1_,v2_,"status",2},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_]:=Return[{0,0,status,2}];
+PyrUpgrade1D[{v1_,v2_,status_,2},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_]:=Return[{0,0,status,2}];
 PyrUpgrade1D[{v1_,v2_,"sign",e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_]:=Return[{v1,v2,"sign",e}];
 PyrUpgrade1D[{v1_,v2_,"mag",e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_]:=Return[{v1,v2,"mag",e}];
 PyrUpgrade1D[{v1_,v2_,"flip",e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_]:=Return[{v1,v2,"flip",e}];

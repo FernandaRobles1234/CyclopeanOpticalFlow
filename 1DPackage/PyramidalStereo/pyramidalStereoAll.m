@@ -48,7 +48,8 @@ pyrb=pyrFuncGen[kb,lvl];
 pyrab=Flatten[{pyra, pyrb},{{2},{1},{3}}];
 
 Table[
-If[mode=="OverConstrained",{v1,v2,dd}=PyrFlow1D[10,x,pyrab[[lvlmin;;lvlmax]],thresholdAdj],If[mode=="SemiConstrained",{v1,v2,dd}=PyrFlow1D[10,x,pyrab[[lvlmin;;lvlmax]],thresholdAdj],{v1,v2,dd,e}=PyrFlow1D[10,x,pyrab[[lvlmin;;lvlmax]],thresholdAdj]]];
+If[mode=="OverConstrained",{v1,v2,dd}=PyrFlow1D[10,x,pyrab[[lvlmin;;lvlmax]],thresholdAdj],If[mode=="SemiConstrained",{v1,v2,dd}=PyrFlow1D[10,x,pyrab[[lvlmin;;lvlmax]],thresholdAdj],
+If[mode=="SemiConstrainedErrorZero",{v1,v2,dd}=PyrFlow1D[10,x,pyrab[[lvlmin;;lvlmax]],thresholdAdj],{v1,v2,dd,e}=PyrFlow1D[10,x,pyrab[[lvlmin;;lvlmax]],thresholdAdj]]]];
 
 
 {Total[{v1,v2}],dd,v1,v2}

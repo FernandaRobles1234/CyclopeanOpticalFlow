@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    598773,      11777]
-NotebookOptionsPosition[    592008,      11644]
-NotebookOutlinePosition[    592594,      11665]
-CellTagsIndexPosition[    592551,      11662]
+NotebookDataLength[    626386,      12355]
+NotebookOptionsPosition[    619479,      12219]
+NotebookOutlinePosition[    620065,      12240]
+CellTagsIndexPosition[    620022,      12237]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -46,7 +46,7 @@ Cell[BoxData[
  CellChangeTimes->{
   3.832189670547576*^9, {3.8372610411417527`*^9, 3.837261053402938*^9}, 
    3.8372611225950527`*^9, {3.8431523924971895`*^9, 3.84315239273125*^9}},
- CellLabel->"In[20]:=",ExpressionUUID->"d6613b5f-169d-4924-a7bf-e1328c874886"],
+ CellLabel->"In[71]:=",ExpressionUUID->"d6613b5f-169d-4924-a7bf-e1328c874886"],
 
 Cell[BoxData[{
  RowBox[{
@@ -63,7 +63,7 @@ Cell[BoxData[{
         RowBox[{"ParentDirectory", "[", "]"}], "}"}]}], "]"}]}], "]"}]}], 
   ";"}]}], "Input",
  CellChangeTimes->{{3.8431516160201325`*^9, 3.843151637488711*^9}},
- CellLabel->"In[21]:=",ExpressionUUID->"20ee0963-ff72-4488-a715-c22f45bfec7e"],
+ CellLabel->"In[72]:=",ExpressionUUID->"20ee0963-ff72-4488-a715-c22f45bfec7e"],
 
 Cell[BoxData[
  RowBox[{
@@ -76,7 +76,7 @@ Cell[BoxData[
    3.836396483243249*^9, 3.836396483782277*^9}, {3.8363965197501154`*^9, 
    3.8363965208316736`*^9}, 3.8363965992226734`*^9, {3.843047889768009*^9, 
    3.8430479211914215`*^9}},
- CellLabel->"In[23]:=",ExpressionUUID->"8671407a-4f01-418c-b8d5-eb14191aec4b"],
+ CellLabel->"In[74]:=",ExpressionUUID->"8671407a-4f01-418c-b8d5-eb14191aec4b"],
 
 Cell[CellGroupData[{
 
@@ -145,7 +145,7 @@ Cell[BoxData[
    3.836398891705703*^9, 3.836398893325742*^9}, {3.8365003825221486`*^9, 
    3.83650041642003*^9}, {3.8402800509000998`*^9, 3.840280051642571*^9}, {
    3.8430474630811205`*^9, 3.843047543816728*^9}},
- CellLabel->"In[24]:=",ExpressionUUID->"432fd1d7-eb95-4631-820c-69dbc52ba15c"],
+ CellLabel->"In[75]:=",ExpressionUUID->"432fd1d7-eb95-4631-820c-69dbc52ba15c"],
 
 Cell[BoxData[
  TemplateBox[{
@@ -531,8 +531,8 @@ jdD4xmj2maC5xxTNvWZofHM0vgUa3xKNb4XGt0bj26DxbdH4dnA+ACjDJ1o=
    3.843047526317483*^9, 3.843047544503813*^9}, 3.8430542193351636`*^9, 
    3.843054258498734*^9, 3.8430572405600147`*^9, 3.843057618297758*^9, 
    3.8431524670049295`*^9, 3.843154109658682*^9, 3.8431561931632214`*^9, 
-   3.8432372195132294`*^9},
- CellLabel->"Out[26]=",ExpressionUUID->"34aedaf2-d79d-46ea-b3d0-5a5cce1e0496"]
+   3.8432372195132294`*^9, 3.843572887644187*^9, 3.8435736324548483`*^9},
+ CellLabel->"Out[77]=",ExpressionUUID->"87d68ae3-94ca-4b5a-90a1-ce7b2d401303"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -596,7 +596,7 @@ Cell[BoxData[
       RowBox[{"{", 
        RowBox[{"x", ",", "1", ",", "30"}], "}"}]}], "]"}], ";"}]}]}]], "Input",
  CellChangeTimes->{3.8431536109231205`*^9},
- CellLabel->"In[27]:=",ExpressionUUID->"d458e5ba-2240-431c-9d6f-024bf6432746"]
+ CellLabel->"In[78]:=",ExpressionUUID->"d458e5ba-2240-431c-9d6f-024bf6432746"]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -740,7 +740,7 @@ db}= {function of b, derivative of function of b}\n\>\""}],
    3.8431538050840473`*^9, 3.843153892412472*^9}, {3.8431540139409733`*^9, 
    3.843154093641114*^9}, 3.8431541489274855`*^9, {3.8431542140665865`*^9, 
    3.84315432111576*^9}},
- CellLabel->"In[31]:=",ExpressionUUID->"1a1c9eee-72d7-44cf-95e5-c69d858841fa"]
+ CellLabel->"In[82]:=",ExpressionUUID->"1a1c9eee-72d7-44cf-95e5-c69d858841fa"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1040,7 +1040,7 @@ constraint\n\>\""}], ";"}]}]}]], "Input",
    3.843066695028036*^9}, {3.8430670820101533`*^9, 3.8430670822719493`*^9}, {
    3.8431531584724064`*^9, 3.8431532415742707`*^9}, {3.8431541924011116`*^9, 
    3.8431542010920024`*^9}, {3.8431543579685593`*^9, 3.84315458831942*^9}},
- CellLabel->"In[33]:=",ExpressionUUID->"a13d90b2-dea1-4b19-a655-f82fe55fa81b"]
+ CellLabel->"In[84]:=",ExpressionUUID->"a13d90b2-dea1-4b19-a655-f82fe55fa81b"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1066,14 +1066,16 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"i", "=", "0"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"p", "=", "19"}], ";"}]}]}]], "Input",
+    RowBox[{"p", "=", "17"}], ";"}]}]}]], "Input",
  CellChangeTimes->{
   3.8363961378588843`*^9, {3.8363967443857393`*^9, 3.8363967528759184`*^9}, {
    3.8363968389271307`*^9, 3.8363968394458265`*^9}, 3.8363986080928793`*^9, {
    3.8363995877529974`*^9, 3.8363995880494523`*^9}, {3.8401892506832857`*^9, 
    3.840189256145101*^9}, {3.84141418354974*^9, 3.841414205257785*^9}, {
-   3.8430483435931425`*^9, 3.843048352325457*^9}},
- CellLabel->"In[38]:=",ExpressionUUID->"e8a19c3b-7ce4-41c9-9e2b-b6be0c488e6e"],
+   3.8430483435931425`*^9, 3.843048352325457*^9}, {3.8435736817894325`*^9, 
+   3.8435736942554803`*^9}},
+ CellLabel->
+  "In[130]:=",ExpressionUUID->"e8a19c3b-7ce4-41c9-9e2b-b6be0c488e6e"],
 
 Cell[CellGroupData[{
 
@@ -1091,7 +1093,7 @@ Cell[BoxData[
     "*)"}], "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
-    RowBox[{"n", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+    RowBox[{"n", "=", "2"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"{", 
      RowBox[{"v1", ",", "v2", ",", "status"}], "}"}], "=", 
@@ -1112,42 +1114,259 @@ Cell[BoxData[
    3.840280262614027*^9, 3.840280329574231*^9}, 3.840548072388741*^9, {
    3.841319243228366*^9, 3.8413192702952523`*^9}, {3.8413206397350407`*^9, 
    3.8413206517595778`*^9}, 3.8414141937325172`*^9, {3.843153289728837*^9, 
-   3.8431533303648815`*^9}},
- CellLabel->"In[42]:=",ExpressionUUID->"8e2e9166-e587-42d9-a494-f7bdc0bc8ffa"],
+   3.8431533303648815`*^9}, 3.8435737335282726`*^9},
+ CellLabel->
+  "In[137]:=",ExpressionUUID->"8e2e9166-e587-42d9-a494-f7bdc0bc8ffa"],
 
 Cell[BoxData[
  RowBox[{"{", 
-  RowBox[{
-  "0.7230341624365715`", ",", "0.7229921693043843`", ",", "\<\"ok\"\>"}], 
-  "}"}]], "Output",
+  RowBox[{"0", ",", "0", ",", "\<\"sign\"\>"}], "}"}]], "Output",
  CellChangeTimes->{{3.8413192713562903`*^9, 3.8413192880665607`*^9}, 
    3.841320522078767*^9, {3.841320642503151*^9, 3.841320657275152*^9}, 
    3.8413209737486086`*^9, {3.841414187835762*^9, 3.8414142099768233`*^9}, 
    3.8414143882172375`*^9, {3.841415004509967*^9, 3.841415012133088*^9}, 
    3.8427011767333364`*^9, 3.8427021145525346`*^9, 3.8430542586237*^9, 
    3.8430572406849856`*^9, 3.8430576185164223`*^9, 3.843152467098657*^9, 
-   3.8431541104842296`*^9, 3.8431561932350283`*^9, 3.8432372199603395`*^9},
- CellLabel->"Out[43]=",ExpressionUUID->"3945cab5-4968-41d8-abb8-6115329e3c03"]
+   3.8431541104842296`*^9, 3.8431561932350283`*^9, 3.8432372199603395`*^9, 
+   3.843572887975294*^9, 3.8435736325998964`*^9, {3.8435736852829995`*^9, 
+   3.843573697200579*^9}, 3.843573734187644*^9},
+ CellLabel->
+  "Out[138]=",ExpressionUUID->"e5a296a1-d22b-4677-9407-8ca6f8552365"]
 }, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"(*", " ", "see", " ", "*)"}], "\[IndentingNewLine]", 
-  RowBox[{
-   RowBox[{"seeplot", "[", 
-    RowBox[{"p", ",", "2", ",", 
-     RowBox[{"{", 
-      RowBox[{"v1", ",", "v2"}], "}"}], ",", 
-     RowBox[{"pyrf12", "[", 
-      RowBox[{"[", "n", "]"}], "]"}]}], "]"}], ";"}]}]], "Input",
+  RowBox[{"seePlot", "[", 
+   RowBox[{"p", ",", "2", ",", 
+    RowBox[{"{", 
+     RowBox[{"v1", ",", "v2"}], "}"}], ",", 
+    RowBox[{"pyrf12", "[", 
+     RowBox[{"[", "n", "]"}], "]"}]}], "]"}]}]], "Input",
  CellChangeTimes->{{3.8363983430106754`*^9, 3.8363983604496603`*^9}, {
    3.8363989657393045`*^9, 3.8363989940990686`*^9}, {3.836399252495593*^9, 
    3.836399458153307*^9}, 3.840214598251926*^9, 3.8402801272137938`*^9, {
    3.8402801885832624`*^9, 3.840280253201376*^9}, {3.840280283420054*^9, 
    3.8402803342978687`*^9}, 3.84054808258837*^9, 3.841319285628847*^9, {
-   3.84315333406427*^9, 3.8431533569493647`*^9}},
- CellLabel->"In[44]:=",ExpressionUUID->"98c7f0d8-9bb8-43a4-9b19-323d9cc80ddb"]
-}, Closed]],
+   3.84315333406427*^9, 3.8431533569493647`*^9}, {3.8435736708990726`*^9, 
+   3.843573675032316*^9}},
+ CellLabel->
+  "In[139]:=",ExpressionUUID->"98c7f0d8-9bb8-43a4-9b19-323d9cc80ddb"],
+
+Cell[BoxData[
+ GraphicsBox[{{{{}, {}, 
+     TagBox[
+      {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], 
+       Opacity[1.], LineBox[CompressedData["
+1:eJwVzXs4lQccB/CYS4gTlYQmU5HqPe/7WtNJ6/dLkxLHrE0m0RBFpXNmKqU5
+S67R6eKhWM0la1FqoZgjSbqIye09ZMXhlONyzhmysNi7P37P9/k8z/f5/qwD
+I77aozlr1iwP9v5P87USNghsP3XyMGeVGppjpxp/Yf1ZjWbU2Eo1JD/lZW3U
+IPDnF+KgDtaTvmUOJzUJjNrXYZDHuiOmOFhHm8BlMZZn17DOfJhTN0efwDkO
+YQd32KthgWd88qL5BF5osIlMs1PD3BBPEwc7AucFcoqeLlVD8KmqmsfbCWyu
+HtErtWD3dYWLjx4n0C0lq9XcRA0JQlcr/3wCu7+4TeXpqkHQOPEg/08CbUWJ
+H68ZV8HlVLXR7PcEZkTccL/YpQK7DbX/Prfh4vT2C8v3VangWnv52Ud8Loqa
+an2XXlZBePNoU2cUF8luR1lMjApS7uvf9srlYmZQnafpDhUoOSFO8mdc1JOE
+BziSKnDd0ru/aISLaR63exbqqmDm3uUrA0YkXs3T/0vWroTjM8O7DG1I1Ilv
+mbejQAm/VhUOda8lMa3FaHX2ASU0CCb5fD6JK4q6U5IoJaR7h+u4BZKotlrh
+HPpuGAxK3NLGD5O4OVzueax4GGw2uYdTp0n0OVrumLVvGBRulWaLc0kkjmT3
+5ZkNQ+FmycXcuyQeN9vYkfVwCIwiuyPK6kk0kW8ZtY4YgiXmQtNjPST2NinH
+SgyHoOXvZSaN70jM0lVlcm4MgkgS1lOhR2Gj0ENRv2UQXml8LPKxorAyealp
+XtsAdB0e/SHOgcKqEaHlZNAAJIU4On23lcJPnOPlTT0KoLbOaWX8KdSN29Z8
+31cB0bs+qukSUni62tjSuL0fhAN7Y88lUmjzYs+Vaxv6weA39fn2bApv5VPF
+gdffwpWdesdKblGYOBjqrT/vLcjixfSmOgqtBqYySva+gbpeHuzupPCZbEV+
+Vq0cvi33siTUFBqem8gpNZRDanUKP1mLxqoFnPIG/z6o/MP761gzGtOCHd00
+b/XCJa7Y3pagcbWujhZfJYNFbYPf+DnT2IFapRY8GbiOlno5+9Co0f9h9gNB
+DxzSNrauOUDj5hFFQFVRN6zbmubSJKLRVMt27HH/a7ijHb3uTAaNTtukLtM+
+r6BhNCGuq5BGs1hHDUVfF8jaluc+vE/jONzo4Ue/hALyU/HONhp1ZKH3ksY6
+wEAS1CJSsP12zvuAVCkU3Jn7/CVrP63QXtsEKThfl9SuGaDxpWXoenWsFKIz
+FpYpWJcEvF77U6QU+gX1mV5DNCoFi0MKd0rh0XIHf2sVjdNKntzEXgo/ijUV
+1WPs/zgXY95jBswTinvM39FYTxwM4zxgoCzGrzOStcTX/vM3FQwow8rq7cZp
+tDnd+WX6TQb8XMJuiv+hceJigtNEOgO8yRff756kMTTxhEAazECr+sT+CtZn
+jc6Iy/wZOPR25Z75UzQ+CrTjpvswcK31lPcT1iefCIe2uzNgWszjkR9o5De2
+CBgHBn6/+oZKZk3pZ2aUr2bAI/u8fR9rp4rXkG3LQFzSsEXmNI1HnkYtCrJg
+YEnspfkjrFc1x21zXcBAZZSrofsMjaqc8xqrOAz4HBjTLmAtStVcb6zHwGhQ
+zvQM67sKcmpck4H/AEkJSK8=
+        "]]},
+      Annotation[#, "Charting`Private`Tag$15771#1"]& ], 
+     TagBox[
+      {RGBColor[0.880722, 0.611041, 0.142051], AbsoluteThickness[1.6], 
+       Opacity[1.], LineBox[CompressedData["
+1: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
+r7yiQSf/D+pZMGQ=
+        "]]},
+      Annotation[#, "Charting`Private`Tag$15771#2"]& ]}, {}}, {
+    PointBox[{{17, 0.9199818881891675}, {17, 0.8586978170056947}, {
+      17, 0.9812659593726403}}], 
+    PointBox[{{17, 0.9199818881891675}, {17, 0.9199818881891675}}], 
+    LineBox[{{17, 0.8586978170056947}, {17, 0.9812659593726403}}], 
+    LineBox[{{17, 0.9199818881891675}, {17, 0.9199818881891675}}]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{15., 0.3595559552228695},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, 
+    "DefaultGraphicsInteraction" -> {
+     "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+      "Effects" -> {
+       "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+        "Droplines" -> {
+         "freeformCursorMode" -> True, 
+          "placement" -> {"x" -> "All", "y" -> "None"}}}}, "DefaultMeshStyle" -> 
+    AbsolutePointSize[6], "ScalingFunctions" -> None, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{15, 19}, {0.3595559552228695, 1.0107569378382002`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.843573671239604*^9, 3.843573700814286*^9}, 
+   3.8435737366955166`*^9},
+ CellLabel->
+  "Out[139]=",ExpressionUUID->"a348ade8-e1b5-456b-98f0-4418dd3c83e7"]
+}, Open  ]]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -1329,7 +1548,7 @@ of the solution (ok, sign, mag, flip, converged)\n\>\""}], ";"}]}]}]], "Input",
    3.8430484122480726`*^9}, {3.8430489408235273`*^9, 
    3.8430489753452682`*^9}, {3.8431533802072535`*^9, 3.843153400508676*^9}, {
    3.843154934308928*^9, 3.8431552055729947`*^9}},
- CellLabel->"In[45]:=",ExpressionUUID->"2ba813e8-f4d4-445d-9ef4-e02d9a926ee0"],
+ CellLabel->"In[96]:=",ExpressionUUID->"2ba813e8-f4d4-445d-9ef4-e02d9a926ee0"],
 
 Cell[CellGroupData[{
 
@@ -1423,7 +1642,7 @@ Cell[BoxData[
    3.841414240079482*^9}, {3.841414549010152*^9, 3.8414145504451213`*^9}, {
    3.8414146901179533`*^9, 3.8414146986307*^9}, {3.841415020445265*^9, 
    3.841415021414605*^9}, {3.8430474058140574`*^9, 3.843047448725752*^9}},
- CellLabel->"In[47]:=",ExpressionUUID->"2609a419-770e-40a0-824d-e1ef4cdb0071"],
+ CellLabel->"In[98]:=",ExpressionUUID->"2609a419-770e-40a0-824d-e1ef4cdb0071"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1478,8 +1697,9 @@ Cell[BoxData[
    3.841415022278308*^9}, 3.8427011769508624`*^9, 3.8427021149565287`*^9, 
    3.8430542589829607`*^9, 3.8430572410130014`*^9, 3.843057618938198*^9, 
    3.8431524673485985`*^9, 3.8431541105610247`*^9, 3.843156193308834*^9, 
-   3.843237220116522*^9},
- CellLabel->"Out[52]=",ExpressionUUID->"a488d9e9-5d3b-41b7-96ae-ff8fd4a3eeb3"],
+   3.843237220116522*^9, 3.843572888045462*^9, 3.8435736326652317`*^9},
+ CellLabel->
+  "Out[103]=",ExpressionUUID->"d55195aa-3866-44a3-89dc-f2a0c351eaf8"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1532,8 +1752,9 @@ Cell[BoxData[
    3.841415022278308*^9}, 3.8427011769508624`*^9, 3.8427021149565287`*^9, 
    3.8430542589829607`*^9, 3.8430572410130014`*^9, 3.843057618938198*^9, 
    3.8431524673485985`*^9, 3.8431541105610247`*^9, 3.843156193308834*^9, 
-   3.843237220132142*^9},
- CellLabel->"Out[53]=",ExpressionUUID->"03c0da85-d9ea-4c21-aa83-9afc4b8ad6ba"]
+   3.843237220116522*^9, 3.843572888045462*^9, 3.843573632667228*^9},
+ CellLabel->
+  "Out[104]=",ExpressionUUID->"f772dc7d-f028-4fb6-b79a-bf99ab5f4862"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -1580,7 +1801,8 @@ Cell[BoxData[
    3.8402809199145455`*^9, {3.8405485709314113`*^9, 3.8405485739471397`*^9}, 
    3.8413207591374435`*^9, {3.8413208116846724`*^9, 3.8413208985881786`*^9}, {
    3.843153463279521*^9, 3.843153469118759*^9}},
- CellLabel->"In[54]:=",ExpressionUUID->"10603e1f-ab0f-41e3-a7a6-b4cd1ded3daf"]
+ CellLabel->
+  "In[105]:=",ExpressionUUID->"10603e1f-ab0f-41e3-a7a6-b4cd1ded3daf"]
 }, Closed]]
 }, Open  ]]
 }, Open  ]],
@@ -1704,7 +1926,8 @@ converged)\n\>\""}], ";"}]}]}]], "Input",
    3.842704209359651*^9}, {3.84315355505046*^9, 3.8431535599008718`*^9}, {
    3.8431552377388268`*^9, 3.8431553202400165`*^9}, {3.8431556216652856`*^9, 
    3.843155644793106*^9}},
- CellLabel->"In[56]:=",ExpressionUUID->"51b7fc9c-9a4c-4b7a-bedc-a509a049222a"],
+ CellLabel->
+  "In[107]:=",ExpressionUUID->"51b7fc9c-9a4c-4b7a-bedc-a509a049222a"],
 
 Cell[CellGroupData[{
 
@@ -1727,7 +1950,8 @@ Cell[BoxData[
   3.8427011171311693`*^9, {3.8427011579256897`*^9, 3.8427011722779355`*^9}, {
    3.842701297457902*^9, 3.8427012976177683`*^9}, 3.842702107395807*^9, {
    3.842702956024593*^9, 3.8427029573174276`*^9}},
- CellLabel->"In[58]:=",ExpressionUUID->"ee0a99ac-b402-4fbe-9ff2-a6318174c0c6"],
+ CellLabel->
+  "In[109]:=",ExpressionUUID->"ee0a99ac-b402-4fbe-9ff2-a6318174c0c6"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1820,8 +2044,9 @@ Cell[BoxData[
    3.8427021103821077`*^9, 3.8427021563455677`*^9}, 3.842702959185557*^9, 
    3.8430542594984956`*^9, 3.843057241497302*^9, 3.843057619609914*^9, 
    3.843152467645406*^9, 3.8431541106507874`*^9, 3.843156193407504*^9, 
-   3.843237220387169*^9},
- CellLabel->"Out[58]=",ExpressionUUID->"4ace4d07-bdb0-4612-8991-16e40dee1544"]
+   3.843237220387169*^9, 3.843572888120261*^9, 3.8435736327359104`*^9},
+ CellLabel->
+  "Out[109]=",ExpressionUUID->"eee2ad2a-ba49-459b-b75b-228b29093d97"]
 }, Open  ]]
 }, Closed]]
 }, Open  ]],
@@ -2045,9 +2270,9 @@ Current level functions \n\>\""}], ";"}]}]}]], "Input",
    3.8432375041045737`*^9}, {3.8432375532083635`*^9, 
    3.8432376001813583`*^9}, {3.8432376394296184`*^9, 3.843237689437848*^9}, {
    3.843237731409698*^9, 3.843237768596917*^9}, 3.843239375978812*^9, 
-   3.8432395326589727`*^9, 
-   3.8432395989462748`*^9},ExpressionUUID->"90a4196f-6009-47b6-a1ea-\
-5dd420c9c5f4"],
+   3.8432395326589727`*^9, 3.8432395989462748`*^9},
+ CellLabel->
+  "In[110]:=",ExpressionUUID->"90a4196f-6009-47b6-a1ea-5dd420c9c5f4"],
 
 Cell[CellGroupData[{
 
@@ -2070,7 +2295,8 @@ Cell[BoxData[
  CellChangeTimes->{{3.842702628017497*^9, 3.8427026756641293`*^9}, {
    3.8427029479441376`*^9, 3.8427029808126087`*^9}, 3.8427030934790354`*^9, 
    3.842704305418618*^9},
- CellLabel->"In[61]:=",ExpressionUUID->"93c1c7e6-2b51-4bab-9f50-ecf0b7773ddd"]
+ CellLabel->
+  "In[112]:=",ExpressionUUID->"93c1c7e6-2b51-4bab-9f50-ecf0b7773ddd"]
 }, Closed]]
 }, Open  ]],
 
@@ -2161,7 +2387,8 @@ and v2}\n\>\""}], ";"}]}]}]], "Input",
    3.843048475383431*^9}, 3.843066754329751*^9, {3.843155730071252*^9, 
    3.843155800230255*^9}, {3.843237332538252*^9, 3.8432373451857224`*^9}, {
    3.8432373779631767`*^9, 3.843237389454793*^9}},
- CellLabel->"In[80]:=",ExpressionUUID->"77b759b5-485c-458b-88fe-9af141cd5701"],
+ CellLabel->
+  "In[113]:=",ExpressionUUID->"77b759b5-485c-458b-88fe-9af141cd5701"],
 
 Cell[CellGroupData[{
 
@@ -2183,18 +2410,19 @@ Cell[BoxData[
  CellChangeTimes->{{3.84270325045253*^9, 3.84270328052081*^9}, {
   3.842703403288223*^9, 3.8427034035937777`*^9}, {3.8427034592427025`*^9, 
   3.842703465318783*^9}, {3.842703548805395*^9, 3.8427035491911554`*^9}},
- CellLabel->"In[88]:=",ExpressionUUID->"605a0631-c088-4826-a2e3-e4d0b0d24b7c"],
+ CellLabel->
+  "In[115]:=",ExpressionUUID->"605a0631-c088-4826-a2e3-e4d0b0d24b7c"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`i1525$$ = 9, Typeset`show$$ = True, 
+   DynamicModuleBox[{$CellContext`i142$$ = 2, Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {
-    "\"min\"" :> {$CellContext`i1525$$ = 1}, 
-     "\"max\"" :> {$CellContext`i1525$$ = 20}}, Typeset`bookmarkMode$$ = 
+    "\"min\"" :> {$CellContext`i142$$ = 1}, 
+     "\"max\"" :> {$CellContext`i142$$ = 20}}, Typeset`bookmarkMode$$ = 
     "Menu", Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{{
-       Hold[$CellContext`i1525$$], 1, ""}, 1, 20, 1}}, Typeset`size$$ = 
+       Hold[$CellContext`i142$$], 1, ""}, 1, 20, 1}}, Typeset`size$$ = 
     Automatic, Typeset`update$$ = 0, Typeset`initDone$$, 
     Typeset`skipInitDone$$ = True}, 
     PaneBox[
@@ -2295,7 +2523,7 @@ NlbqRbuUhi82HaXhop+IoBP9Nzhe2Pl/NCicOZTNRVtKF+TH/aThsHBVSTFa
 YfTupbQJGuiQqH156JHmBydu/aJhhUfGwkx0XEr9xnoB5lutaO9FtMdJnmnL
 JA1qrjclotH6O1u0ev/g/lYNZZxGz7Ds+uf7FK7XkQCDEHQb3Sv4+5eG5CKH
 Wn/0/wPFwAQ+
-                    "]]}, Annotation[#, "Charting`Private`Tag$225729#1"]& ], 
+                    "]]}, Annotation[#, "Charting`Private`Tag$10949#1"]& ], 
                     TagBox[{
                     Directive[
                     Opacity[1.], 
@@ -2339,7 +2567,7 @@ Ih+JZ1+gTr9z6DPXvxGopDXry6g310lcvV/Rf7vywTEp9WTST8yIfxDMTTfT
 2sLaxhHMbCoN+4s6OoV4a98huL7W3PIl9VKRljcwgeBt0+HfX1NPXdXz0fB7
 BG6i+eJ/qfVoYHxyEoEuXWPBeEDwf1CEKuA=
                     "]]}, 
-                    Annotation[#, "Charting`Private`Tag$225729#2"]& ]}}, {}}, {
+                    Annotation[#, "Charting`Private`Tag$10949#2"]& ]}}, {}}, {
                     PointSize[0.01], 
                     
                     LineBox[{{11, 0.24822232781251852`}, {
@@ -2604,32 +2832,49 @@ BG6i+eJ/qfVoYHxyEoEuXWPBeEDwf1CEKuA=
                     InsetBox[
                     BoxData[
                     FormBox[
+                    TemplateBox[{"\"Initial df= \"", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.00324\"", ShowStringCharacters -> False], 
+                    0.0032404692978602054`, AutoDelete -> True], 
+                    NumberForm[#, 3]& ], ",", 
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0042\"", ShowStringCharacters -> False], 
+                    0.004200203519001025, AutoDelete -> True], 
+                    NumberForm[#, 3]& ]}], "}"}]}, "RowDefault"], 
+                    TraditionalForm]], {120.225, -8.64}, {Center, Center}, {
+                    229., 16.}]}, {
+                    InsetBox[
+                    BoxData[
+                    FormBox[
                     TemplateBox[{"\"Current dv= \"", 
                     RowBox[{"{", 
                     
                     RowBox[{"0.8966164311478614`", ",", 
                     "0.6917421986691479`"}], "}"}]}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -8.6}, {Center, Center}, {
-                    229., 15.999999999999998`}]}, {
+                    TraditionalForm]], {120.225, -25.92}, {Center, Center}, {
+                    229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     
                     TemplateBox[{"\"Current iteration= \"", "1"}, 
-                    "RowDefault"], TraditionalForm]], {
-                    120.225, -25.799999999999997`}, {Center, Center}, {229., 
-                    15.999999999999996`}]}, {
+                    "RowDefault"], TraditionalForm]], {120.225, -43.2}, {
+                    Center, Center}, {229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     TemplateBox[{"\"Current level= \"", "5"}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -43.}, {Center, Center}, {
-                    229., 15.999999999999993`}]}}, {}}, 
+                    TraditionalForm]], {120.225, -60.480000000000004`}, {
+                    Center, Center}, {229., 16.}]}}, {}}, 
                     ImageSize -> {Automatic, 
                     UpTo[700]}, {
                     PlotRangePadding -> {6, 5}, 
-                    PlotRange -> {{0, 240.45}, {-51.599999999999994`, 0}}}], 
-                   StripOnInput -> False], StripOnInput -> False]},
+                    PlotRange -> {{0, 240.45}, {-69.12, 0}}}], StripOnInput -> 
+                   False], StripOnInput -> False]},
                 "Labeled",
                 DisplayFunction->(GridBox[{{
                     TagBox[
@@ -2736,7 +2981,7 @@ NlbqRbuUhi82HaXhop+IoBP9Nzhe2Pl/NCicOZTNRVtKF+TH/aThsHBVSTFa
 YfTupbQJGuiQqH156JHmBydu/aJhhUfGwkx0XEr9xnoB5lutaO9FtMdJnmnL
 JA1qrjclotH6O1u0ev/g/lYNZZxGz7Ds+uf7FK7XkQCDEHQb3Sv4+5eG5CKH
 Wn/0/wPFwAQ+
-                    "]]}, Annotation[#, "Charting`Private`Tag$225871#1"]& ], 
+                    "]]}, Annotation[#, "Charting`Private`Tag$11113#1"]& ], 
                     TagBox[{
                     Directive[
                     Opacity[1.], 
@@ -2780,7 +3025,7 @@ Ih+JZ1+gTr9z6DPXvxGopDXry6g310lcvV/Rf7vywTEp9WTST8yIfxDMTTfT
 2sLaxhHMbCoN+4s6OoV4a98huL7W3PIl9VKRljcwgeBt0+HfX1NPXdXz0fB7
 BG6i+eJ/qfVoYHxyEoEuXWPBeEDwf1CEKuA=
                     "]]}, 
-                    Annotation[#, "Charting`Private`Tag$225871#2"]& ]}}, {}}, {
+                    Annotation[#, "Charting`Private`Tag$11113#2"]& ]}}, {}}, {
                     PointSize[0.01], 
                     
                     LineBox[{{11, 0.24822232781251852`}, {
@@ -3045,32 +3290,49 @@ BG6i+eJ/qfVoYHxyEoEuXWPBeEDwf1CEKuA=
                     InsetBox[
                     BoxData[
                     FormBox[
+                    TemplateBox[{"\"Initial df= \"", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.00324\"", ShowStringCharacters -> False], 
+                    0.0032404692978602054`, AutoDelete -> True], 
+                    NumberForm[#, 3]& ], ",", 
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0042\"", ShowStringCharacters -> False], 
+                    0.004200203519001025, AutoDelete -> True], 
+                    NumberForm[#, 3]& ]}], "}"}]}, "RowDefault"], 
+                    TraditionalForm]], {120.225, -8.64}, {Center, Center}, {
+                    229., 16.}]}, {
+                    InsetBox[
+                    BoxData[
+                    FormBox[
                     TemplateBox[{"\"Current dv= \"", 
                     RowBox[{"{", 
                     
                     RowBox[{"0.7650464361243845`", ",", 
                     "0.7926561423203454`"}], "}"}]}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -8.6}, {Center, Center}, {
-                    229., 15.999999999999998`}]}, {
+                    TraditionalForm]], {120.225, -25.92}, {Center, Center}, {
+                    229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     
                     TemplateBox[{"\"Current iteration= \"", "2"}, 
-                    "RowDefault"], TraditionalForm]], {
-                    120.225, -25.799999999999997`}, {Center, Center}, {229., 
-                    15.999999999999996`}]}, {
+                    "RowDefault"], TraditionalForm]], {120.225, -43.2}, {
+                    Center, Center}, {229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     TemplateBox[{"\"Current level= \"", "5"}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -43.}, {Center, Center}, {
-                    229., 15.999999999999993`}]}}, {}}, 
+                    TraditionalForm]], {120.225, -60.480000000000004`}, {
+                    Center, Center}, {229., 16.}]}}, {}}, 
                     ImageSize -> {Automatic, 
                     UpTo[700]}, {
                     PlotRangePadding -> {6, 5}, 
-                    PlotRange -> {{0, 240.45}, {-51.599999999999994`, 0}}}], 
-                   StripOnInput -> False], StripOnInput -> False]},
+                    PlotRange -> {{0, 240.45}, {-69.12, 0}}}], StripOnInput -> 
+                   False], StripOnInput -> False]},
                 "Labeled",
                 DisplayFunction->(GridBox[{{
                     TagBox[
@@ -3177,7 +3439,7 @@ NlbqRbuUhi82HaXhop+IoBP9Nzhe2Pl/NCicOZTNRVtKF+TH/aThsHBVSTFa
 YfTupbQJGuiQqH156JHmBydu/aJhhUfGwkx0XEr9xnoB5lutaO9FtMdJnmnL
 JA1qrjclotH6O1u0ev/g/lYNZZxGz7Ds+uf7FK7XkQCDEHQb3Sv4+5eG5CKH
 Wn/0/wPFwAQ+
-                    "]]}, Annotation[#, "Charting`Private`Tag$226013#1"]& ], 
+                    "]]}, Annotation[#, "Charting`Private`Tag$11277#1"]& ], 
                     TagBox[{
                     Directive[
                     Opacity[1.], 
@@ -3221,7 +3483,7 @@ Ih+JZ1+gTr9z6DPXvxGopDXry6g310lcvV/Rf7vywTEp9WTST8yIfxDMTTfT
 2sLaxhHMbCoN+4s6OoV4a98huL7W3PIl9VKRljcwgeBt0+HfX1NPXdXz0fB7
 BG6i+eJ/qfVoYHxyEoEuXWPBeEDwf1CEKuA=
                     "]]}, 
-                    Annotation[#, "Charting`Private`Tag$226013#2"]& ]}}, {}}, {
+                    Annotation[#, "Charting`Private`Tag$11277#2"]& ]}}, {}}, {
                     PointSize[0.01], 
                     
                     LineBox[{{11, 0.24822232781251852`}, {
@@ -3486,32 +3748,49 @@ BG6i+eJ/qfVoYHxyEoEuXWPBeEDwf1CEKuA=
                     InsetBox[
                     BoxData[
                     FormBox[
+                    TemplateBox[{"\"Initial df= \"", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.00324\"", ShowStringCharacters -> False], 
+                    0.0032404692978602054`, AutoDelete -> True], 
+                    NumberForm[#, 3]& ], ",", 
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0042\"", ShowStringCharacters -> False], 
+                    0.004200203519001025, AutoDelete -> True], 
+                    NumberForm[#, 3]& ]}], "}"}]}, "RowDefault"], 
+                    TraditionalForm]], {120.225, -8.64}, {Center, Center}, {
+                    229., 16.}]}, {
+                    InsetBox[
+                    BoxData[
+                    FormBox[
                     TemplateBox[{"\"Current dv= \"", 
                     RowBox[{"{", 
                     
                     RowBox[{"0.7621312391359871`", ",", 
                     "0.7948453877137893`"}], "}"}]}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -8.6}, {Center, Center}, {
-                    229., 15.999999999999998`}]}, {
+                    TraditionalForm]], {120.225, -25.92}, {Center, Center}, {
+                    229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     
                     TemplateBox[{"\"Current iteration= \"", "3"}, 
-                    "RowDefault"], TraditionalForm]], {
-                    120.225, -25.799999999999997`}, {Center, Center}, {229., 
-                    15.999999999999996`}]}, {
+                    "RowDefault"], TraditionalForm]], {120.225, -43.2}, {
+                    Center, Center}, {229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     TemplateBox[{"\"Current level= \"", "5"}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -43.}, {Center, Center}, {
-                    229., 15.999999999999993`}]}}, {}}, 
+                    TraditionalForm]], {120.225, -60.480000000000004`}, {
+                    Center, Center}, {229., 16.}]}}, {}}, 
                     ImageSize -> {Automatic, 
                     UpTo[700]}, {
                     PlotRangePadding -> {6, 5}, 
-                    PlotRange -> {{0, 240.45}, {-51.599999999999994`, 0}}}], 
-                   StripOnInput -> False], StripOnInput -> False]},
+                    PlotRange -> {{0, 240.45}, {-69.12, 0}}}], StripOnInput -> 
+                   False], StripOnInput -> False]},
                 "Labeled",
                 DisplayFunction->(GridBox[{{
                     TagBox[
@@ -3618,7 +3897,7 @@ NlbqRbuUhi82HaXhop+IoBP9Nzhe2Pl/NCicOZTNRVtKF+TH/aThsHBVSTFa
 YfTupbQJGuiQqH156JHmBydu/aJhhUfGwkx0XEr9xnoB5lutaO9FtMdJnmnL
 JA1qrjclotH6O1u0ev/g/lYNZZxGz7Ds+uf7FK7XkQCDEHQb3Sv4+5eG5CKH
 Wn/0/wPFwAQ+
-                    "]]}, Annotation[#, "Charting`Private`Tag$226155#1"]& ], 
+                    "]]}, Annotation[#, "Charting`Private`Tag$11441#1"]& ], 
                     TagBox[{
                     Directive[
                     Opacity[1.], 
@@ -3662,7 +3941,7 @@ Ih+JZ1+gTr9z6DPXvxGopDXry6g310lcvV/Rf7vywTEp9WTST8yIfxDMTTfT
 2sLaxhHMbCoN+4s6OoV4a98huL7W3PIl9VKRljcwgeBt0+HfX1NPXdXz0fB7
 BG6i+eJ/qfVoYHxyEoEuXWPBeEDwf1CEKuA=
                     "]]}, 
-                    Annotation[#, "Charting`Private`Tag$226155#2"]& ]}}, {}}, {
+                    Annotation[#, "Charting`Private`Tag$11441#2"]& ]}}, {}}, {
                     PointSize[0.01], 
                     
                     LineBox[{{11, 0.24822232781251852`}, {
@@ -3927,32 +4206,49 @@ BG6i+eJ/qfVoYHxyEoEuXWPBeEDwf1CEKuA=
                     InsetBox[
                     BoxData[
                     FormBox[
+                    TemplateBox[{"\"Initial df= \"", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.00324\"", ShowStringCharacters -> False], 
+                    0.0032404692978602054`, AutoDelete -> True], 
+                    NumberForm[#, 3]& ], ",", 
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0042\"", ShowStringCharacters -> False], 
+                    0.004200203519001025, AutoDelete -> True], 
+                    NumberForm[#, 3]& ]}], "}"}]}, "RowDefault"], 
+                    TraditionalForm]], {116.55, -8.64}, {Center, Center}, {
+                    221.99999999999997`, 16.}]}, {
+                    InsetBox[
+                    BoxData[
+                    FormBox[
                     TemplateBox[{"\"Current dv= \"", 
                     RowBox[{"{", 
                     
                     RowBox[{"0.7621297961538662`", ",", 
                     "0.794846415686613`"}], "}"}]}, "RowDefault"], 
-                    TraditionalForm]], {116.55, -8.6}, {Center, Center}, {
-                    221.99999999999997`, 15.999999999999998`}]}, {
+                    TraditionalForm]], {116.55, -25.92}, {Center, Center}, {
+                    221.99999999999997`, 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     
                     TemplateBox[{"\"Current iteration= \"", "4"}, 
-                    "RowDefault"], TraditionalForm]], {
-                    116.55, -25.799999999999997`}, {Center, Center}, {
-                    221.99999999999997`, 15.999999999999996`}]}, {
+                    "RowDefault"], TraditionalForm]], {116.55, -43.2}, {
+                    Center, Center}, {221.99999999999997`, 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     TemplateBox[{"\"Current level= \"", "5"}, "RowDefault"], 
-                    TraditionalForm]], {116.55, -43.}, {Center, Center}, {
-                    221.99999999999997`, 15.999999999999993`}]}}, {}}, 
+                    TraditionalForm]], {116.55, -60.480000000000004`}, {
+                    Center, Center}, {221.99999999999997`, 16.}]}}, {}}, 
                     ImageSize -> {Automatic, 
                     UpTo[700]}, {
                     PlotRangePadding -> {6, 5}, 
-                    PlotRange -> {{0, 233.1}, {-51.599999999999994`, 0}}}], 
-                   StripOnInput -> False], StripOnInput -> False]},
+                    PlotRange -> {{0, 233.1}, {-69.12, 0}}}], StripOnInput -> 
+                   False], StripOnInput -> False]},
                 "Labeled",
                 DisplayFunction->(GridBox[{{
                     TagBox[
@@ -4059,7 +4355,7 @@ NlbqRbuUhi82HaXhop+IoBP9Nzhe2Pl/NCicOZTNRVtKF+TH/aThsHBVSTFa
 YfTupbQJGuiQqH156JHmBydu/aJhhUfGwkx0XEr9xnoB5lutaO9FtMdJnmnL
 JA1qrjclotH6O1u0ev/g/lYNZZxGz7Ds+uf7FK7XkQCDEHQb3Sv4+5eG5CKH
 Wn/0/wPFwAQ+
-                    "]]}, Annotation[#, "Charting`Private`Tag$226297#1"]& ], 
+                    "]]}, Annotation[#, "Charting`Private`Tag$11605#1"]& ], 
                     TagBox[{
                     Directive[
                     Opacity[1.], 
@@ -4103,7 +4399,7 @@ Ih+JZ1+gTr9z6DPXvxGopDXry6g310lcvV/Rf7vywTEp9WTST8yIfxDMTTfT
 2sLaxhHMbCoN+4s6OoV4a98huL7W3PIl9VKRljcwgeBt0+HfX1NPXdXz0fB7
 BG6i+eJ/qfVoYHxyEoEuXWPBeEDwf1CEKuA=
                     "]]}, 
-                    Annotation[#, "Charting`Private`Tag$226297#2"]& ]}}, {}}, {
+                    Annotation[#, "Charting`Private`Tag$11605#2"]& ]}}, {}}, {
                     PointSize[0.01], 
                     
                     LineBox[{{11, 0.24822232781251852`}, {
@@ -4341,8 +4637,8 @@ BG6i+eJ/qfVoYHxyEoEuXWPBeEDwf1CEKuA=
                     RowBox[{"LegendMarkers", "\[Rule]", "None"}], ",", 
                     RowBox[{"LabelStyle", "\[Rule]", 
                     RowBox[{"{", "}"}]}], ",", 
-                    RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}]}], "]"}]
-                    & ), Editable -> True], TraditionalForm], 
+                    RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}]}], 
+                    "]"}]& ), Editable -> True], TraditionalForm], 
                     TraditionalForm]}, "Legended", 
                   DisplayFunction -> (GridBox[{{
                     TagBox[
@@ -4368,32 +4664,49 @@ BG6i+eJ/qfVoYHxyEoEuXWPBeEDwf1CEKuA=
                     InsetBox[
                     BoxData[
                     FormBox[
+                    TemplateBox[{"\"Initial df= \"", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.00324\"", ShowStringCharacters -> False], 
+                    0.0032404692978602054`, AutoDelete -> True], 
+                    NumberForm[#, 3]& ], ",", 
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0042\"", ShowStringCharacters -> False], 
+                    0.004200203519001025, AutoDelete -> True], 
+                    NumberForm[#, 3]& ]}], "}"}]}, "RowDefault"], 
+                    TraditionalForm]], {116.55, -8.64}, {Center, Center}, {
+                    221.99999999999997`, 16.}]}, {
+                    InsetBox[
+                    BoxData[
+                    FormBox[
                     TemplateBox[{"\"Current dv= \"", 
                     RowBox[{"{", 
                     
                     RowBox[{"0.7621297961535245`", ",", 
                     "0.7948464156868533`"}], "}"}]}, "RowDefault"], 
-                    TraditionalForm]], {116.55, -8.6}, {Center, Center}, {
-                    221.99999999999997`, 15.999999999999998`}]}, {
+                    TraditionalForm]], {116.55, -25.92}, {Center, Center}, {
+                    221.99999999999997`, 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     
                     TemplateBox[{"\"Current iteration= \"", "5"}, 
-                    "RowDefault"], TraditionalForm]], {
-                    116.55, -25.799999999999997`}, {Center, Center}, {
-                    221.99999999999997`, 15.999999999999996`}]}, {
+                    "RowDefault"], TraditionalForm]], {116.55, -43.2}, {
+                    Center, Center}, {221.99999999999997`, 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     TemplateBox[{"\"Current level= \"", "5"}, "RowDefault"], 
-                    TraditionalForm]], {116.55, -43.}, {Center, Center}, {
-                    221.99999999999997`, 15.999999999999993`}]}}, {}}, 
+                    TraditionalForm]], {116.55, -60.480000000000004`}, {
+                    Center, Center}, {221.99999999999997`, 16.}]}}, {}}, 
                     ImageSize -> {Automatic, 
                     UpTo[700]}, {
                     PlotRangePadding -> {6, 5}, 
-                    PlotRange -> {{0, 233.1}, {-51.599999999999994`, 0}}}], 
-                   StripOnInput -> False], StripOnInput -> False]},
+                    PlotRange -> {{0, 233.1}, {-69.12, 0}}}], StripOnInput -> 
+                   False], StripOnInput -> False]},
                 "Labeled",
                 DisplayFunction->(GridBox[{{
                     TagBox[
@@ -4500,7 +4813,7 @@ NlbqRbuUhi82HaXhop+IoBP9Nzhe2Pl/NCicOZTNRVtKF+TH/aThsHBVSTFa
 YfTupbQJGuiQqH156JHmBydu/aJhhUfGwkx0XEr9xnoB5lutaO9FtMdJnmnL
 JA1qrjclotH6O1u0ev/g/lYNZZxGz7Ds+uf7FK7XkQCDEHQb3Sv4+5eG5CKH
 Wn/0/wPFwAQ+
-                    "]]}, Annotation[#, "Charting`Private`Tag$226439#1"]& ], 
+                    "]]}, Annotation[#, "Charting`Private`Tag$11769#1"]& ], 
                     TagBox[{
                     Directive[
                     Opacity[1.], 
@@ -4544,7 +4857,7 @@ Ih+JZ1+gTr9z6DPXvxGopDXry6g310lcvV/Rf7vywTEp9WTST8yIfxDMTTfT
 2sLaxhHMbCoN+4s6OoV4a98huL7W3PIl9VKRljcwgeBt0+HfX1NPXdXz0fB7
 BG6i+eJ/qfVoYHxyEoEuXWPBeEDwf1CEKuA=
                     "]]}, 
-                    Annotation[#, "Charting`Private`Tag$226439#2"]& ]}}, {}}, {
+                    Annotation[#, "Charting`Private`Tag$11769#2"]& ]}}, {}}, {
                     PointSize[0.01], 
                     
                     LineBox[{{11, 0.24822232781251852`}, {
@@ -4809,32 +5122,49 @@ BG6i+eJ/qfVoYHxyEoEuXWPBeEDwf1CEKuA=
                     InsetBox[
                     BoxData[
                     FormBox[
+                    TemplateBox[{"\"Initial df= \"", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.00324\"", ShowStringCharacters -> False], 
+                    0.0032404692978602054`, AutoDelete -> True], 
+                    NumberForm[#, 3]& ], ",", 
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0042\"", ShowStringCharacters -> False], 
+                    0.004200203519001025, AutoDelete -> True], 
+                    NumberForm[#, 3]& ]}], "}"}]}, "RowDefault"], 
+                    TraditionalForm]], {116.55, -8.64}, {Center, Center}, {
+                    221.99999999999997`, 16.}]}, {
+                    InsetBox[
+                    BoxData[
+                    FormBox[
                     TemplateBox[{"\"Current dv= \"", 
                     RowBox[{"{", 
                     
                     RowBox[{"0.7621297961535182`", ",", 
                     "0.7948464156868444`"}], "}"}]}, "RowDefault"], 
-                    TraditionalForm]], {116.55, -8.6}, {Center, Center}, {
-                    221.99999999999997`, 15.999999999999998`}]}, {
+                    TraditionalForm]], {116.55, -25.92}, {Center, Center}, {
+                    221.99999999999997`, 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     
                     TemplateBox[{"\"Current iteration= \"", "6"}, 
-                    "RowDefault"], TraditionalForm]], {
-                    116.55, -25.799999999999997`}, {Center, Center}, {
-                    221.99999999999997`, 15.999999999999996`}]}, {
+                    "RowDefault"], TraditionalForm]], {116.55, -43.2}, {
+                    Center, Center}, {221.99999999999997`, 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     TemplateBox[{"\"Current level= \"", "5"}, "RowDefault"], 
-                    TraditionalForm]], {116.55, -43.}, {Center, Center}, {
-                    221.99999999999997`, 15.999999999999993`}]}}, {}}, 
+                    TraditionalForm]], {116.55, -60.480000000000004`}, {
+                    Center, Center}, {221.99999999999997`, 16.}]}}, {}}, 
                     ImageSize -> {Automatic, 
                     UpTo[700]}, {
                     PlotRangePadding -> {6, 5}, 
-                    PlotRange -> {{0, 233.1}, {-51.599999999999994`, 0}}}], 
-                   StripOnInput -> False], StripOnInput -> False]},
+                    PlotRange -> {{0, 233.1}, {-69.12, 0}}}], StripOnInput -> 
+                   False], StripOnInput -> False]},
                 "Labeled",
                 DisplayFunction->(GridBox[{{
                     TagBox[
@@ -4941,7 +5271,7 @@ NlbqRbuUhi82HaXhop+IoBP9Nzhe2Pl/NCicOZTNRVtKF+TH/aThsHBVSTFa
 YfTupbQJGuiQqH156JHmBydu/aJhhUfGwkx0XEr9xnoB5lutaO9FtMdJnmnL
 JA1qrjclotH6O1u0ev/g/lYNZZxGz7Ds+uf7FK7XkQCDEHQb3Sv4+5eG5CKH
 Wn/0/wPFwAQ+
-                    "]]}, Annotation[#, "Charting`Private`Tag$226581#1"]& ], 
+                    "]]}, Annotation[#, "Charting`Private`Tag$11933#1"]& ], 
                     TagBox[{
                     Directive[
                     Opacity[1.], 
@@ -4985,7 +5315,7 @@ Ih+JZ1+gTr9z6DPXvxGopDXry6g310lcvV/Rf7vywTEp9WTST8yIfxDMTTfT
 2sLaxhHMbCoN+4s6OoV4a98huL7W3PIl9VKRljcwgeBt0+HfX1NPXdXz0fB7
 BG6i+eJ/qfVoYHxyEoEuXWPBeEDwf1CEKuA=
                     "]]}, 
-                    Annotation[#, "Charting`Private`Tag$226581#2"]& ]}}, {}}, {
+                    Annotation[#, "Charting`Private`Tag$11933#2"]& ]}}, {}}, {
                     PointSize[0.01], 
                     
                     LineBox[{{11, 0.24822232781251852`}, {
@@ -5250,32 +5580,49 @@ BG6i+eJ/qfVoYHxyEoEuXWPBeEDwf1CEKuA=
                     InsetBox[
                     BoxData[
                     FormBox[
+                    TemplateBox[{"\"Initial df= \"", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.00324\"", ShowStringCharacters -> False], 
+                    0.0032404692978602054`, AutoDelete -> True], 
+                    NumberForm[#, 3]& ], ",", 
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0042\"", ShowStringCharacters -> False], 
+                    0.004200203519001025, AutoDelete -> True], 
+                    NumberForm[#, 3]& ]}], "}"}]}, "RowDefault"], 
+                    TraditionalForm]], {116.55, -8.64}, {Center, Center}, {
+                    221.99999999999997`, 16.}]}, {
+                    InsetBox[
+                    BoxData[
+                    FormBox[
                     TemplateBox[{"\"Current dv= \"", 
                     RowBox[{"{", 
                     
                     RowBox[{"0.7621297961535182`", ",", 
                     "0.7948464156868444`"}], "}"}]}, "RowDefault"], 
-                    TraditionalForm]], {116.55, -8.6}, {Center, Center}, {
-                    221.99999999999997`, 15.999999999999998`}]}, {
+                    TraditionalForm]], {116.55, -25.92}, {Center, Center}, {
+                    221.99999999999997`, 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     
                     TemplateBox[{"\"Current iteration= \"", "7"}, 
-                    "RowDefault"], TraditionalForm]], {
-                    116.55, -25.799999999999997`}, {Center, Center}, {
-                    221.99999999999997`, 15.999999999999996`}]}, {
+                    "RowDefault"], TraditionalForm]], {116.55, -43.2}, {
+                    Center, Center}, {221.99999999999997`, 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     TemplateBox[{"\"Current level= \"", "5"}, "RowDefault"], 
-                    TraditionalForm]], {116.55, -43.}, {Center, Center}, {
-                    221.99999999999997`, 15.999999999999993`}]}}, {}}, 
+                    TraditionalForm]], {116.55, -60.480000000000004`}, {
+                    Center, Center}, {221.99999999999997`, 16.}]}}, {}}, 
                     ImageSize -> {Automatic, 
                     UpTo[700]}, {
                     PlotRangePadding -> {6, 5}, 
-                    PlotRange -> {{0, 233.1}, {-51.599999999999994`, 0}}}], 
-                   StripOnInput -> False], StripOnInput -> False]},
+                    PlotRange -> {{0, 233.1}, {-69.12, 0}}}], StripOnInput -> 
+                   False], StripOnInput -> False]},
                 "Labeled",
                 DisplayFunction->(GridBox[{{
                     TagBox[
@@ -5382,7 +5729,7 @@ NlbqRbuUhi82HaXhop+IoBP9Nzhe2Pl/NCicOZTNRVtKF+TH/aThsHBVSTFa
 YfTupbQJGuiQqH156JHmBydu/aJhhUfGwkx0XEr9xnoB5lutaO9FtMdJnmnL
 JA1qrjclotH6O1u0ev/g/lYNZZxGz7Ds+uf7FK7XkQCDEHQb3Sv4+5eG5CKH
 Wn/0/wPFwAQ+
-                    "]]}, Annotation[#, "Charting`Private`Tag$226723#1"]& ], 
+                    "]]}, Annotation[#, "Charting`Private`Tag$12097#1"]& ], 
                     TagBox[{
                     Directive[
                     Opacity[1.], 
@@ -5426,7 +5773,7 @@ Ih+JZ1+gTr9z6DPXvxGopDXry6g310lcvV/Rf7vywTEp9WTST8yIfxDMTTfT
 2sLaxhHMbCoN+4s6OoV4a98huL7W3PIl9VKRljcwgeBt0+HfX1NPXdXz0fB7
 BG6i+eJ/qfVoYHxyEoEuXWPBeEDwf1CEKuA=
                     "]]}, 
-                    Annotation[#, "Charting`Private`Tag$226723#2"]& ]}}, {}}, {
+                    Annotation[#, "Charting`Private`Tag$12097#2"]& ]}}, {}}, {
                     PointSize[0.01], 
                     
                     LineBox[{{11, 0.24822232781251852`}, {
@@ -5691,32 +6038,49 @@ BG6i+eJ/qfVoYHxyEoEuXWPBeEDwf1CEKuA=
                     InsetBox[
                     BoxData[
                     FormBox[
+                    TemplateBox[{"\"Initial df= \"", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.00324\"", ShowStringCharacters -> False], 
+                    0.0032404692978602054`, AutoDelete -> True], 
+                    NumberForm[#, 3]& ], ",", 
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0042\"", ShowStringCharacters -> False], 
+                    0.004200203519001025, AutoDelete -> True], 
+                    NumberForm[#, 3]& ]}], "}"}]}, "RowDefault"], 
+                    TraditionalForm]], {116.55, -8.64}, {Center, Center}, {
+                    221.99999999999997`, 16.}]}, {
+                    InsetBox[
+                    BoxData[
+                    FormBox[
                     TemplateBox[{"\"Current dv= \"", 
                     RowBox[{"{", 
                     
                     RowBox[{"0.7621297961535182`", ",", 
                     "0.7948464156868444`"}], "}"}]}, "RowDefault"], 
-                    TraditionalForm]], {116.55, -8.6}, {Center, Center}, {
-                    221.99999999999997`, 15.999999999999998`}]}, {
+                    TraditionalForm]], {116.55, -25.92}, {Center, Center}, {
+                    221.99999999999997`, 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     
                     TemplateBox[{"\"Current iteration= \"", "8"}, 
-                    "RowDefault"], TraditionalForm]], {
-                    116.55, -25.799999999999997`}, {Center, Center}, {
-                    221.99999999999997`, 15.999999999999996`}]}, {
+                    "RowDefault"], TraditionalForm]], {116.55, -43.2}, {
+                    Center, Center}, {221.99999999999997`, 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     TemplateBox[{"\"Current level= \"", "5"}, "RowDefault"], 
-                    TraditionalForm]], {116.55, -43.}, {Center, Center}, {
-                    221.99999999999997`, 15.999999999999993`}]}}, {}}, 
+                    TraditionalForm]], {116.55, -60.480000000000004`}, {
+                    Center, Center}, {221.99999999999997`, 16.}]}}, {}}, 
                     ImageSize -> {Automatic, 
                     UpTo[700]}, {
                     PlotRangePadding -> {6, 5}, 
-                    PlotRange -> {{0, 233.1}, {-51.599999999999994`, 0}}}], 
-                   StripOnInput -> False], StripOnInput -> False]},
+                    PlotRange -> {{0, 233.1}, {-69.12, 0}}}], StripOnInput -> 
+                   False], StripOnInput -> False]},
                 "Labeled",
                 DisplayFunction->(GridBox[{{
                     TagBox[
@@ -5823,7 +6187,7 @@ NlbqRbuUhi82HaXhop+IoBP9Nzhe2Pl/NCicOZTNRVtKF+TH/aThsHBVSTFa
 YfTupbQJGuiQqH156JHmBydu/aJhhUfGwkx0XEr9xnoB5lutaO9FtMdJnmnL
 JA1qrjclotH6O1u0ev/g/lYNZZxGz7Ds+uf7FK7XkQCDEHQb3Sv4+5eG5CKH
 Wn/0/wPFwAQ+
-                    "]]}, Annotation[#, "Charting`Private`Tag$226865#1"]& ], 
+                    "]]}, Annotation[#, "Charting`Private`Tag$12261#1"]& ], 
                     TagBox[{
                     Directive[
                     Opacity[1.], 
@@ -5867,7 +6231,7 @@ Ih+JZ1+gTr9z6DPXvxGopDXry6g310lcvV/Rf7vywTEp9WTST8yIfxDMTTfT
 2sLaxhHMbCoN+4s6OoV4a98huL7W3PIl9VKRljcwgeBt0+HfX1NPXdXz0fB7
 BG6i+eJ/qfVoYHxyEoEuXWPBeEDwf1CEKuA=
                     "]]}, 
-                    Annotation[#, "Charting`Private`Tag$226865#2"]& ]}}, {}}, {
+                    Annotation[#, "Charting`Private`Tag$12261#2"]& ]}}, {}}, {
                     PointSize[0.01], 
                     
                     LineBox[{{11, 0.24822232781251852`}, {
@@ -6132,32 +6496,49 @@ BG6i+eJ/qfVoYHxyEoEuXWPBeEDwf1CEKuA=
                     InsetBox[
                     BoxData[
                     FormBox[
+                    TemplateBox[{"\"Initial df= \"", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.00324\"", ShowStringCharacters -> False], 
+                    0.0032404692978602054`, AutoDelete -> True], 
+                    NumberForm[#, 3]& ], ",", 
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0042\"", ShowStringCharacters -> False], 
+                    0.004200203519001025, AutoDelete -> True], 
+                    NumberForm[#, 3]& ]}], "}"}]}, "RowDefault"], 
+                    TraditionalForm]], {116.55, -8.64}, {Center, Center}, {
+                    221.99999999999997`, 16.}]}, {
+                    InsetBox[
+                    BoxData[
+                    FormBox[
                     TemplateBox[{"\"Current dv= \"", 
                     RowBox[{"{", 
                     
                     RowBox[{"0.7621297961535182`", ",", 
                     "0.7948464156868444`"}], "}"}]}, "RowDefault"], 
-                    TraditionalForm]], {116.55, -8.6}, {Center, Center}, {
-                    221.99999999999997`, 15.999999999999998`}]}, {
+                    TraditionalForm]], {116.55, -25.92}, {Center, Center}, {
+                    221.99999999999997`, 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     
                     TemplateBox[{"\"Current iteration= \"", "9"}, 
-                    "RowDefault"], TraditionalForm]], {
-                    116.55, -25.799999999999997`}, {Center, Center}, {
-                    221.99999999999997`, 15.999999999999996`}]}, {
+                    "RowDefault"], TraditionalForm]], {116.55, -43.2}, {
+                    Center, Center}, {221.99999999999997`, 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     TemplateBox[{"\"Current level= \"", "5"}, "RowDefault"], 
-                    TraditionalForm]], {116.55, -43.}, {Center, Center}, {
-                    221.99999999999997`, 15.999999999999993`}]}}, {}}, 
+                    TraditionalForm]], {116.55, -60.480000000000004`}, {
+                    Center, Center}, {221.99999999999997`, 16.}]}}, {}}, 
                     ImageSize -> {Automatic, 
                     UpTo[700]}, {
                     PlotRangePadding -> {6, 5}, 
-                    PlotRange -> {{0, 233.1}, {-51.599999999999994`, 0}}}], 
-                   StripOnInput -> False], StripOnInput -> False]},
+                    PlotRange -> {{0, 233.1}, {-69.12, 0}}}], StripOnInput -> 
+                   False], StripOnInput -> False]},
                 "Labeled",
                 DisplayFunction->(GridBox[{{
                     TagBox[
@@ -6264,7 +6645,7 @@ NlbqRbuUhi82HaXhop+IoBP9Nzhe2Pl/NCicOZTNRVtKF+TH/aThsHBVSTFa
 YfTupbQJGuiQqH156JHmBydu/aJhhUfGwkx0XEr9xnoB5lutaO9FtMdJnmnL
 JA1qrjclotH6O1u0ev/g/lYNZZxGz7Ds+uf7FK7XkQCDEHQb3Sv4+5eG5CKH
 Wn/0/wPFwAQ+
-                    "]]}, Annotation[#, "Charting`Private`Tag$227007#1"]& ], 
+                    "]]}, Annotation[#, "Charting`Private`Tag$12425#1"]& ], 
                     TagBox[{
                     Directive[
                     Opacity[1.], 
@@ -6308,7 +6689,7 @@ Ih+JZ1+gTr9z6DPXvxGopDXry6g310lcvV/Rf7vywTEp9WTST8yIfxDMTTfT
 2sLaxhHMbCoN+4s6OoV4a98huL7W3PIl9VKRljcwgeBt0+HfX1NPXdXz0fB7
 BG6i+eJ/qfVoYHxyEoEuXWPBeEDwf1CEKuA=
                     "]]}, 
-                    Annotation[#, "Charting`Private`Tag$227007#2"]& ]}}, {}}, {
+                    Annotation[#, "Charting`Private`Tag$12425#2"]& ]}}, {}}, {
                     PointSize[0.01], 
                     
                     LineBox[{{11, 0.24822232781251852`}, {
@@ -6573,32 +6954,49 @@ BG6i+eJ/qfVoYHxyEoEuXWPBeEDwf1CEKuA=
                     InsetBox[
                     BoxData[
                     FormBox[
+                    TemplateBox[{"\"Initial df= \"", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.00324\"", ShowStringCharacters -> False], 
+                    0.0032404692978602054`, AutoDelete -> True], 
+                    NumberForm[#, 3]& ], ",", 
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0042\"", ShowStringCharacters -> False], 
+                    0.004200203519001025, AutoDelete -> True], 
+                    NumberForm[#, 3]& ]}], "}"}]}, "RowDefault"], 
+                    TraditionalForm]], {116.55, -8.64}, {Center, Center}, {
+                    221.99999999999997`, 16.}]}, {
+                    InsetBox[
+                    BoxData[
+                    FormBox[
                     TemplateBox[{"\"Current dv= \"", 
                     RowBox[{"{", 
                     
                     RowBox[{"0.7621297961535182`", ",", 
                     "0.7948464156868444`"}], "}"}]}, "RowDefault"], 
-                    TraditionalForm]], {116.55, -8.6}, {Center, Center}, {
-                    221.99999999999997`, 15.999999999999998`}]}, {
+                    TraditionalForm]], {116.55, -25.92}, {Center, Center}, {
+                    221.99999999999997`, 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     
                     TemplateBox[{"\"Current iteration= \"", "10"}, 
-                    "RowDefault"], TraditionalForm]], {
-                    116.55, -25.799999999999997`}, {Center, Center}, {
-                    221.99999999999997`, 15.999999999999996`}]}, {
+                    "RowDefault"], TraditionalForm]], {116.55, -43.2}, {
+                    Center, Center}, {221.99999999999997`, 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     TemplateBox[{"\"Current level= \"", "5"}, "RowDefault"], 
-                    TraditionalForm]], {116.55, -43.}, {Center, Center}, {
-                    221.99999999999997`, 15.999999999999993`}]}}, {}}, 
+                    TraditionalForm]], {116.55, -60.480000000000004`}, {
+                    Center, Center}, {221.99999999999997`, 16.}]}}, {}}, 
                     ImageSize -> {Automatic, 
                     UpTo[700]}, {
                     PlotRangePadding -> {6, 5}, 
-                    PlotRange -> {{0, 233.1}, {-51.599999999999994`, 0}}}], 
-                   StripOnInput -> False], StripOnInput -> False]},
+                    PlotRange -> {{0, 233.1}, {-69.12, 0}}}], StripOnInput -> 
+                   False], StripOnInput -> False]},
                 "Labeled",
                 DisplayFunction->(GridBox[{{
                     TagBox[
@@ -6655,7 +7053,7 @@ ZZhA2/N+qrH1LMGfdLKcf6O9kpjHOPyeYAfFkBinUbB73a2a3A8EZRssvDUu
 ULBltqHw6keCGRll0wdpT/U3JtX+Q/BUZ7lDHu3cK11uXYt0vzl/h9XpFBxP
 7rXm/0tw5We1aRvaO/z4upIlgjMmbl6xtD/bPaI8t0zwXOa6wnraAiJZXFkh
 6Jlmn/+a9n/1W244
-                    "]]}, Annotation[#, "Charting`Private`Tag$227149#1"]& ], 
+                    "]]}, Annotation[#, "Charting`Private`Tag$12589#1"]& ], 
                     TagBox[{
                     Directive[
                     Opacity[1.], 
@@ -6691,7 +7089,7 @@ gvygSytKhinoTDxOuTNDMGw6Rv3bEQoyYdXlwln5PyUfaZncCRlN+5rmCOb4
 +InKZRSORvFtxPMEo67FLlp8pLDVX2z8YYHgp0/+45VyL9sp1ZhcJJitOp1v
 NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     "]]}, 
-                    Annotation[#, "Charting`Private`Tag$227149#2"]& ]}}, {}}, {
+                    Annotation[#, "Charting`Private`Tag$12589#2"]& ]}}, {}}, {
                     PointSize[0.01], 
                     
                     LineBox[{{11, 0.4257239702016861}, {
@@ -6956,32 +7354,49 @@ NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     InsetBox[
                     BoxData[
                     FormBox[
+                    TemplateBox[{"\"Initial df= \"", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0349\"", ShowStringCharacters -> False], 
+                    0.03488335407655899, AutoDelete -> True], 
+                    NumberForm[#, 3]& ], ",", 
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0409\"", ShowStringCharacters -> False], 
+                    0.040890521803009595`, AutoDelete -> True], 
+                    NumberForm[#, 3]& ]}], "}"}]}, "RowDefault"], 
+                    TraditionalForm]], {120.225, -8.64}, {Center, Center}, {
+                    229., 16.}]}, {
+                    InsetBox[
+                    BoxData[
+                    FormBox[
                     TemplateBox[{"\"Current dv= \"", 
                     RowBox[{"{", 
                     
                     RowBox[{"0.4389280817029852`", ",", 
                     "0.3774660316318145`"}], "}"}]}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -8.6}, {Center, Center}, {
-                    229., 15.999999999999998`}]}, {
+                    TraditionalForm]], {120.225, -25.92}, {Center, Center}, {
+                    229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     
                     TemplateBox[{"\"Current iteration= \"", "1"}, 
-                    "RowDefault"], TraditionalForm]], {
-                    120.225, -25.799999999999997`}, {Center, Center}, {229., 
-                    15.999999999999996`}]}, {
+                    "RowDefault"], TraditionalForm]], {120.225, -43.2}, {
+                    Center, Center}, {229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     TemplateBox[{"\"Current level= \"", "4"}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -43.}, {Center, Center}, {
-                    229., 15.999999999999993`}]}}, {}}, 
+                    TraditionalForm]], {120.225, -60.480000000000004`}, {
+                    Center, Center}, {229., 16.}]}}, {}}, 
                     ImageSize -> {Automatic, 
                     UpTo[700]}, {
                     PlotRangePadding -> {6, 5}, 
-                    PlotRange -> {{0, 240.45}, {-51.599999999999994`, 0}}}], 
-                   StripOnInput -> False], StripOnInput -> False]},
+                    PlotRange -> {{0, 240.45}, {-69.12, 0}}}], StripOnInput -> 
+                   False], StripOnInput -> False]},
                 "Labeled",
                 DisplayFunction->(GridBox[{{
                     TagBox[
@@ -7038,7 +7453,7 @@ ZZhA2/N+qrH1LMGfdLKcf6O9kpjHOPyeYAfFkBinUbB73a2a3A8EZRssvDUu
 ULBltqHw6keCGRll0wdpT/U3JtX+Q/BUZ7lDHu3cK11uXYt0vzl/h9XpFBxP
 7rXm/0tw5We1aRvaO/z4upIlgjMmbl6xtD/bPaI8t0zwXOa6wnraAiJZXFkh
 6Jlmn/+a9n/1W244
-                    "]]}, Annotation[#, "Charting`Private`Tag$227291#1"]& ], 
+                    "]]}, Annotation[#, "Charting`Private`Tag$12753#1"]& ], 
                     TagBox[{
                     Directive[
                     Opacity[1.], 
@@ -7074,7 +7489,7 @@ gvygSytKhinoTDxOuTNDMGw6Rv3bEQoyYdXlwln5PyUfaZncCRlN+5rmCOb4
 +InKZRSORvFtxPMEo67FLlp8pLDVX2z8YYHgp0/+45VyL9sp1ZhcJJitOp1v
 NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     "]]}, 
-                    Annotation[#, "Charting`Private`Tag$227291#2"]& ]}}, {}}, {
+                    Annotation[#, "Charting`Private`Tag$12753#2"]& ]}}, {}}, {
                     PointSize[0.01], 
                     
                     LineBox[{{11, 0.4257239702016861}, {
@@ -7339,32 +7754,49 @@ NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     InsetBox[
                     BoxData[
                     FormBox[
+                    TemplateBox[{"\"Initial df= \"", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0349\"", ShowStringCharacters -> False], 
+                    0.03488335407655899, AutoDelete -> True], 
+                    NumberForm[#, 3]& ], ",", 
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0409\"", ShowStringCharacters -> False], 
+                    0.040890521803009595`, AutoDelete -> True], 
+                    NumberForm[#, 3]& ]}], "}"}]}, "RowDefault"], 
+                    TraditionalForm]], {120.225, -8.64}, {Center, Center}, {
+                    229., 16.}]}, {
+                    InsetBox[
+                    BoxData[
+                    FormBox[
                     TemplateBox[{"\"Current dv= \"", 
                     RowBox[{"{", 
                     
                     RowBox[{"0.43218252894758297`", ",", 
                     "0.3925577176083468`"}], "}"}]}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -8.6}, {Center, Center}, {
-                    229., 15.999999999999998`}]}, {
+                    TraditionalForm]], {120.225, -25.92}, {Center, Center}, {
+                    229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     
                     TemplateBox[{"\"Current iteration= \"", "2"}, 
-                    "RowDefault"], TraditionalForm]], {
-                    120.225, -25.799999999999997`}, {Center, Center}, {229., 
-                    15.999999999999996`}]}, {
+                    "RowDefault"], TraditionalForm]], {120.225, -43.2}, {
+                    Center, Center}, {229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     TemplateBox[{"\"Current level= \"", "4"}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -43.}, {Center, Center}, {
-                    229., 15.999999999999993`}]}}, {}}, 
+                    TraditionalForm]], {120.225, -60.480000000000004`}, {
+                    Center, Center}, {229., 16.}]}}, {}}, 
                     ImageSize -> {Automatic, 
                     UpTo[700]}, {
                     PlotRangePadding -> {6, 5}, 
-                    PlotRange -> {{0, 240.45}, {-51.599999999999994`, 0}}}], 
-                   StripOnInput -> False], StripOnInput -> False]},
+                    PlotRange -> {{0, 240.45}, {-69.12, 0}}}], StripOnInput -> 
+                   False], StripOnInput -> False]},
                 "Labeled",
                 DisplayFunction->(GridBox[{{
                     TagBox[
@@ -7377,8 +7809,7 @@ NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
                   GridBoxAlignment -> {
                    "Columns" -> {{Center}}, "Rows" -> {{Center}}}, AutoDelete -> 
-                  False, 
-                  GridBoxItemSize -> {
+                  False, GridBoxItemSize -> {
                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
                   BaselinePosition -> {1, 1}]& ),
                 InterpretationFunction->(RowBox[{"Labeled", "[", 
@@ -7422,7 +7853,7 @@ ZZhA2/N+qrH1LMGfdLKcf6O9kpjHOPyeYAfFkBinUbB73a2a3A8EZRssvDUu
 ULBltqHw6keCGRll0wdpT/U3JtX+Q/BUZ7lDHu3cK11uXYt0vzl/h9XpFBxP
 7rXm/0tw5We1aRvaO/z4upIlgjMmbl6xtD/bPaI8t0zwXOa6wnraAiJZXFkh
 6Jlmn/+a9n/1W244
-                    "]]}, Annotation[#, "Charting`Private`Tag$227433#1"]& ], 
+                    "]]}, Annotation[#, "Charting`Private`Tag$12917#1"]& ], 
                     TagBox[{
                     Directive[
                     Opacity[1.], 
@@ -7458,7 +7889,7 @@ gvygSytKhinoTDxOuTNDMGw6Rv3bEQoyYdXlwln5PyUfaZncCRlN+5rmCOb4
 +InKZRSORvFtxPMEo67FLlp8pLDVX2z8YYHgp0/+45VyL9sp1ZhcJJitOp1v
 NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     "]]}, 
-                    Annotation[#, "Charting`Private`Tag$227433#2"]& ]}}, {}}, {
+                    Annotation[#, "Charting`Private`Tag$12917#2"]& ]}}, {}}, {
                     PointSize[0.01], 
                     
                     LineBox[{{11, 0.4257239702016861}, {
@@ -7723,32 +8154,49 @@ NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     InsetBox[
                     BoxData[
                     FormBox[
+                    TemplateBox[{"\"Initial df= \"", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0349\"", ShowStringCharacters -> False], 
+                    0.03488335407655899, AutoDelete -> True], 
+                    NumberForm[#, 3]& ], ",", 
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0409\"", ShowStringCharacters -> False], 
+                    0.040890521803009595`, AutoDelete -> True], 
+                    NumberForm[#, 3]& ]}], "}"}]}, "RowDefault"], 
+                    TraditionalForm]], {120.225, -8.64}, {Center, Center}, {
+                    229., 16.}]}, {
+                    InsetBox[
+                    BoxData[
+                    FormBox[
                     TemplateBox[{"\"Current dv= \"", 
                     RowBox[{"{", 
                     
                     RowBox[{"0.4321793047501716`", ",", 
                     "0.39257562925854783`"}], "}"}]}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -8.6}, {Center, Center}, {
-                    229., 15.999999999999998`}]}, {
+                    TraditionalForm]], {120.225, -25.92}, {Center, Center}, {
+                    229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     
                     TemplateBox[{"\"Current iteration= \"", "3"}, 
-                    "RowDefault"], TraditionalForm]], {
-                    120.225, -25.799999999999997`}, {Center, Center}, {229., 
-                    15.999999999999996`}]}, {
+                    "RowDefault"], TraditionalForm]], {120.225, -43.2}, {
+                    Center, Center}, {229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     TemplateBox[{"\"Current level= \"", "4"}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -43.}, {Center, Center}, {
-                    229., 15.999999999999993`}]}}, {}}, 
+                    TraditionalForm]], {120.225, -60.480000000000004`}, {
+                    Center, Center}, {229., 16.}]}}, {}}, 
                     ImageSize -> {Automatic, 
                     UpTo[700]}, {
                     PlotRangePadding -> {6, 5}, 
-                    PlotRange -> {{0, 240.45}, {-51.599999999999994`, 0}}}], 
-                   StripOnInput -> False], StripOnInput -> False]},
+                    PlotRange -> {{0, 240.45}, {-69.12, 0}}}], StripOnInput -> 
+                   False], StripOnInput -> False]},
                 "Labeled",
                 DisplayFunction->(GridBox[{{
                     TagBox[
@@ -7805,7 +8253,7 @@ ZZhA2/N+qrH1LMGfdLKcf6O9kpjHOPyeYAfFkBinUbB73a2a3A8EZRssvDUu
 ULBltqHw6keCGRll0wdpT/U3JtX+Q/BUZ7lDHu3cK11uXYt0vzl/h9XpFBxP
 7rXm/0tw5We1aRvaO/z4upIlgjMmbl6xtD/bPaI8t0zwXOa6wnraAiJZXFkh
 6Jlmn/+a9n/1W244
-                    "]]}, Annotation[#, "Charting`Private`Tag$227575#1"]& ], 
+                    "]]}, Annotation[#, "Charting`Private`Tag$13081#1"]& ], 
                     TagBox[{
                     Directive[
                     Opacity[1.], 
@@ -7841,7 +8289,7 @@ gvygSytKhinoTDxOuTNDMGw6Rv3bEQoyYdXlwln5PyUfaZncCRlN+5rmCOb4
 +InKZRSORvFtxPMEo67FLlp8pLDVX2z8YYHgp0/+45VyL9sp1ZhcJJitOp1v
 NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     "]]}, 
-                    Annotation[#, "Charting`Private`Tag$227575#2"]& ]}}, {}}, {
+                    Annotation[#, "Charting`Private`Tag$13081#2"]& ]}}, {}}, {
                     PointSize[0.01], 
                     
                     LineBox[{{11, 0.4257239702016861}, {
@@ -8106,32 +8554,49 @@ NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     InsetBox[
                     BoxData[
                     FormBox[
+                    TemplateBox[{"\"Initial df= \"", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0349\"", ShowStringCharacters -> False], 
+                    0.03488335407655899, AutoDelete -> True], 
+                    NumberForm[#, 3]& ], ",", 
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0409\"", ShowStringCharacters -> False], 
+                    0.040890521803009595`, AutoDelete -> True], 
+                    NumberForm[#, 3]& ]}], "}"}]}, "RowDefault"], 
+                    TraditionalForm]], {120.225, -8.64}, {Center, Center}, {
+                    229., 16.}]}, {
+                    InsetBox[
+                    BoxData[
+                    FormBox[
                     TemplateBox[{"\"Current dv= \"", 
                     RowBox[{"{", 
                     
                     RowBox[{"0.4321793047494364`", ",", 
                     "0.39257562928387596`"}], "}"}]}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -8.6}, {Center, Center}, {
-                    229., 15.999999999999998`}]}, {
+                    TraditionalForm]], {120.225, -25.92}, {Center, Center}, {
+                    229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     
                     TemplateBox[{"\"Current iteration= \"", "4"}, 
-                    "RowDefault"], TraditionalForm]], {
-                    120.225, -25.799999999999997`}, {Center, Center}, {229., 
-                    15.999999999999996`}]}, {
+                    "RowDefault"], TraditionalForm]], {120.225, -43.2}, {
+                    Center, Center}, {229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     TemplateBox[{"\"Current level= \"", "4"}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -43.}, {Center, Center}, {
-                    229., 15.999999999999993`}]}}, {}}, 
+                    TraditionalForm]], {120.225, -60.480000000000004`}, {
+                    Center, Center}, {229., 16.}]}}, {}}, 
                     ImageSize -> {Automatic, 
                     UpTo[700]}, {
                     PlotRangePadding -> {6, 5}, 
-                    PlotRange -> {{0, 240.45}, {-51.599999999999994`, 0}}}], 
-                   StripOnInput -> False], StripOnInput -> False]},
+                    PlotRange -> {{0, 240.45}, {-69.12, 0}}}], StripOnInput -> 
+                   False], StripOnInput -> False]},
                 "Labeled",
                 DisplayFunction->(GridBox[{{
                     TagBox[
@@ -8188,7 +8653,7 @@ ZZhA2/N+qrH1LMGfdLKcf6O9kpjHOPyeYAfFkBinUbB73a2a3A8EZRssvDUu
 ULBltqHw6keCGRll0wdpT/U3JtX+Q/BUZ7lDHu3cK11uXYt0vzl/h9XpFBxP
 7rXm/0tw5We1aRvaO/z4upIlgjMmbl6xtD/bPaI8t0zwXOa6wnraAiJZXFkh
 6Jlmn/+a9n/1W244
-                    "]]}, Annotation[#, "Charting`Private`Tag$227717#1"]& ], 
+                    "]]}, Annotation[#, "Charting`Private`Tag$13245#1"]& ], 
                     TagBox[{
                     Directive[
                     Opacity[1.], 
@@ -8224,7 +8689,7 @@ gvygSytKhinoTDxOuTNDMGw6Rv3bEQoyYdXlwln5PyUfaZncCRlN+5rmCOb4
 +InKZRSORvFtxPMEo67FLlp8pLDVX2z8YYHgp0/+45VyL9sp1ZhcJJitOp1v
 NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     "]]}, 
-                    Annotation[#, "Charting`Private`Tag$227717#2"]& ]}}, {}}, {
+                    Annotation[#, "Charting`Private`Tag$13245#2"]& ]}}, {}}, {
                     PointSize[0.01], 
                     
                     LineBox[{{11, 0.4257239702016861}, {
@@ -8462,8 +8927,8 @@ NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     RowBox[{"LegendMarkers", "\[Rule]", "None"}], ",", 
                     RowBox[{"LabelStyle", "\[Rule]", 
                     RowBox[{"{", "}"}]}], ",", 
-                    RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}]}], "]"}]
-                    & ), Editable -> True], TraditionalForm], 
+                    RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}]}], 
+                    "]"}]& ), Editable -> True], TraditionalForm], 
                     TraditionalForm]}, "Legended", 
                   DisplayFunction -> (GridBox[{{
                     TagBox[
@@ -8489,32 +8954,49 @@ NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     InsetBox[
                     BoxData[
                     FormBox[
+                    TemplateBox[{"\"Initial df= \"", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0349\"", ShowStringCharacters -> False], 
+                    0.03488335407655899, AutoDelete -> True], 
+                    NumberForm[#, 3]& ], ",", 
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0409\"", ShowStringCharacters -> False], 
+                    0.040890521803009595`, AutoDelete -> True], 
+                    NumberForm[#, 3]& ]}], "}"}]}, "RowDefault"], 
+                    TraditionalForm]], {120.225, -8.64}, {Center, Center}, {
+                    229., 16.}]}, {
+                    InsetBox[
+                    BoxData[
+                    FormBox[
                     TemplateBox[{"\"Current dv= \"", 
                     RowBox[{"{", 
                     
                     RowBox[{"0.4321793047494349`", ",", 
                     "0.3925756292838745`"}], "}"}]}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -8.6}, {Center, Center}, {
-                    229., 15.999999999999998`}]}, {
+                    TraditionalForm]], {120.225, -25.92}, {Center, Center}, {
+                    229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     
                     TemplateBox[{"\"Current iteration= \"", "5"}, 
-                    "RowDefault"], TraditionalForm]], {
-                    120.225, -25.799999999999997`}, {Center, Center}, {229., 
-                    15.999999999999996`}]}, {
+                    "RowDefault"], TraditionalForm]], {120.225, -43.2}, {
+                    Center, Center}, {229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     TemplateBox[{"\"Current level= \"", "4"}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -43.}, {Center, Center}, {
-                    229., 15.999999999999993`}]}}, {}}, 
+                    TraditionalForm]], {120.225, -60.480000000000004`}, {
+                    Center, Center}, {229., 16.}]}}, {}}, 
                     ImageSize -> {Automatic, 
                     UpTo[700]}, {
                     PlotRangePadding -> {6, 5}, 
-                    PlotRange -> {{0, 240.45}, {-51.599999999999994`, 0}}}], 
-                   StripOnInput -> False], StripOnInput -> False]},
+                    PlotRange -> {{0, 240.45}, {-69.12, 0}}}], StripOnInput -> 
+                   False], StripOnInput -> False]},
                 "Labeled",
                 DisplayFunction->(GridBox[{{
                     TagBox[
@@ -8571,7 +9053,7 @@ ZZhA2/N+qrH1LMGfdLKcf6O9kpjHOPyeYAfFkBinUbB73a2a3A8EZRssvDUu
 ULBltqHw6keCGRll0wdpT/U3JtX+Q/BUZ7lDHu3cK11uXYt0vzl/h9XpFBxP
 7rXm/0tw5We1aRvaO/z4upIlgjMmbl6xtD/bPaI8t0zwXOa6wnraAiJZXFkh
 6Jlmn/+a9n/1W244
-                    "]]}, Annotation[#, "Charting`Private`Tag$227859#1"]& ], 
+                    "]]}, Annotation[#, "Charting`Private`Tag$13409#1"]& ], 
                     TagBox[{
                     Directive[
                     Opacity[1.], 
@@ -8607,7 +9089,7 @@ gvygSytKhinoTDxOuTNDMGw6Rv3bEQoyYdXlwln5PyUfaZncCRlN+5rmCOb4
 +InKZRSORvFtxPMEo67FLlp8pLDVX2z8YYHgp0/+45VyL9sp1ZhcJJitOp1v
 NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     "]]}, 
-                    Annotation[#, "Charting`Private`Tag$227859#2"]& ]}}, {}}, {
+                    Annotation[#, "Charting`Private`Tag$13409#2"]& ]}}, {}}, {
                     PointSize[0.01], 
                     
                     LineBox[{{11, 0.4257239702016861}, {
@@ -8872,32 +9354,49 @@ NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     InsetBox[
                     BoxData[
                     FormBox[
+                    TemplateBox[{"\"Initial df= \"", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0349\"", ShowStringCharacters -> False], 
+                    0.03488335407655899, AutoDelete -> True], 
+                    NumberForm[#, 3]& ], ",", 
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0409\"", ShowStringCharacters -> False], 
+                    0.040890521803009595`, AutoDelete -> True], 
+                    NumberForm[#, 3]& ]}], "}"}]}, "RowDefault"], 
+                    TraditionalForm]], {120.225, -8.64}, {Center, Center}, {
+                    229., 16.}]}, {
+                    InsetBox[
+                    BoxData[
+                    FormBox[
                     TemplateBox[{"\"Current dv= \"", 
                     RowBox[{"{", 
                     
                     RowBox[{"0.4321793047494364`", ",", 
                     "0.3925756292838745`"}], "}"}]}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -8.6}, {Center, Center}, {
-                    229., 15.999999999999998`}]}, {
+                    TraditionalForm]], {120.225, -25.92}, {Center, Center}, {
+                    229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     
                     TemplateBox[{"\"Current iteration= \"", "6"}, 
-                    "RowDefault"], TraditionalForm]], {
-                    120.225, -25.799999999999997`}, {Center, Center}, {229., 
-                    15.999999999999996`}]}, {
+                    "RowDefault"], TraditionalForm]], {120.225, -43.2}, {
+                    Center, Center}, {229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     TemplateBox[{"\"Current level= \"", "4"}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -43.}, {Center, Center}, {
-                    229., 15.999999999999993`}]}}, {}}, 
+                    TraditionalForm]], {120.225, -60.480000000000004`}, {
+                    Center, Center}, {229., 16.}]}}, {}}, 
                     ImageSize -> {Automatic, 
                     UpTo[700]}, {
                     PlotRangePadding -> {6, 5}, 
-                    PlotRange -> {{0, 240.45}, {-51.599999999999994`, 0}}}], 
-                   StripOnInput -> False], StripOnInput -> False]},
+                    PlotRange -> {{0, 240.45}, {-69.12, 0}}}], StripOnInput -> 
+                   False], StripOnInput -> False]},
                 "Labeled",
                 DisplayFunction->(GridBox[{{
                     TagBox[
@@ -8954,7 +9453,7 @@ ZZhA2/N+qrH1LMGfdLKcf6O9kpjHOPyeYAfFkBinUbB73a2a3A8EZRssvDUu
 ULBltqHw6keCGRll0wdpT/U3JtX+Q/BUZ7lDHu3cK11uXYt0vzl/h9XpFBxP
 7rXm/0tw5We1aRvaO/z4upIlgjMmbl6xtD/bPaI8t0zwXOa6wnraAiJZXFkh
 6Jlmn/+a9n/1W244
-                    "]]}, Annotation[#, "Charting`Private`Tag$228001#1"]& ], 
+                    "]]}, Annotation[#, "Charting`Private`Tag$13573#1"]& ], 
                     TagBox[{
                     Directive[
                     Opacity[1.], 
@@ -8990,7 +9489,7 @@ gvygSytKhinoTDxOuTNDMGw6Rv3bEQoyYdXlwln5PyUfaZncCRlN+5rmCOb4
 +InKZRSORvFtxPMEo67FLlp8pLDVX2z8YYHgp0/+45VyL9sp1ZhcJJitOp1v
 NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     "]]}, 
-                    Annotation[#, "Charting`Private`Tag$228001#2"]& ]}}, {}}, {
+                    Annotation[#, "Charting`Private`Tag$13573#2"]& ]}}, {}}, {
                     PointSize[0.01], 
                     
                     LineBox[{{11, 0.4257239702016861}, {
@@ -9255,31 +9754,49 @@ NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     InsetBox[
                     BoxData[
                     FormBox[
+                    TemplateBox[{"\"Initial df= \"", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0349\"", ShowStringCharacters -> False], 
+                    0.03488335407655899, AutoDelete -> True], 
+                    NumberForm[#, 3]& ], ",", 
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0409\"", ShowStringCharacters -> False], 
+                    0.040890521803009595`, AutoDelete -> True], 
+                    NumberForm[#, 3]& ]}], "}"}]}, "RowDefault"], 
+                    TraditionalForm]], {120.225, -8.64}, {Center, Center}, {
+                    229., 16.}]}, {
+                    InsetBox[
+                    BoxData[
+                    FormBox[
                     TemplateBox[{"\"Current dv= \"", 
                     RowBox[{"{", 
                     
                     RowBox[{"0.4321793047494349`", ",", 
                     "0.3925756292838745`"}], "}"}]}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -8.6}, {Center, Center}, {
-                    229., 15.999999999999998`}]}, {
+                    TraditionalForm]], {120.225, -25.92}, {Center, Center}, {
+                    229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
+                    
                     TemplateBox[{"\"Current iteration= \"", "7"}, 
-                    "RowDefault"], TraditionalForm]], {
-                    120.225, -25.799999999999997`}, {Center, Center}, {229., 
-                    15.999999999999996`}]}, {
+                    "RowDefault"], TraditionalForm]], {120.225, -43.2}, {
+                    Center, Center}, {229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     TemplateBox[{"\"Current level= \"", "4"}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -43.}, {Center, Center}, {
-                    229., 15.999999999999993`}]}}, {}}, 
+                    TraditionalForm]], {120.225, -60.480000000000004`}, {
+                    Center, Center}, {229., 16.}]}}, {}}, 
                     ImageSize -> {Automatic, 
                     UpTo[700]}, {
                     PlotRangePadding -> {6, 5}, 
-                    PlotRange -> {{0, 240.45}, {-51.599999999999994`, 0}}}], 
-                   StripOnInput -> False], StripOnInput -> False]},
+                    PlotRange -> {{0, 240.45}, {-69.12, 0}}}], StripOnInput -> 
+                   False], StripOnInput -> False]},
                 "Labeled",
                 DisplayFunction->(GridBox[{{
                     TagBox[
@@ -9336,7 +9853,7 @@ ZZhA2/N+qrH1LMGfdLKcf6O9kpjHOPyeYAfFkBinUbB73a2a3A8EZRssvDUu
 ULBltqHw6keCGRll0wdpT/U3JtX+Q/BUZ7lDHu3cK11uXYt0vzl/h9XpFBxP
 7rXm/0tw5We1aRvaO/z4upIlgjMmbl6xtD/bPaI8t0zwXOa6wnraAiJZXFkh
 6Jlmn/+a9n/1W244
-                    "]]}, Annotation[#, "Charting`Private`Tag$228143#1"]& ], 
+                    "]]}, Annotation[#, "Charting`Private`Tag$13737#1"]& ], 
                     TagBox[{
                     Directive[
                     Opacity[1.], 
@@ -9371,8 +9888,8 @@ NBsnmFjDF+sMUvCqiDazmSD4tOm67x25lyITGZ7/EFRsHG7KGaKwc3VRQcJn
 gvygSytKhinoTDxOuTNDMGw6Rv3bEQoyYdXlwln5PyUfaZncCRlN+5rmCOb4
 +InKZRSORvFtxPMEo67FLlp8pLDVX2z8YYHgp0/+45VyL9sp1ZhcJJitOp1v
 NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
-                    "]]}, Annotation[#, 
-                    "Charting`Private`Tag$228143#2"]& ]}}, {}}, {
+                    "]]}, 
+                    Annotation[#, "Charting`Private`Tag$13737#2"]& ]}}, {}}, {
                     PointSize[0.01], 
                     
                     LineBox[{{11, 0.4257239702016861}, {
@@ -9637,32 +10154,49 @@ NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     InsetBox[
                     BoxData[
                     FormBox[
+                    TemplateBox[{"\"Initial df= \"", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0349\"", ShowStringCharacters -> False], 
+                    0.03488335407655899, AutoDelete -> True], 
+                    NumberForm[#, 3]& ], ",", 
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0409\"", ShowStringCharacters -> False], 
+                    0.040890521803009595`, AutoDelete -> True], 
+                    NumberForm[#, 3]& ]}], "}"}]}, "RowDefault"], 
+                    TraditionalForm]], {120.225, -8.64}, {Center, Center}, {
+                    229., 16.}]}, {
+                    InsetBox[
+                    BoxData[
+                    FormBox[
                     TemplateBox[{"\"Current dv= \"", 
                     RowBox[{"{", 
                     
                     RowBox[{"0.4321793047494364`", ",", 
                     "0.3925756292838745`"}], "}"}]}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -8.6}, {Center, Center}, {
-                    229., 15.999999999999998`}]}, {
+                    TraditionalForm]], {120.225, -25.92}, {Center, Center}, {
+                    229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     
                     TemplateBox[{"\"Current iteration= \"", "8"}, 
-                    "RowDefault"], TraditionalForm]], {
-                    120.225, -25.799999999999997`}, {Center, Center}, {229., 
-                    15.999999999999996`}]}, {
+                    "RowDefault"], TraditionalForm]], {120.225, -43.2}, {
+                    Center, Center}, {229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     TemplateBox[{"\"Current level= \"", "4"}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -43.}, {Center, Center}, {
-                    229., 15.999999999999993`}]}}, {}}, 
+                    TraditionalForm]], {120.225, -60.480000000000004`}, {
+                    Center, Center}, {229., 16.}]}}, {}}, 
                     ImageSize -> {Automatic, 
                     UpTo[700]}, {
                     PlotRangePadding -> {6, 5}, 
-                    PlotRange -> {{0, 240.45}, {-51.599999999999994`, 0}}}], 
-                   StripOnInput -> False], StripOnInput -> False]},
+                    PlotRange -> {{0, 240.45}, {-69.12, 0}}}], StripOnInput -> 
+                   False], StripOnInput -> False]},
                 "Labeled",
                 DisplayFunction->(GridBox[{{
                     TagBox[
@@ -9719,7 +10253,7 @@ ZZhA2/N+qrH1LMGfdLKcf6O9kpjHOPyeYAfFkBinUbB73a2a3A8EZRssvDUu
 ULBltqHw6keCGRll0wdpT/U3JtX+Q/BUZ7lDHu3cK11uXYt0vzl/h9XpFBxP
 7rXm/0tw5We1aRvaO/z4upIlgjMmbl6xtD/bPaI8t0zwXOa6wnraAiJZXFkh
 6Jlmn/+a9n/1W244
-                    "]]}, Annotation[#, "Charting`Private`Tag$228285#1"]& ], 
+                    "]]}, Annotation[#, "Charting`Private`Tag$13901#1"]& ], 
                     TagBox[{
                     Directive[
                     Opacity[1.], 
@@ -9755,7 +10289,7 @@ gvygSytKhinoTDxOuTNDMGw6Rv3bEQoyYdXlwln5PyUfaZncCRlN+5rmCOb4
 +InKZRSORvFtxPMEo67FLlp8pLDVX2z8YYHgp0/+45VyL9sp1ZhcJJitOp1v
 NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     "]]}, 
-                    Annotation[#, "Charting`Private`Tag$228285#2"]& ]}}, {}}, {
+                    Annotation[#, "Charting`Private`Tag$13901#2"]& ]}}, {}}, {
                     PointSize[0.01], 
                     
                     LineBox[{{11, 0.4257239702016861}, {
@@ -10020,32 +10554,49 @@ NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     InsetBox[
                     BoxData[
                     FormBox[
+                    TemplateBox[{"\"Initial df= \"", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0349\"", ShowStringCharacters -> False], 
+                    0.03488335407655899, AutoDelete -> True], 
+                    NumberForm[#, 3]& ], ",", 
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0409\"", ShowStringCharacters -> False], 
+                    0.040890521803009595`, AutoDelete -> True], 
+                    NumberForm[#, 3]& ]}], "}"}]}, "RowDefault"], 
+                    TraditionalForm]], {120.225, -8.64}, {Center, Center}, {
+                    229., 16.}]}, {
+                    InsetBox[
+                    BoxData[
+                    FormBox[
                     TemplateBox[{"\"Current dv= \"", 
                     RowBox[{"{", 
                     
                     RowBox[{"0.4321793047494349`", ",", 
                     "0.3925756292838745`"}], "}"}]}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -8.6}, {Center, Center}, {
-                    229., 15.999999999999998`}]}, {
+                    TraditionalForm]], {120.225, -25.92}, {Center, Center}, {
+                    229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     
                     TemplateBox[{"\"Current iteration= \"", "9"}, 
-                    "RowDefault"], TraditionalForm]], {
-                    120.225, -25.799999999999997`}, {Center, Center}, {229., 
-                    15.999999999999996`}]}, {
+                    "RowDefault"], TraditionalForm]], {120.225, -43.2}, {
+                    Center, Center}, {229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     TemplateBox[{"\"Current level= \"", "4"}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -43.}, {Center, Center}, {
-                    229., 15.999999999999993`}]}}, {}}, 
+                    TraditionalForm]], {120.225, -60.480000000000004`}, {
+                    Center, Center}, {229., 16.}]}}, {}}, 
                     ImageSize -> {Automatic, 
                     UpTo[700]}, {
                     PlotRangePadding -> {6, 5}, 
-                    PlotRange -> {{0, 240.45}, {-51.599999999999994`, 0}}}], 
-                   StripOnInput -> False], StripOnInput -> False]},
+                    PlotRange -> {{0, 240.45}, {-69.12, 0}}}], StripOnInput -> 
+                   False], StripOnInput -> False]},
                 "Labeled",
                 DisplayFunction->(GridBox[{{
                     TagBox[
@@ -10102,7 +10653,7 @@ ZZhA2/N+qrH1LMGfdLKcf6O9kpjHOPyeYAfFkBinUbB73a2a3A8EZRssvDUu
 ULBltqHw6keCGRll0wdpT/U3JtX+Q/BUZ7lDHu3cK11uXYt0vzl/h9XpFBxP
 7rXm/0tw5We1aRvaO/z4upIlgjMmbl6xtD/bPaI8t0zwXOa6wnraAiJZXFkh
 6Jlmn/+a9n/1W244
-                    "]]}, Annotation[#, "Charting`Private`Tag$228427#1"]& ], 
+                    "]]}, Annotation[#, "Charting`Private`Tag$14065#1"]& ], 
                     TagBox[{
                     Directive[
                     Opacity[1.], 
@@ -10138,7 +10689,7 @@ gvygSytKhinoTDxOuTNDMGw6Rv3bEQoyYdXlwln5PyUfaZncCRlN+5rmCOb4
 +InKZRSORvFtxPMEo67FLlp8pLDVX2z8YYHgp0/+45VyL9sp1ZhcJJitOp1v
 NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     "]]}, 
-                    Annotation[#, "Charting`Private`Tag$228427#2"]& ]}}, {}}, {
+                    Annotation[#, "Charting`Private`Tag$14065#2"]& ]}}, {}}, {
                     PointSize[0.01], 
                     
                     LineBox[{{11, 0.4257239702016861}, {
@@ -10403,32 +10954,49 @@ NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     InsetBox[
                     BoxData[
                     FormBox[
+                    TemplateBox[{"\"Initial df= \"", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0349\"", ShowStringCharacters -> False], 
+                    0.03488335407655899, AutoDelete -> True], 
+                    NumberForm[#, 3]& ], ",", 
+                    TagBox[
+                    InterpretationBox[
+                    StyleBox["\"0.0409\"", ShowStringCharacters -> False], 
+                    0.040890521803009595`, AutoDelete -> True], 
+                    NumberForm[#, 3]& ]}], "}"}]}, "RowDefault"], 
+                    TraditionalForm]], {120.225, -8.64}, {Center, Center}, {
+                    229., 16.}]}, {
+                    InsetBox[
+                    BoxData[
+                    FormBox[
                     TemplateBox[{"\"Current dv= \"", 
                     RowBox[{"{", 
                     
                     RowBox[{"0.4321793047494364`", ",", 
                     "0.3925756292838745`"}], "}"}]}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -8.6}, {Center, Center}, {
-                    229., 15.999999999999998`}]}, {
+                    TraditionalForm]], {120.225, -25.92}, {Center, Center}, {
+                    229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     
                     TemplateBox[{"\"Current iteration= \"", "10"}, 
-                    "RowDefault"], TraditionalForm]], {
-                    120.225, -25.799999999999997`}, {Center, Center}, {229., 
-                    15.999999999999996`}]}, {
+                    "RowDefault"], TraditionalForm]], {120.225, -43.2}, {
+                    Center, Center}, {229., 16.}]}, {
                     InsetBox[
                     BoxData[
                     FormBox[
                     TemplateBox[{"\"Current level= \"", "4"}, "RowDefault"], 
-                    TraditionalForm]], {120.225, -43.}, {Center, Center}, {
-                    229., 15.999999999999993`}]}}, {}}, 
+                    TraditionalForm]], {120.225, -60.480000000000004`}, {
+                    Center, Center}, {229., 16.}]}}, {}}, 
                     ImageSize -> {Automatic, 
                     UpTo[700]}, {
                     PlotRangePadding -> {6, 5}, 
-                    PlotRange -> {{0, 240.45}, {-51.599999999999994`, 0}}}], 
-                   StripOnInput -> False], StripOnInput -> False]},
+                    PlotRange -> {{0, 240.45}, {-69.12, 0}}}], StripOnInput -> 
+                   False], StripOnInput -> False]},
                 "Labeled",
                 DisplayFunction->(GridBox[{{
                     TagBox[
@@ -10441,13 +11009,12 @@ NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
                     ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
                   GridBoxAlignment -> {
                    "Columns" -> {{Center}}, "Rows" -> {{Center}}}, AutoDelete -> 
-                  False, 
-                  GridBoxItemSize -> {
+                  False, GridBoxItemSize -> {
                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
                   BaselinePosition -> {1, 1}]& ),
                 InterpretationFunction->(RowBox[{"Labeled", "[", 
                    RowBox[{#, ",", #2}], "]"}]& )]}, 
-               Dynamic[$CellContext`i1525$$],
+               Dynamic[$CellContext`i142$$],
                Alignment->Automatic,
                BaseStyle->"ListAnimateCore",
                ImageSize->All,
@@ -10477,10 +11044,10 @@ NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
            TagBox[
             StyleBox[GridBox[{
                {"\<\"\"\>", 
-                AnimatorBox[Dynamic[$CellContext`i1525$$], {1, 20, 1},
+                AnimatorBox[Dynamic[$CellContext`i142$$], {1, 20, 1},
                  AnimationRate->Automatic,
-                 AnimationRunTime->5.910833358764648,
-                 AnimationTimeIndex->2.25,
+                 AnimationRunTime->0.4547390937805176,
+                 AnimationTimeIndex->0.4547390937805176,
                  
                  AppearanceElements->{
                   "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
@@ -10534,8 +11101,9 @@ NUqhi3yYW1oiaGyzbfOfcv8HQeNU3g==
    3.843057625561659*^9, 3.8431524760808997`*^9, 3.8431541166035175`*^9, 
    3.843156199587536*^9, 3.8432372291152124`*^9, 3.8432374117985525`*^9, 
    3.843237517068433*^9, 3.8432376143964787`*^9, 3.8432377013398137`*^9, 
-   3.843237760136248*^9},
- CellLabel->"Out[88]=",ExpressionUUID->"2b61c13d-c4da-4296-a234-c0a688640909"]
+   3.843237760136248*^9, 3.8435728962215114`*^9, 3.8435736411184645`*^9},
+ CellLabel->
+  "Out[115]=",ExpressionUUID->"dba59e0c-2198-4220-8094-95810610bab0"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -10589,7 +11157,8 @@ Cell[BoxData[{
   3.8430536232334023`*^9, {3.843053877375848*^9, 3.8430539486245584`*^9}, {
    3.8430540149210873`*^9, 3.8430541575389752`*^9}, {3.8430548675404863`*^9, 
    3.843054872742379*^9}, {3.843155808869821*^9, 3.8431558644185762`*^9}},
- CellLabel->"In[65]:=",ExpressionUUID->"10f67e4c-a510-4974-8458-09ad23983331"],
+ CellLabel->
+  "In[116]:=",ExpressionUUID->"10f67e4c-a510-4974-8458-09ad23983331"],
 
 Cell[CellGroupData[{
 
@@ -10614,7 +11183,8 @@ Cell[BoxData[
  CellChangeTimes->{{3.8430541726603727`*^9, 3.8430542426021805`*^9}, {
   3.8430542768852186`*^9, 3.843054302157134*^9}, {3.843054883911598*^9, 
   3.843054892362711*^9}},
- CellLabel->"In[67]:=",ExpressionUUID->"0b6e9818-9b79-41bf-9bf7-d7ca355e3f9d"],
+ CellLabel->
+  "In[118]:=",ExpressionUUID->"0b6e9818-9b79-41bf-9bf7-d7ca355e3f9d"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -10737,8 +11307,9 @@ Cell[BoxData[
  CellChangeTimes->{3.843054892690528*^9, 3.843057248151964*^9, 
   3.8430576259209175`*^9, 3.8430593423263717`*^9, 3.843152342245943*^9, 
   3.8431524763777046`*^9, 3.84315411667899*^9, 3.8431561996824923`*^9, 
-  3.843237229647175*^9},
- CellLabel->"Out[67]=",ExpressionUUID->"080d40fe-bd7b-41e0-a366-125ab5795d07"]
+  3.843237229647175*^9, 3.84357289654782*^9, 3.843573641403241*^9},
+ CellLabel->
+  "Out[118]=",ExpressionUUID->"99ea3e0b-0966-4a9e-a014-ae79accc114d"]
 }, Open  ]]
 }, Closed]]
 }, Open  ]],
@@ -10916,7 +11487,8 @@ Plot with solutions in rangex\n\>\""}], ";"}]}], "Input",
    3.843226837153799*^9, 3.84322696220273*^9}, {3.8432271064317884`*^9, 
    3.8432271168764763`*^9}, {3.8432274505964975`*^9, 3.84322745217492*^9}, 
    3.8432282436186953`*^9, {3.8432372030973496`*^9, 3.8432372141972623`*^9}},
- CellLabel->"In[68]:=",ExpressionUUID->"981b4e12-52d9-4e32-98d8-6d5d4c75e1ec"],
+ CellLabel->
+  "In[119]:=",ExpressionUUID->"981b4e12-52d9-4e32-98d8-6d5d4c75e1ec"],
 
 Cell[CellGroupData[{
 
@@ -10938,7 +11510,8 @@ Cell[BoxData[
    3.8430572639138165`*^9}, {3.843057637652525*^9, 3.8430576404489775`*^9}, {
    3.8430577064955626`*^9, 3.8430577087296467`*^9}, {3.843059112390246*^9, 
    3.843059117654656*^9}, 3.843237233695332*^9},
- CellLabel->"In[71]:=",ExpressionUUID->"6afeee29-2c07-4d3c-b24f-4a2c20bfcd96"],
+ CellLabel->
+  "In[121]:=",ExpressionUUID->"6afeee29-2c07-4d3c-b24f-4a2c20bfcd96"],
 
 Cell[BoxData[
  TemplateBox[{
@@ -11149,7 +11722,7 @@ U+/8R9gQecfZ5Am64411LTmK+T605sYI2uyOSN6VMTaMD3kkuU3hebb3O7L/
 Dxsa5tu8M/7HpQ5se31AchLz9U4gJgR9XZdlWYP2DPURL0ULSXxYozGF+0u1
 2Zo5zaWAT5vdhdYQGFOwQwf2X1qS8I8NBYHqWTHo/PYfIqbTbGjhiQ69RHdX
 G0xNo1s/rpieRv8PYg50Kw==
-           "]]}, Annotation[#, "Charting`Private`Tag$203950#1"]& ], 
+           "]]}, Annotation[#, "Charting`Private`Tag$14852#1"]& ], 
         TagBox[{
           Directive[
            Opacity[1.], 
@@ -11352,7 +11925,7 @@ soI/5/h8fD59m23x/k1BSqiq2KwQnv/vrd+xJiiYbz77JQbb7JFYxvVJHB+n
 nOJSQR5SOejleXiGgiy9iYtMAR46urP2qOQfCkbMJ4HG73cJWkp7q7DV/e95
 2GKLLP28SW2WAomYIsVr83gI+DZQPdjNyjEZyth+w1GycXMUftNqfViB3xez
 2vrFTP/henpUKnMU+3ul/uw/bD8InMeH/T9+rUTW
-           "]]}, Annotation[#, "Charting`Private`Tag$203950#2"]& ]}}, {}}, {
+           "]]}, Annotation[#, "Charting`Private`Tag$14852#2"]& ]}}, {}}, {
       PointSize[0.01], 
       LineBox[{{9, 3.469446951953614*^-18}, {9, 0.}}], 
       RGBColor[1, 0, 0], 
@@ -11634,8 +12207,10 @@ nOJSQR5SOejleXiGgiy9iYtMAR46urP2qOQfCkbMJ4HG73cJWkp7q7DV/e95
    3.8430590335809045`*^9, {3.843059107391549*^9, 3.843059118092018*^9}, {
    3.843059216542522*^9, 3.843059241249436*^9}, 3.8430593424513426`*^9, 
    3.843152342325376*^9, 3.8431524765182905`*^9, 3.8431541167973447`*^9, 
-   3.843156199800172*^9, {3.8432372301782956`*^9, 3.843237234257698*^9}},
- CellLabel->"Out[71]=",ExpressionUUID->"1f46ce7f-f36d-4c33-a0e2-7cccda878cd8"]
+   3.843156199800172*^9, {3.8432372301782956`*^9, 3.843237234257698*^9}, 
+   3.843572896656544*^9, 3.843573641499982*^9},
+ CellLabel->
+  "Out[121]=",ExpressionUUID->"c79e683f-d583-4d10-9b84-d33f73ae1aa1"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -11674,106 +12249,109 @@ Cell[CellGroupData[{
 Cell[2965, 82, 337, 5, 63, "Section",ExpressionUUID->"79fa593e-1f2e-4dd7-9dad-7c9ed6b76de5"],
 Cell[CellGroupData[{
 Cell[3327, 91, 2336, 56, 81, "Input",ExpressionUUID->"432fd1d7-eb95-4631-820c-69dbc52ba15c"],
-Cell[5666, 149, 18209, 385, 70, "Output",ExpressionUUID->"34aedaf2-d79d-46ea-b3d0-5a5cce1e0496"]
+Cell[5666, 149, 18255, 385, 70, "Output",ExpressionUUID->"87d68ae3-94ca-4b5a-90a1-ce7b2d401303"]
 }, Open  ]],
-Cell[23890, 537, 2065, 61, 153, "Input",ExpressionUUID->"d458e5ba-2240-431c-9d6f-024bf6432746"]
+Cell[23936, 537, 2065, 61, 153, "Input",ExpressionUUID->"d458e5ba-2240-431c-9d6f-024bf6432746"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[25992, 603, 277, 4, 50, "Section",ExpressionUUID->"18e1ac0b-2e67-4ae4-85a8-851f071e6799"],
+Cell[26038, 603, 277, 4, 50, "Section",ExpressionUUID->"18e1ac0b-2e67-4ae4-85a8-851f071e6799"],
 Cell[CellGroupData[{
-Cell[26294, 611, 255, 4, 51, "Subsection",ExpressionUUID->"2cdbf668-8d21-4060-b40c-6cfd253436b4"],
-Cell[26552, 617, 5127, 125, 528, "Input",ExpressionUUID->"1a1c9eee-72d7-44cf-95e5-c69d858841fa",
+Cell[26340, 611, 255, 4, 51, "Subsection",ExpressionUUID->"2cdbf668-8d21-4060-b40c-6cfd253436b4"],
+Cell[26598, 617, 5127, 125, 528, "Input",ExpressionUUID->"1a1c9eee-72d7-44cf-95e5-c69d858841fa",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[31716, 747, 162, 3, 51, "Subsection",ExpressionUUID->"4d85132e-f9aa-4886-993d-13ba7706c410"],
-Cell[31881, 752, 13282, 290, 906, "Input",ExpressionUUID->"a13d90b2-dea1-4b19-a655-f82fe55fa81b",
+Cell[31762, 747, 162, 3, 51, "Subsection",ExpressionUUID->"4d85132e-f9aa-4886-993d-13ba7706c410"],
+Cell[31927, 752, 13282, 290, 906, "Input",ExpressionUUID->"a13d90b2-dea1-4b19-a655-f82fe55fa81b",
  InitializationCell->True]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[45200, 1047, 191, 3, 49, "Subsection",ExpressionUUID->"057490d3-59e3-4979-8857-b71daab20425"],
-Cell[45394, 1052, 997, 23, 99, "Input",ExpressionUUID->"e8a19c3b-7ce4-41c9-9e2b-b6be0c488e6e"],
+Cell[45246, 1047, 191, 3, 49, "Subsection",ExpressionUUID->"057490d3-59e3-4979-8857-b71daab20425"],
+Cell[45440, 1052, 1055, 25, 99, "Input",ExpressionUUID->"e8a19c3b-7ce4-41c9-9e2b-b6be0c488e6e"],
 Cell[CellGroupData[{
-Cell[46416, 1079, 1761, 36, 81, "Input",ExpressionUUID->"8e2e9166-e587-42d9-a494-f7bdc0bc8ffa"],
-Cell[48180, 1117, 727, 12, 70, "Output",ExpressionUUID->"3945cab5-4968-41d8-abb8-6115329e3c03"]
+Cell[46520, 1081, 1789, 37, 81, "Input",ExpressionUUID->"8e2e9166-e587-42d9-a494-f7bdc0bc8ffa"],
+Cell[48312, 1120, 815, 13, 30, "Output",ExpressionUUID->"e5a296a1-d22b-4677-9407-8ca6f8552365"]
 }, Open  ]],
-Cell[48922, 1132, 817, 16, 45, "Input",ExpressionUUID->"98c7f0d8-9bb8-43a4-9b19-323d9cc80ddb"]
-}, Closed]],
 Cell[CellGroupData[{
-Cell[49776, 1153, 182, 3, 36, "Subsection",ExpressionUUID->"9476c611-cedb-4e14-b4f1-a7f3e4e663c4"],
-Cell[49961, 1158, 9598, 173, 636, "Input",ExpressionUUID->"2ba813e8-f4d4-445d-9ef4-e02d9a926ee0",
+Cell[49164, 1138, 849, 17, 45, "Input",ExpressionUUID->"98c7f0d8-9bb8-43a4-9b19-323d9cc80ddb"],
+Cell[50016, 1157, 11423, 209, 225, "Output",ExpressionUUID->"a348ade8-e1b5-456b-98f0-4418dd3c83e7"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[61488, 1372, 182, 3, 51, "Subsection",ExpressionUUID->"9476c611-cedb-4e14-b4f1-a7f3e4e663c4"],
+Cell[61673, 1377, 9598, 173, 636, "Input",ExpressionUUID->"2ba813e8-f4d4-445d-9ef4-e02d9a926ee0",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[59584, 1335, 182, 3, 42, "Subsubsection",ExpressionUUID->"bd0e4e5e-07ac-4d81-8d42-091704d955dc"],
-Cell[59769, 1340, 240, 6, 34, "Text",ExpressionUUID->"6b52b0d8-024c-41a6-a4fa-ff4f0506ee33"],
+Cell[71296, 1554, 182, 3, 42, "Subsubsection",ExpressionUUID->"bd0e4e5e-07ac-4d81-8d42-091704d955dc"],
+Cell[71481, 1559, 240, 6, 34, "Text",ExpressionUUID->"6b52b0d8-024c-41a6-a4fa-ff4f0506ee33"],
 Cell[CellGroupData[{
-Cell[60034, 1350, 3531, 75, 225, "Input",ExpressionUUID->"2609a419-770e-40a0-824d-e1ef4cdb0071"],
-Cell[63568, 1427, 3766, 54, 70, "Output",ExpressionUUID->"a488d9e9-5d3b-41b7-96ae-ff8fd4a3eeb3"],
-Cell[67337, 1483, 3730, 52, 70, "Output",ExpressionUUID->"03c0da85-d9ea-4c21-aa83-9afc4b8ad6ba"]
+Cell[71746, 1569, 3531, 75, 225, "Input",ExpressionUUID->"2609a419-770e-40a0-824d-e1ef4cdb0071"],
+Cell[75280, 1646, 3816, 55, 70, "Output",ExpressionUUID->"d55195aa-3866-44a3-89dc-f2a0c351eaf8"],
+Cell[79099, 1703, 3778, 53, 70, "Output",ExpressionUUID->"f772dc7d-f028-4fb6-b79a-bf99ab5f4862"]
 }, Open  ]],
-Cell[71082, 1538, 2037, 44, 63, "Input",ExpressionUUID->"10603e1f-ab0f-41e3-a7a6-b4cd1ded3daf"]
+Cell[82892, 1759, 2041, 45, 63, "Input",ExpressionUUID->"10603e1f-ab0f-41e3-a7a6-b4cd1ded3daf"]
 }, Closed]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[73180, 1589, 351, 5, 63, "Section",ExpressionUUID->"8d76930e-1f2b-44f0-a084-e1de6a4c67aa"],
+Cell[84994, 1811, 351, 5, 63, "Section",ExpressionUUID->"8d76930e-1f2b-44f0-a084-e1de6a4c67aa"],
 Cell[CellGroupData[{
-Cell[73556, 1598, 296, 5, 51, "Subsection",ExpressionUUID->"7f62c307-ac5b-4c49-a067-0be7d3f2e84c"],
-Cell[73855, 1605, 4679, 101, 636, "Input",ExpressionUUID->"51b7fc9c-9a4c-4b7a-bedc-a509a049222a",
+Cell[85370, 1820, 296, 5, 51, "Subsection",ExpressionUUID->"7f62c307-ac5b-4c49-a067-0be7d3f2e84c"],
+Cell[85669, 1827, 4683, 102, 636, "Input",ExpressionUUID->"51b7fc9c-9a4c-4b7a-bedc-a509a049222a",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[78559, 1710, 182, 3, 42, "Subsubsection",ExpressionUUID->"1e4baa5c-a0ad-4e52-9fdf-925b1342065d"],
+Cell[90377, 1933, 182, 3, 42, "Subsubsection",ExpressionUUID->"1e4baa5c-a0ad-4e52-9fdf-925b1342065d"],
 Cell[CellGroupData[{
-Cell[78766, 1717, 553, 12, 26, "Input",ExpressionUUID->"ee0a99ac-b402-4fbe-9ff2-a6318174c0c6"],
-Cell[79322, 1731, 3286, 92, 70, "Output",ExpressionUUID->"4ace4d07-bdb0-4612-8991-16e40dee1544"]
+Cell[90584, 1940, 557, 13, 26, "Input",ExpressionUUID->"ee0a99ac-b402-4fbe-9ff2-a6318174c0c6"],
+Cell[91144, 1955, 3336, 93, 70, "Output",ExpressionUUID->"eee2ad2a-ba49-459b-b75b-228b29093d97"]
 }, Open  ]]
 }, Closed]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[82669, 1830, 308, 5, 51, "Subsection",ExpressionUUID->"5b13fe0b-6829-441b-9cb1-3ae86bc71407"],
-Cell[82980, 1837, 10001, 212, 852, "Input",ExpressionUUID->"90a4196f-6009-47b6-a1ea-5dd420c9c5f4",
+Cell[94541, 2055, 308, 5, 51, "Subsection",ExpressionUUID->"5b13fe0b-6829-441b-9cb1-3ae86bc71407"],
+Cell[94852, 2062, 10023, 212, 852, "Input",ExpressionUUID->"90a4196f-6009-47b6-a1ea-5dd420c9c5f4",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[93006, 2053, 182, 3, 42, "Subsubsection",ExpressionUUID->"3b46685c-8216-4e4b-837f-c05b9cc5ce68"],
-Cell[93191, 2058, 630, 14, 26, "Input",ExpressionUUID->"93c1c7e6-2b51-4bab-9f50-ecf0b7773ddd"]
+Cell[104900, 2278, 182, 3, 42, "Subsubsection",ExpressionUUID->"3b46685c-8216-4e4b-837f-c05b9cc5ce68"],
+Cell[105085, 2283, 634, 15, 26, "Input",ExpressionUUID->"93c1c7e6-2b51-4bab-9f50-ecf0b7773ddd"]
 }, Closed]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[93870, 2078, 238, 4, 51, "Subsection",ExpressionUUID->"abaa49c8-c960-4a65-995b-c640ba410ede"],
-Cell[94111, 2084, 3705, 79, 330, "Input",ExpressionUUID->"77b759b5-485c-458b-88fe-9af141cd5701",
+Cell[105768, 2304, 238, 4, 51, "Subsection",ExpressionUUID->"abaa49c8-c960-4a65-995b-c640ba410ede"],
+Cell[106009, 2310, 3709, 80, 330, "Input",ExpressionUUID->"77b759b5-485c-458b-88fe-9af141cd5701",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[97841, 2167, 182, 3, 42, "Subsubsection",ExpressionUUID->"01c2bcf3-a4e7-402d-9980-07dc6c76f6d5"],
+Cell[109743, 2394, 182, 3, 42, "Subsubsection",ExpressionUUID->"01c2bcf3-a4e7-402d-9980-07dc6c76f6d5"],
 Cell[CellGroupData[{
-Cell[98048, 2174, 578, 11, 26, "Input",ExpressionUUID->"605a0631-c088-4826-a2e3-e4d0b0d24b7c"],
-Cell[98629, 2187, 439142, 8350, 528, "Output",ExpressionUUID->"2b61c13d-c4da-4296-a234-c0a688640909"]
+Cell[109950, 2401, 582, 12, 26, "Input",ExpressionUUID->"605a0631-c088-4826-a2e3-e4d0b0d24b7c"],
+Cell[110535, 2415, 454594, 8690, 540, "Output",ExpressionUUID->"dba59e0c-2198-4220-8094-95810610bab0"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[537844, 10545, 275, 4, 63, "Section",ExpressionUUID->"8897d717-11c6-4352-a298-4f388e7ab7d7"],
+Cell[565202, 11113, 275, 4, 63, "Section",ExpressionUUID->"8897d717-11c6-4352-a298-4f388e7ab7d7"],
 Cell[CellGroupData[{
-Cell[538144, 10553, 292, 5, 51, "Subsection",ExpressionUUID->"e60189f2-e7bd-4220-b4b1-75ce133efdd6"],
-Cell[538439, 10560, 1365, 31, 222, "Input",ExpressionUUID->"10f67e4c-a510-4974-8458-09ad23983331",
+Cell[565502, 11121, 292, 5, 51, "Subsection",ExpressionUUID->"e60189f2-e7bd-4220-b4b1-75ce133efdd6"],
+Cell[565797, 11128, 1369, 32, 222, "Input",ExpressionUUID->"10f67e4c-a510-4974-8458-09ad23983331",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[539829, 10595, 182, 3, 42, "Subsubsection",ExpressionUUID->"c7415a34-629c-4ca1-90ae-b515fbd64721"],
+Cell[567191, 11164, 182, 3, 42, "Subsubsection",ExpressionUUID->"c7415a34-629c-4ca1-90ae-b515fbd64721"],
 Cell[CellGroupData[{
-Cell[540036, 10602, 568, 14, 26, "Input",ExpressionUUID->"0b6e9818-9b79-41bf-9bf7-d7ca355e3f9d"],
-Cell[540607, 10618, 4216, 122, 70, "Output",ExpressionUUID->"080d40fe-bd7b-41e0-a366-125ab5795d07"]
+Cell[567398, 11171, 572, 15, 26, "Input",ExpressionUUID->"0b6e9818-9b79-41bf-9bf7-d7ca355e3f9d"],
+Cell[567973, 11188, 4263, 123, 70, "Output",ExpressionUUID->"99ea3e0b-0966-4a9e-a014-ae79accc114d"]
 }, Open  ]]
 }, Closed]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[544884, 10747, 320, 5, 51, "Subsection",ExpressionUUID->"fc3379c8-cbc4-477e-9e71-ae3637d799b8"],
-Cell[545207, 10754, 7486, 164, 690, "Input",ExpressionUUID->"981b4e12-52d9-4e32-98d8-6d5d4c75e1ec",
+Cell[572297, 11318, 320, 5, 51, "Subsection",ExpressionUUID->"fc3379c8-cbc4-477e-9e71-ae3637d799b8"],
+Cell[572620, 11325, 7490, 165, 690, "Input",ExpressionUUID->"981b4e12-52d9-4e32-98d8-6d5d4c75e1ec",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[552718, 10922, 182, 3, 42, "Subsubsection",ExpressionUUID->"4df388eb-3d2a-43af-a400-022bb55558ce"],
+Cell[580135, 11494, 182, 3, 42, "Subsubsection",ExpressionUUID->"4df388eb-3d2a-43af-a400-022bb55558ce"],
 Cell[CellGroupData[{
-Cell[552925, 10929, 594, 11, 26, "Input",ExpressionUUID->"6afeee29-2c07-4d3c-b24f-4a2c20bfcd96"],
-Cell[553522, 10942, 38422, 695, 324, "Output",ExpressionUUID->"1f46ce7f-f36d-4c33-a0e2-7cccda878cd8"]
+Cell[580342, 11501, 598, 12, 26, "Input",ExpressionUUID->"6afeee29-2c07-4d3c-b24f-4a2c20bfcd96"],
+Cell[580943, 11515, 38472, 697, 324, "Output",ExpressionUUID->"c79e683f-d583-4d10-9b84-d33f73ae1aa1"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
