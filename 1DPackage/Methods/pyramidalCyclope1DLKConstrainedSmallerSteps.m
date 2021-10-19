@@ -54,7 +54,7 @@ v2= Solution for b
 (* Output\[Rule] {new values for v1, v2 and status} *)
 PyrUpgrade1D[{v1_,v2_,status_,e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_]:=Block[{p1, p2, c,d1,d2,dv1,dv2},(
 
-fric=0.01;
+fric=0.015;
 
 p1=p0-v1;
 p2=p0+v2;
