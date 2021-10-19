@@ -54,6 +54,8 @@ v2= Solution for b
 (* Output\[Rule] {new values for v1, v2 and status} *)
 PyrUpgrade1D[{v1_,v2_,status_,e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_]:=Block[{p1, p2, c,d1,d2,dv1,dv2},(
 
+fric=0.01;
+
 p1=p0-v1;
 p2=p0+v2;
 
@@ -71,7 +73,7 @@ If[(Abs[d1]<threshold||Abs[d2]<threshold ),If[e<2,Return[{v1,v2,"mag",e+1}],Retu
 If[(dfline1[p0]*d1<0||dfline2[p0]*d2<0),If[e<2,Return[{v1,v2,"flip",e+1}],Return[{0,0,"flip",e}]]];
 
 (* dv1,dv2 : step from last {v1,v2} to new {v1,v2} *)
-{dv1,dv2}= {(fline1[p1]-c)/(d1+Sign[d1]*threshold),(c-fline2[p2])/d2+Sign[d2]*threshold};
+{dv1,dv2}= {(fline1[p1]-c)/(d1+Sign[d1]*fric),(c-fline2[p2])/(d2+Sign[d2]*fric)};
 
 {v1+dv1,v2+dv2,If[Norm[{dv1,dv2}]<0.001,"converged","ok"],e}
 )];
@@ -206,7 +208,7 @@ ImageSize->Scaled[0.5]
 ],
 (* Label *)
 Style[Framed[GraphicsColumn[{
-Row[{"Initial df= ", {NumberForm[dflineia[p0],3],NumberForm[dflineib[p0],3]}}],
+Row[{"df= ", {NumberForm[dflineia[p0-iter[[i,1]]],3],NumberForm[dflineib[p0+iter[[i,2]]],3]}}],
 Row[{"Current dv= ", {iter[[i,1]],iter[[i,2]]}}],
 Row[{"Current iteration= ",i}],Row[{"Current level= ",lvl}]}]]]]
 ,{i,1,Length[iter]}]
