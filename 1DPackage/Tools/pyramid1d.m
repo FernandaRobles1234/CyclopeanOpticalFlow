@@ -29,8 +29,8 @@ Gaussian filter tap 5 where a={0.3, 0,6}
 
 (* ::Input::Initialization:: *)
 pyrNextLevel[line_]:=Block[{d},(
-d=ListConvolve[gaussianKernel[0.3],ArrayPad[line,2(* to get 1 extra value on each side *),"Fixed"]]
-(*Mean/@Partition[d,2]*)
+d=ListConvolve[gaussianKernel[0.3],ArrayPad[line,2+2(* to get 1 extra value on each side *),"Fixed"]];
+Mean/@Partition[d,2]
 )];
 
 pyrNextLevel::usage="
@@ -40,11 +40,36 @@ ADDS a value before and after, padding of 2 which become 1 due to averaging
 
 
 (* ::Input::Initialization:: *)
-functionGen[line_] := Block[{fline}, (
+pyrNextCoord[coords_]:=Block[{step,first,last,x},(
+step=coords[[2]]-coords[[1]];
+first=coords[[1]]-2*(step);
+last=coords[[-1]]+2*(step);
+x=Table[i,{i,first,last,step}];
+N[Mean/@Partition[x,2]]
+)];
 
-fline=ListInterpolation[line, {1,Length[line]}, Method -> "Spline", InterpolationOrder -> 3];
+pyrNextCoord::usage="
+compute the X coordinates of next level based on a current level
+we usually start with Range[1,lineSize] at level 0
+";
+
+
+(* ::Input::Initialization:: *)
+pyrCoordFirstLast[level_,lineSizeLevel0_]:=Block[{},(
+Nest[pyrNextCoord,Range[1,lineSizeLevel0],level][[{1,-1}]]
+)];
+
+pyrCoordFirstLast::usage="
+return: first and last coordinates of a specific pyramid level.
+ ATENTION: we need the lineSize of level 0 to figure out the coordinates of all following levels 
+";
+
+
+(* ::Input::Initialization:: *)
+functionGen[line_,{firstCoord_,___,lastCoord_}] := Block[
+{fline}, (
+fline=ListInterpolation[line, {firstCoord,lastCoord}, Method -> "Spline", InterpolationOrder -> 3];
 {fline,fline'}
-
 )];
 
 functionGen::usage="
@@ -55,7 +80,9 @@ create a spline for the line containing y values, and coords contains the x coor
 
 (* ::Input::Initialization:: *)
 pyrFuncGen[line0_,maxLevel_]:=Block[{y,x},(
-functionGen[#]&/@NestList[pyrNextLevel,line0,maxLevel]
+y=NestList[pyrNextLevel,line0,maxLevel];
+x=NestList[pyrNextCoord,Range[1,Length[line0]],maxLevel];
+Table[functionGen[y[[i]],x[[i]]],{i,1,Length[y]}]
 )];
 
 pyrFuncGen::usage="

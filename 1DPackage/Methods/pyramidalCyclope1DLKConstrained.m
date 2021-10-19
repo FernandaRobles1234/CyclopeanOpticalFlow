@@ -73,7 +73,7 @@ If[(dfline1[p0]*d1<0||dfline2[p0]*d2<0),If[e<2,Return[{v1,v2,"flip",e+1}],Return
 (* dv1,dv2 : step from last {v1,v2} to new {v1,v2} *)
 {dv1,dv2}= {(fline1[p1]-c)/d1,(c-fline2[p2])/d2};
 
-If[e<2,{v1+dv1,v2+dv2,If[Norm[{dv1,dv2}]<0.001,"converged","ok"],e},{0,0,"ok",2}]
+{v1+dv1,v2+dv2,If[Norm[{dv1,dv2}]<0.001,"converged","ok"],e}
 )];
 
 (* status: "OK" -> solution respects constraints,  errors: "sign", "mag", "flip" *)
@@ -103,14 +103,19 @@ threshold= threshold to respect magnitude constraint
 PyrFlow1D[i_, p0_, pyrfunctions_,threshold_]:=Block[{v1, v2,c,d,dd,cc,status,e},(
 c=Length[pyrfunctions]; (* number of levels *)
 
-{v1, v2}={0.,0.};
-e=0;
+{v1, v2,status, e}={0.,0.,"ok",0};
 
 Do[
 (* compute at this scale, using current motion estimate *)
-{v1,v2,status,e}=Nest[PyrUpgrade1D[#,p0, pyrfunctions[[-f]],threshold*2^(-c+1)]&,{v1,v2,"ok",e},i];
+If[e<2,status="ok"];
+iterTable=Table[
+{v1,v2,status,e}=PyrUpgrade1D[{v1,v2,status,e},p0, pyrfunctions[[-f]],threshold*2^(-c+1)]
 
-c=c-1
+,{j,1,i}];
+
+c=c-1;
+iterTable
+
 ,{f,1,Length[pyrfunctions]}];
 
 {v1, v2,status,e}
@@ -142,7 +147,7 @@ c=Length[pyrfunctions]-1; (* number of levels *)
 
 Table[
 (* compute at this scale, using current motion estimate *)
-status="ok";
+If[e<2,status="ok"];
 iterTable=Table[
 (*index of pyrfunction works only if fed the right range of pyrfunctions*)
 {v1,v2,status,e}=PyrUpgrade1D[{v1,v2,status,e},p0, pyrfunctions[[-f]],threshold*2^(-c)]
@@ -188,10 +193,10 @@ Graphics[{
 PointSize[0.01],
 (* c line *)
 Line[{{p0,flineia[p0]},{p0,flineib[p0]}}],
-If[iter[[i,4]]==2,Blue,
+(*If[iter[[i,4]]\[Equal]2,Blue,*)
 If[iter[[i,3]]=="sign",Red,
 If[iter[[i,3]]=="mag",Purple,
-If[iter[[i,3]]=="flip",Orange,Black]]
+If[iter[[i,3]]=="flip",Orange,Black](*]*)
 ]],
 (* c point *)
 Point[{p0,c}],
