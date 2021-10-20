@@ -52,7 +52,7 @@ v2= Solution for b
 (* ::Input::Initialization:: *)
 (* Input\[Rule] {{initial values for v1, v2 and status}, pixel of interest, {functions f1, df1, f2, df2}, threshold for magnitude error}*)
 (* Output\[Rule] {new values for v1, v2 and status} *)
-PyrUpgrade1D[{v1_,v2_,status_,e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_]:=Block[{p1, p2, c,d1,d2,dv1,dv2},(
+PyrUpgrade1D[{v1_,v2_,status_,e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_,"ConstrainedSmallStep"]:=Block[{p1, p2, c,d1,d2,dv1,dv2},(
 
 fric=0.015;
 

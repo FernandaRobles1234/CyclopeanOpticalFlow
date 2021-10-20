@@ -21,12 +21,9 @@
 
 (* ::Input::Initialization:: *)
 pixelTest[p0_,prange_,{lvlmin_,lvlmax_},pyrfunctions_,threshold_,mode_]:=Block[{},(
-(* Import mode of interest *)
-Get["pyramidalCyclope1DLK"<>mode<>"`"];
-
 (* Get all values of 10 iterations *)
 (*Any time we call the methods we have to give threshold accordint to the min level *)
-pixelIterGraphics[10, p0,prange, lvlmax,pyrfunctions[[lvlmin;;lvlmax]],threshold*2^(-lvlmin+1)]
+pixelIterGraphics[10, p0,prange, lvlmax,pyrfunctions[[lvlmin;;lvlmax]],threshold*2^(-lvlmin+1),mode]
 
 )]
 

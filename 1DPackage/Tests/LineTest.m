@@ -21,12 +21,9 @@
 
 (* ::Input::Initialization:: *)
 lineTest[rangex_,{lvlmin_,lvlmax_},pyrfunctions_,threshold_,mode_]:=Block[{},(
-(* Import mode of interest *)
-Get["pyramidalCyclope1DLK"<>mode<>"`"];
-
 (* Get all values of 10 iterations *)
 (*Any time we call the methods we have to give threshold accordint to the min level *)
-seeAllLine[rangex,pyrfunctions[[lvlmin;;lvlmax]],threshold*2^(-lvlmin+1)]
+seeAllLine[rangex,pyrfunctions[[lvlmin;;lvlmax]],threshold*2^(-lvlmin+1),mode]
 )]
 
 lineTest::usage="
