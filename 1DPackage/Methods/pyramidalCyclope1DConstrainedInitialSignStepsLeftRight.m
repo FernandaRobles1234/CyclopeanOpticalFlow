@@ -22,10 +22,10 @@
 (* ::Input::Initialization:: *)
 (* Input\[Rule] {{initial values for v1, v2 and status}, pixel of interest, {functions f1, df1, f2, df2}, threshold for magnitude error}*)
 (* Output\[Rule] {new values for v1, v2 and status} *)
-PyrUpgrade1D[{v1_,v2_,status_,e_,dv1sign_,dv2sign_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_,"ConstrainedInitialSignStepsLeftRight"]:=Block[{fric1,fric2,p1, p2, c,d1,d2,dv1,dv2},(
+PyrUpgrade1D[{v1_,v2_,status_,e_,dv1sign_,dv2sign_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_,"ConstrainedInitialSignStepsLeftRight"]:=Block[{fric1,fric2,p1, p2, c,d1,d2,dv1,dv2,newdv1sign, newdv2sign},(
 
-p1=p0-v1;
-p2=p0+v2;
+p1=(p0-dv1sign)-v1;
+p2=(p0+dv2sign)+v2;
 
 c = (fline1[p0]+fline2[p0])/2;
 d1=dfline1[p1];
@@ -35,23 +35,26 @@ fric1=1*dfline1'[p1];
 fric2=1*dfline2'[p2];
 
 (* Change of sign during iteration *)
-If[(Abs[d1]<threshold||Abs[d2]<threshold ),If[e<2,Return[{v1,v2,"mag",e+1,dv1sign,dv2sign}],Return[{0.,0.,"mag",e,0.,0.}]]];
+If[(Abs[d1]<threshold||Abs[d2]<threshold ),
+If[e<2,Return[{v1,v2,"mag",e+1,dv1sign,dv2sign}],Return[{0.,0.,"mag",e,0.,0.}]]];
 
 (* Change of sign during iteration *)
-If[(dfline1[p0]*d1<0||dfline2[p0]*d2<0),If[e<2,Return[{v1,v2,"flip",e+1,dv1sign,dv2sign}],Return[{0.,0.,"flip",e,0.,0.}]]];
+If[(dfline1[p0-dv1sign]*d1<0||dfline2[p0+dv2sign]*d2<0),If[e<2,Return[{v1,v2,"flip",e+1,dv1sign,dv2sign}],Return[{0.,0.,"flip",e,0.,0.}]]];
 
 (* d1 and d2 have to be the same sign in every iteration *)
 If[d1*d2 <0, 
+
 If[e<2,
 
 (* if p at initial position and failed... *)
 If[(p0==p1 && p0==p2),
 (*we could use the root to find the new dv1 too*)
 (* we feed new dv1sign... *)
-If[Abs[d1]>Abs[d2],{newdv1sign,newdv2sign}={0.,(c-fline2[p2])/-(d2+Sign[d2]*0.01)},{newdv1sign,newdv2sign}={(fline1[p1]-c)/-(d1+Sign[d1]*0.01),0.}];
-
+If[Abs[d1]>Abs[d2],
+{newdv1sign,newdv2sign}={0.,(c-fline2[p2])/-(d2+Sign[d2]*0.01)},{newdv1sign,newdv2sign}={(fline1[p1]-c)/-(d1+Sign[d1]*0.01),0.}];
 
 Return[PyrUpgrade1D[{v1,v2,"oksign",e,newdv1sign, newdv2sign},p0, {{fline1,dfline1} ,{fline2,dfline2}}, threshold,"ConstrainedInitialSignStepsLeftRight"]],
+
 Return[PyrUpgrade1D[{v1,v2,"oksign",e,dv1sign,dv2sign},p0, {{fline1,dfline1} ,{fline2,dfline2}}, threshold,"ConstrainedInitialSignStepsLeftRight"]]
 ]
 ,

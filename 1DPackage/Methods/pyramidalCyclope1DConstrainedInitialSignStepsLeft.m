@@ -24,7 +24,7 @@
 (* Output\[Rule] {new values for v1, v2 and status} *)
 PyrUpgrade1D[{v1_,v2_,status_,e_,dv1sign_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_,"ConstrainedInitialSignStepsLeft"]:=Block[{fric1,fric2,p1, p2, c,d1,d2,dv1,dv2},(
 
-p1=p0-v1;
+p1=(p0-dv1sign)-v1;
 p2=p0+v2;
 
 c = (fline1[p0]+fline2[p0])/2;
@@ -38,7 +38,7 @@ fric2=1*dfline2'[p2];
 If[(Abs[d1]<threshold||Abs[d2]<threshold ),If[e<2,Return[{v1,v2,"mag",e+1,dv1sign}],Return[{0.,0.,"mag",e,0.}]]];
 
 (* Change of sign during iteration *)
-If[(dfline1[p0]*d1<0||dfline2[p0]*d2<0),If[e<2,Return[{v1,v2,"flip",e+1,dv1sign}],Return[{0.,0.,"flip",e,0.}]]];
+If[(dfline1[p0-dv1sign]*d1<0||dfline2[p0]*d2<0),If[e<2,Return[{v1,v2,"flip",e+1,dv1sign}],Return[{0.,0.,"flip",e,0.}]]];
 
 (* d1 and d2 have to be the same sign in every iteration *)
 If[d1*d2 <0, 

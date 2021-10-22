@@ -24,7 +24,7 @@
 (* Output\[Rule] {new values for v1, v2 and status} *)
 PyrUpgrade1D[{v1_,v2_,status_,e_,dv1sign_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_,"ConstrainedInitialSignLeft"]:=Block[{p1, p2, c,d1,d2,dv1,dv2},(
 
-p1=p0-v1;
+p1=(p0-dv1sign)-v1;
 p2=p0+v2;
 
 c = (fline1[p0]+fline2[p0])/2;
@@ -36,7 +36,7 @@ d2=dfline2[p2];
 If[(Abs[d1]<threshold||Abs[d2]<threshold ),If[e<2,Return[{v1,v2,"mag",e+1,dv1sign}],Return[{0.,0.,"mag",e,0.}]]];
 
 (* Change of sign during iteration *)
-If[(dfline1[p0]*d1<0||dfline2[p0]*d2<0),If[e<2,Return[{v1,v2,"flip",e+1,dv1sign}],Return[{0.,0.,"flip",e,0.}]]];
+If[(dfline1[p0-dv1sign]*d1<0||dfline2[p0]*d2<0),If[e<2,Return[{v1,v2,"flip",e+1,dv1sign}],Return[{0.,0.,"flip",e,0.}]]];
 
 (* d1 and d2 have to be the same sign in every iteration *)
 If[d1*d2 <0, 
@@ -122,7 +122,13 @@ updateValues={0.,0.,"ok",0.,0.};
 
 Do[
 (* compute at this scale, using current motion estimate *)
-If[updateValues[[4]]<2,updateValues[[3]]="ok",updateValues={0.,0.,updateValues[[3]],2.,0.}];
+If[updateValues[[4]]<2,
+
+(* Checking if we are on "oksign" mode by checking if a dv1sign value is stored *)
+
+updateValues[[3]]="ok",
+
+updateValues={0.,0.,updateValues[[3]],2.,0.}];
 
 iterTable=Table[
 updateValues=PyrUpgrade1D[updateValues,p0, pyrfunctions[[-f]],threshold*2^(-c+1),"ConstrainedInitialSignLeft"];
@@ -165,7 +171,9 @@ updateValues={0.,0.,"ok",0.,0.};
 
 Table[
 (* compute at this scale, using current motion estimate *)
-If[updateValues[[4]]<2,updateValues[[3]]="ok",updateValues={0.,0.,updateValues[[3]],2.,0.}];
+If[updateValues[[4]]<2,
+updateValues[[3]]="ok",
+updateValues={0.,0.,updateValues[[3]],2.,0.}];
 
 iterTable=Table[
 updateValues=PyrUpgrade1D[updateValues,p0, pyrfunctions[[-f]],threshold*2^(-c+1),"ConstrainedInitialSignLeft"];
