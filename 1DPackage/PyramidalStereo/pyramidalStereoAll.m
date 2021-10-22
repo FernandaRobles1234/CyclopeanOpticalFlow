@@ -38,8 +38,6 @@ Output-> Manipulate object deplacing ia in range of lowdx and highdx with static
 stereoDepth[ia_,ib_,lvl_,{lvlmin_,lvlmax_},rangex_,rangey_,threshold_, mode_]:=Block[{ka,kb,pyra,pyrb,pyrab,thresholdAdj,dd,e,v1,v2},
 thresholdAdj=threshold*2^(-lvlmin+1);
 
-Get["pyramidalCyclope1DLK"<>mode<>"`"];
-
 Table[
 
 {ka,kb}=ImageData[#][[k]]&/@{ia,ib};
@@ -48,9 +46,7 @@ pyrb=pyrFuncGen[kb,lvl];
 pyrab=Flatten[{pyra, pyrb},{{2},{1},{3}}];
 
 Table[
-If[mode=="OverConstrained",{v1,v2,dd}=PyrFlow1D[10,x,pyrab[[lvlmin;;lvlmax]],thresholdAdj],If[mode=="SemiConstrained",{v1,v2,dd}=PyrFlow1D[10,x,pyrab[[lvlmin;;lvlmax]],thresholdAdj],
-If[mode=="SemiConstrainedErrorZero",{v1,v2,dd}=PyrFlow1D[10,x,pyrab[[lvlmin;;lvlmax]],thresholdAdj],{v1,v2,dd,e}=PyrFlow1D[10,x,pyrab[[lvlmin;;lvlmax]],thresholdAdj]]]];
-
+{v1,v2,dd}=PyrFlow1D[10,x,pyrab[[lvlmin;;lvlmax]],thresholdAdj,mode];
 
 {Total[{v1,v2}],dd,v1,v2}
 ,{x,rangex}]
