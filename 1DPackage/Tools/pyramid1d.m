@@ -23,13 +23,13 @@
 gaussianKernel[a_]:={1-a*2, 1,a*4,1,1-a*2}/4.0;
 
 gaussianKernel::usage="
-Gaussian filter tap 5 where a={0.3, 0,6}
+Gaussian filter tap 5 where a={0.3, 0.6}
 ";
 
 
 (* ::Input::Initialization:: *)
 pyrNextLevel[line_]:=Block[{d},(
-d=ListConvolve[gaussianKernel[0.3],ArrayPad[line,2+2(* to get 1 extra value on each side *),"Fixed"]];
+d=ListConvolve[gaussianKernel[0.5],ArrayPad[line,2+2(* to get 1 extra value on each side *),"Fixed"]];
 Mean/@Partition[d,2]
 )];
 

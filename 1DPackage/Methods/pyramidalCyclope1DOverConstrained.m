@@ -26,7 +26,7 @@
 (* Input\[Rule] {{initial values for v1, v2 and status, and counter e}, pixel of interest, {functions f1, df1, f2, df2}, threshold for magnitude error}*)
 (* Output\[Rule] {new values for v1, v2 and status and e} *)
 
-PyrUpgrade1D[{v1_,v2_,status_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_,"OverConstrained"]:=Block[{p1, p2, c,d1,d2,dv1,dv2},(
+PyrUpgrade1D[{v1_,v2_,status_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_,"OverConstrained"]:=Block[{p1, p2, c,d1,d2,dv1,dv2,fric1,fric2},(
 
 p1=p0-v1;
 p2=p0+v2;
@@ -34,6 +34,9 @@ p2=p0+v2;
 c = (fline1[p0]+fline2[p0])/2;
 d1=dfline1[p1];
 d2=dfline2[p2];
+
+fric1=0.5*dfline1'[p1];
+fric2=0.5*dfline2'[p2];
 
 (* d1 and d2 have to be the same sign in every iteration *)
 If[d1*d2 <0, Return[{0,0,"sign"}]];
@@ -46,7 +49,7 @@ If[(dfline1[p0]*d1<0||dfline2[p0]*d2<0),Return[{0,0,"flip"}]];
 
 
 (* dv1,dv2 : step from last {v1,v2} to new {v1,v2} *)
-{dv1,dv2}= {(fline1[p1]-c)/d1,(c-fline2[p2])/d2};
+{dv1,dv2}= {(fline1[p1]-c)/(d1+Sign[d1]*Abs[fric1]),(c-fline2[p2])/(d2+Sign[d2]*Abs[fric2])};
 
 (* status: "OK" -> solution respects constraints,  errors: "sign", "mag", "flip" *)
 (* status: "converged" -> we converged!! *)
