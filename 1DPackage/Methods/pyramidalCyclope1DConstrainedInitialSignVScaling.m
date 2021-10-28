@@ -31,7 +31,7 @@ c = (fline1[p0]+fline2[p0])/2;
 d1=dfline1[p1];
 d2=dfline2[p2];
 
-fric1=0.5*dfline1'[p1]; 
+fric1=0.5*dfline1'[p1];
 fric2=0.5*dfline2'[p2];
 
 (* Change of sign during iteration *)
@@ -39,9 +39,7 @@ If[(Abs[d1]<threshold||Abs[d2]<threshold ),
 If[e<2,Return[{v1,v2,"mag",e+1,dv1sign,dv2sign}],Return[{0.,0.,"mag",e,0.,0.}]]];
 
 (* Change of sign during iteration *)
-(*If[(dfline1[p0-dv1sign]*d1<0||dfline2[p0+dv2sign]*d2<0),If[e<2,Return[{v1,v2,"flip",e+1,dv1sign,dv2sign}],Return[{0.,0.,"flip",e,0.,0.}]]];*)
-
-(*We cannot compare to previous lvls because we don't know where we are at *)
+If[(dfline1[p0-dv1sign]*d1<0||dfline2[p0+dv2sign]*d2<0),If[e<2,Return[{v1,v2,"flip",e+1,dv1sign,dv2sign}],Return[{0.,0.,"flip",e,0.,0.}]]];
 
 (* d1 and d2 have to be the same sign in every iteration *)
 If[d1*d2 <0, 
@@ -82,8 +80,8 @@ c = (fline1[p0]+fline2[p0])/2;
 d1=dfline1[p1];
 d2=dfline2[p2];
 
-fric1=0.5*dfline1'[p1];
-fric2=0.5*dfline2'[p2];
+fric1=1*dfline1'[p1];
+fric2=1*dfline2'[p2];
 
 (*{Null,Null}*)
 (* magnitude *)
@@ -91,7 +89,7 @@ If[(Abs[d1]<threshold||Abs[d2]<threshold ),If[e<2,Return[{v1,v2,"mag",e+1,dv1sig
 
 (*{v1,v2}*)
 (* Change of sign during iteration *)
-(*If[(dfline1[p0-dv1sign]*d1<0||dfline2[p0+dv2sign]*d2<0),If[e<2,Return[{v1,v2,"flip",e+1,dv1sign,dv2sign}],Return[{0.,0.,"flip",e,0.,0.}]]];*)
+If[(dfline1[p0-dv1sign]*d1<0||dfline2[p0+dv2sign]*d2<0),If[e<2,Return[{v1,v2,"flip",e+1,dv1sign,dv2sign}],Return[{0.,0.,"flip",e,0.,0.}]]];
 
 (*{Null,Null}*)
 (* d1 and d2 have to be the same sign *)
@@ -142,6 +140,11 @@ updateValues=PyrUpgrade1D[updateValues,p0, pyrfunctions[[-f]],threshold*2^(-c+1)
 
 ,{j,1,i}];
 
+(* Scaling v values *)
+{updateValues[[1]],updateValues[[2]]}=
+{updateValues[[1]]+(Abs[pyrfunctions[[-f,1,2]]'[p0-updateValues[[1]]]]),
+updateValues[[2]]-(Abs[pyrfunctions[[-f,2,2]]'[p0-updateValues[[2]]]])};
+
 c=c-1;
 ,{f,1,Length[pyrfunctions]}];
 
@@ -174,11 +177,11 @@ PyrFlow1DIter[i_, p0_,v0_, pyrfunctions_,threshold_,"ConstrainedInitialSign"]:=B
 c=Length[pyrfunctions]; (* number of levels *)
 
 (*{v1, v2, status, e, dv1sign, dv2sign}*)
-updateValues={v0[[1]],v0[[2]],"ok",0.,0.,0.};
+updateValues={0.,0.,"ok",0.,0.,0.};
 
 Table[
 (* compute at this scale, using current motion estimate *)
-If[updateValues[[4]]<2,updateValues[[3]]="ok",updateValues={0.,0.,updateValues[[3]],2.,0.,0.}];
+If[updateValues[[4]]<2,updateValues[[3]]="ok",updateValues={0.,0.,updateValues[[3]],2.,0.}];
 
 iterTable=Table[
 updateValues=PyrUpgrade1D[updateValues,p0, pyrfunctions[[-f]],threshold*2^(-c+1),"ConstrainedInitialSign"];

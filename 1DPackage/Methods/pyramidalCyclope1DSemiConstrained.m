@@ -43,7 +43,7 @@ If[d1*d2 <0, Return[{v1,v2,"sign"}]];
 If[(Abs[d1]<threshold||Abs[d2]<threshold ),Return[{v1,v2,"mag"}]];
 
 (* Change of sign during iteration *)
-If[(dfline1[p0]*d1<0||dfline2[p0]*d2<0),Return[{v1,v2,"flip"}]];
+(*If[(dfline1[p0]*d1<0||dfline2[p0]*d2<0),Return[{v1,v2,"flip"}]];*)
 
 (* dv1,dv2 : step from last {v1,v2} to new {v1,v2} *)
 {dv1,dv2}= {(fline1[p1]-c)/(d1+Sign[d1]*Abs[fric1]),(c-fline2[p2])/(d2+Sign[d2]*Abs[fric2])};

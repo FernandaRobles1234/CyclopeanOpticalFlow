@@ -210,7 +210,7 @@ prange= range for plot from p0
 (* ::Input::Initialization:: *)
 (* Makes graphics for all levels*)
 (* iterations, pixel of interest, plot range from pixel, max lvl,lvl's functions, threshold}*)
-pixelIterGraphics[i_, p0_,v0_,prange_, lvlmax_,pyrfunctions_,threshold_,mode_]:=Block[{},(
+pixelIterGraphics[i_, p0_,v0_,prange_, lvlmax_,pyrfunctions_,threshold_,mode_]:=Block[{iter},(
 (* Makes iterations by saving all the values *)
 iter=PyrFlow1DIter[i,p0,v0, pyrfunctions,threshold,mode];
 
@@ -227,6 +227,41 @@ pixelIterGraphics::usage="
 Makes plots for the intermediate solutions of a pyramidal level
 Input\[Rule] [i, p0, prange, maxlvl, pyrfunctions threshold,mode]
 Output-> list with the dimensions of: {lvls*i, Plot of flineia and flineib with solution v1 and v2}
+";
+
+
+(* ::Input::Initialization:: *)
+(* Makes graphics for all levels*)
+(* iterations, pixel of interest, plot range from pixel, max lvl,lvl's functions, threshold}*)
+pixelInitialValueGraphics[i_,j_, p0_,{n1_,n2_},sol_,pyrfunctions_,threshold_,mode_]:=Block[{result,vx,vy},(
+
+result=Table[
+(
+(*{vx,vy}=RandomReal[{0,10},2]*Sign[RandomReal[{-1,1}]];*)
+{vx,vy}=RandomReal[{n1,n2},2];
+
+Join[{vx,vy},
+PyrFlow1DIter[i,p0,{vx,vy},pyrfunctions,threshold,mode][[-1,-1]]
+]
+
+)
+,{rep,j}];
+
+Clear[dessin];
+dessin[{u1_,u2_,v1_,v2_,"converged"}]:={Blue,Point[{u1,u2}],PointSize[0.02],Green,Point[{v1,v2}]};
+dessin[{u1_,u2_,v1_,v2_,"mag"}]:={Purple,Point[{u1,u2}]};
+dessin[{u1_,u2_,v1_,v2_,"sign"}]:={Red,Point[{u1,u2}]};
+dessin[{u1_,u2_,v1_,v2_,"flip"}]:={Yellow,Point[{u1,u2}]};
+dessin[{u1_,u2_,v1_,v2_,_}]:={Black,Point[{u1,u2}]};
+
+
+Graphics[{dessin/@result,{Thick,Black,Line[{{n1,-n1+sol},{n2,-n2+sol}}]}},PlotRange->{{n1,n2},{n1,n2}},Axes->True]
+
+)];
+
+pixelInitialValueGraphics::usage="
+Makes a plot to vizualise a map trying the initial values of {vx,vy}
+and displays their status.
 ";
 
 
