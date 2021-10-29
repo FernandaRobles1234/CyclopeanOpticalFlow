@@ -49,11 +49,12 @@ If[d1*d2 <0,
 If[e<2,
 
 (* if p at initial position and failed... *)
-If[(p0==p1 && p0==p2),
+If[((p0-dv1sign)==p1 &&(p0+dv2sign)==p2),
 (*we could use the root to find the new dv1 too*)
 (* we feed new dv1sign... *)
 If[Abs[d1]>Abs[d2],
-{newdv1sign,newdv2sign}={0.,(c-fline2[p2])/-(d2+Sign[d2]*0.01)},{newdv1sign,newdv2sign}={(fline1[p1]-c)/-(d1+Sign[d1]*0.01),0.}];
+{newdv1sign,newdv2sign}={0.,-((c-fline2[p2])/(d2))},
+{newdv1sign,newdv2sign}={-((fline1[p1]-c)/(d1)),0.}];
 
 Return[PyrUpgrade1D[{v1,v2,"oksign",e,newdv1sign, newdv2sign},p0, {{fline1,dfline1} ,{fline2,dfline2}}, threshold,"ConstrainedInitialSign"]],
 
