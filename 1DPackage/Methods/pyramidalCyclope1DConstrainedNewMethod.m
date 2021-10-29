@@ -34,13 +34,13 @@ c = (fline1[p0]+fline2[p0])/2;
 d1=dfline1[p1];
 d2=dfline2[p2];
 
-fric1=0.5*dfline1'[p1];
-fric2=0.5*dfline2'[p2];
+fric1=1*dfline1'[p1];
+fric2=1*dfline2'[p2];
 
 (* d1 and d2 have to be the same sign in every iteration *)
 If[d1*d2 <0, If[e<2,Return[{v1,v2,"sign",e+1}],Return[{0.,0.,"sign",e}]]];
 
-(* Change of sign during iteration *)
+(* magnitud *)
 If[(Abs[d1]<threshold||Abs[d2]<threshold ),If[e<2,Return[{v1,v2,"mag",e+1}],Return[{0.,0.,"mag",e}]]];
 
 (* Change of sign during iteration *)
@@ -68,27 +68,43 @@ PyrUpgrade1D[{v1_,v2_,"flip",e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, 
 
 
 (* ::Input::Initialization:: *)
-newValues[i_,{v1_,v2_}]:=Block[{},(
+(* This will only give values that sum up to the magnitude of v 
+Or if v0 = 0, random values between 10 and -10 *)
+
+newValues[i_,{v1_,v2_},v0_]:=Block[{v,r,rs},(
 v=v1+v2;
 
+
+
+If[v!=0.,
 Table[
 r=RandomReal[];
-rs={r,1-r}*v
+{r,1-r}*v
 ,{j,i}]
-
+,
+Table[
+r=RandomReal[];
+{r,1-r}*v0
+,{j,i}]
+]
 )]
 
 
-
 (* ::Input::Initialization:: *)
-pickNewValue[tableNewVals_]:=Block[{newVal},(
+(* This will give back a value that converged or is on "ok" status. If not, error is returned and {v1,v2} goes back to 0. *)
 
-newVal=Select[tableNewVals,#[[3]]==("converged")&,1];
+pickNewValue[tableNewVals_]:=Block[{newValCon,newValOk},(
 
-If[newVal=={},
-tableNewVals[[1]],
-newVal[[1]]]
+newValCon=Select[tableNewVals,#[[3]]==("converged")&,1];
+newValOk=Select[tableNewVals,#[[3]]==("ok")&,1];
 
+If[newValCon=={},
+
+If[newValOk=={},
+Flatten[{0.,0.,tableNewVals[[1,3;;4]]}],
+newValOk[[1]]],
+
+newValCon[[1]]]
 )]
 
 
@@ -96,7 +112,7 @@ newVal[[1]]]
 (* Function to find solutions for all levels of pyramid {l1,l2,l3,l4,...} or {l1} *)
 (* Input\[Rule] {number of iterations, pixel of interests, pyrfunctions,threshold *)
 (* Output\[Rule] {v1, v2,status}*)
-PyrFlow1D[i_, p0_, pyrfunctions_,threshold_,"ConstrainedNewMethod"]:=Block[{v1, v2,c,status},(
+PyrFlow1D[i_, p0_, pyrfunctions_,threshold_,"ConstrainedNewMethod"]:=Block[{c, updateValues,nV,tableNewValues,tValues},(
 
 c=Length[pyrfunctions]; (* number of levels *)
 
@@ -105,34 +121,49 @@ updateValues={0.,0.,"ok",0};
 
 Do[
 
+(* This will only give values that sum up to the magnitude of v 
+Or if v0 = 0, random values between 5 and -5 *)
+nV=newValues[100,{updateValues[[1]],updateValues[[2]]},-3];
 (* compute at this scale, using current motion estimate *)
-If[updateValues[[4]]<2,updateValues[[3]]="ok", updateValues={0.,0.,updateValues[[3]],2}];
 
-(* we get 5 new values *)
-newVals=newValues[100,updateValues[[1;;2]]];
+(* Flag to stop when e\[GreaterEqual]2 *)
+If[updateValues[[4]]<2,updateValues[[3]]="ok", updateValues={0.,0.,updateValues[[3]],2}];
 
 tableNewValues=Table[
 
-updateValues[[1;;2]]=v;
+(* We initialize whith values calculated at nV and last calculated updateValues[[3;;4]]*)
+tValues=Flatten[{v,updateValues[[3;;4]]}];
 
 Do[
 
-updateValues=PyrUpgrade1D[updateValues,p0, pyrfunctions[[-f]],threshold*2^(-c+1),"ConstrainedNewMethod"]
+tValues=PyrUpgrade1D[tValues,p0, pyrfunctions[[-f]],threshold*2^(-c+1),"ConstrainedNewMethod"]
 
 ,{j,1,i}];
 
-updateValues
-,{v,newVals}];
+tValues
+,{v,nV}];
 
-updateValues[[1;;2]]=pickNewValue[tableNewValues][[1;;2]];
+
+(* We only update updateValues with the tValue that converged *)
+updateValues=pickNewValue[tableNewValues];
 
 c=c-1;
 ,{f,1,Length[pyrfunctions]}];
 
-
-
 updateValues[[1;;3]]
 )];
+
+
+(* ::Input::Initialization:: *)
+pickNewValueIter[tableIterNewVals_]:=Block[{newIterVal},(
+
+newIterVal=Select[tableIterNewVals,Last[#][[3]]==("converged")&,1];
+
+If[newIterVal=={},
+tableIterNewVals[[1]],
+newIterVal[[1]]
+]
+)]
 
 
 (* ::Input::Initialization:: *)
@@ -177,18 +208,6 @@ goodValIter
 ,{f,1,Length[pyrfunctions]}]
 
 )];
-
-
-(* ::Input::Initialization:: *)
-pickNewValueIter[tableIterNewVals_]:=Block[{newIterVal},(
-
-newIterVal=Select[tableIterNewVals,Last[#][[3]]==("converged")&,1];
-
-If[newIterVal=={},
-tableIterNewVals[[1]],
-newIterVal[[1]]
-]
-)]
 
 
 
