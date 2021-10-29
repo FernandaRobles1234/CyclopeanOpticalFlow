@@ -248,14 +248,14 @@ PyrFlow1DIter[i,p0,{vx,vy},pyrfunctions,threshold,mode][[-1,-1]]
 ,{rep,j}];
 
 Clear[dessin];
-dessin[{u1_,u2_,v1_,v2_,"converged"}]:={Blue,Point[{u1,u2}],PointSize[0.02],Green,Point[{v1,v2}]};
+dessin[{u1_,u2_,v1_,v2_,"converged"}]:={Blue,Point[{u1,u2}],PointSize[0.05],Green,Point[{v1,v2}]};
 dessin[{u1_,u2_,v1_,v2_,"mag"}]:={Purple,Point[{u1,u2}]};
 dessin[{u1_,u2_,v1_,v2_,"sign"}]:={Red,Point[{u1,u2}]};
 dessin[{u1_,u2_,v1_,v2_,"flip"}]:={Yellow,Point[{u1,u2}]};
 dessin[{u1_,u2_,v1_,v2_,_}]:={Black,Point[{u1,u2}]};
 
 
-Graphics[{dessin/@result,{Thick,Black,Line[{{n1,-n1+sol},{n2,-n2+sol}}]}},PlotRange->{{n1,n2},{n1,n2}},Axes->True]
+Labeled[Graphics[{dessin/@result,{Thick,Black,Line[{{n1,-n1+sol},{n2,-n2+sol}}]}},PlotRange->{{n1,n2},{n1,n2}},Axes->True],mode]
 
 )];
 
