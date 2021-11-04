@@ -35,7 +35,7 @@ Output-> Manipulate object deplacing ia in range of lowdx and highdx with static
 
 
 (* ::Input::Initialization:: *)
-stereoDepth[ia_,ib_,lvl_,{lvlmin_,lvlmax_},rangex_,rangey_,threshold_, mode_]:=Block[{ka,kb,pyra,pyrb,pyrab,thresholdAdj,dd,e,v1,v2},
+stereoDepth[v0_,ia_,ib_,lvl_,{lvlmin_,lvlmax_},rangex_,rangey_,threshold_, mode_]:=Block[{ka,kb,pyra,pyrb,pyrab,thresholdAdj,dd,e,v1,v2},
 thresholdAdj=threshold*2^(-lvlmin+1);
 
 Table[
@@ -54,8 +54,27 @@ Table[
 ,{k, rangey}]
 ]
 
-stereoDepth[ia_,ib_,lvl_,mode_]:=stereoDepth[ia,ib,lvl,{1,lvl},Range[1,ImageDimensions[ia][[1]],1],Range[1,ImageDimensions[ia][[2]],1],0.0001,mode]
-stereoDepth[ia_,ib_,lvl_,{lvlmin_,lvlmax_},threshold_,mode_]:=stereoDepth[ia,ib,lvl,{lvlmin,lvlmax},Range[1,ImageDimensions[ia][[1]],1],Range[1,ImageDimensions[ia][[2]],1],threshold,mode]
+stereoDepth[v0_,ia_,ib_,lvl_,{lvlmin_,lvlmax_},rangex_,rangey_,threshold_, "ConstrainedNewMethod"]:=Block[{ka,kb,pyra,pyrb,pyrab,thresholdAdj,dd,e,v1,v2},
+thresholdAdj=threshold*2^(-lvlmin+1);
+
+Table[
+
+{ka,kb}=ImageData[#][[k]]&/@{ia,ib};
+pyra=pyrFuncGen[ka,lvl];
+pyrb=pyrFuncGen[kb,lvl];
+pyrab=Flatten[{pyra, pyrb},{{2},{1},{3}}];
+
+Table[
+{v1,v2,dd}=PyrFlow1D[10,x,v0,pyrab[[lvlmin;;lvlmax]],thresholdAdj,"ConstrainedNewMethod"];
+
+{Total[{v1,v2}],dd,v1,v2}
+,{x,rangex}]
+
+,{k, rangey}]
+]
+
+stereoDepth[ia_,ib_,lvl_,{lvlmin_,lvlmax_},threshold_,mode_]:=stereoDepth[0.,ia,ib,lvl,{lvlmin,lvlmax},Range[1,ImageDimensions[ia][[1]],1],Range[1,ImageDimensions[ia][[2]],1],threshold,mode]
+stereoDepth[v0_,ia_,ib_,lvl_,{lvlmin_,lvlmax_},threshold_, "ConstrainedNewMethod"]:=stereoDepth[v0,ia,ib,lvl,{lvlmin,lvlmax},Range[1,ImageDimensions[ia][[1]],1],Range[1,ImageDimensions[ia][[2]],1],threshold, "ConstrainedNewMethod"]
 
 stereoDepth::usage="
 Input=[ia, ib, lvl,{lvlmin,lvlmax},threshold, mode]

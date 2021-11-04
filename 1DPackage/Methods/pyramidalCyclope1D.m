@@ -87,18 +87,25 @@ e= Counts the amount of times the constraints were not met
 
 
 (* ::Input::Initialization:: *)
-lineTest[rangex_,pyrab_,threshold_,mode_]:=Block[{v1,v2,status},(
+lineTest[v0_,rangex_,pyrab_,threshold_,mode_]:=Block[{v1,v2,status},(
 Table[
 {v1,v2,status}=PyrFlow1D[10,x,pyrab,threshold,mode]
 ,{x,rangex}]
 )]
 
 
+lineTest[rangev0_,rangex_,pyrab_,threshold_,"ConstrainedNewMethod"]:=Block[{v1,v2,status},(
+Table[
+{v1,v2,status}=PyrFlow1D[10,x,rangev0,pyrab,threshold,"ConstrainedNewMethod"];
+{v1,v2,status,x}
+,{x,rangex}]
+)]
+
 
 (* ::Input::Initialization:: *)
-seeAllLine[rangex_,pyrab_,threshold_,mode_]:=Block[{tRun,lineia,dlineia,lineib,dlineib,cTable,c,g0,i},(
+seeAllLine[rangev0_,rangex_,pyrab_,threshold_,mode_]:=Block[{tRun,lineia,dlineia,lineib,dlineib,cTable,c,g0,i},(
 
-tRun=lineTest[rangex,pyrab,threshold,mode];
+tRun=lineTest[rangev0,rangex,pyrab,threshold,mode];
 
 {lineia,dlineia}=pyrab[[1,1]];
 {lineib,dlineib}=pyrab[[1,2]];
@@ -128,6 +135,8 @@ PlotLabel\[Rule]info,*)
 ImageSize->Scaled[0.5]
 ]
 )]
+
+seeAllLine[rangex_,pyrab_,threshold_,mode_]:=seeAllLine[{0.,0.},rangex,pyrab,threshold,mode]
 
 seeAllLine::usage="
 Input\[Rule] [rangex, {lvlmin,lvlmax}, pyrab, threshold]
@@ -232,20 +241,19 @@ Output-> list with the dimensions of: {lvls*i, Plot of flineia and flineib with 
 
 (* ::Input::Initialization:: *)
 (* Makes graphics for all levels*)
-(* iterations, pixel of interest, plot range from pixel, max lvl,lvl's functions, threshold}*)
-pixelInitialValueGraphics[i_,j_, p0_,{n1_,n2_},sol_,pyrfunctions_,threshold_,mode_]:=Block[{result,vx,vy},(
+(* iterations, pixel of interest, plot range from pixel, max lvl,lvl's functions, 
+threshold}*)
 
-result=Table[
-(
-(*{vx,vy}=RandomReal[{0,10},2]*Sign[RandomReal[{-1,1}]];*)
-{vx,vy}=RandomReal[{n1,n2},2];
+pixelInitialValueGraphics[i_, p0_,listv0_,sol_,pyrfunctions_,threshold_,mode_]:=Block[{result,vx,vy},(
 
-Join[{vx,vy},
-PyrFlow1DIter[i,p0,{vx,vy},pyrfunctions,threshold,mode][[-1,-1]]
+result=Table[(
+Join[v,
+PyrFlow1DIter[i,p0,v,pyrfunctions,threshold,mode][[-1,-1]]
 ]
 
-)
-,{rep,j}];
+
+),{v,listv0}];
+
 
 Clear[dessin];
 dessin[{u1_,u2_,v1_,v2_,"converged"}]:={Blue,Point[{u1,u2}],PointSize[0.05],Green,Point[{v1,v2}]};
@@ -255,7 +263,32 @@ dessin[{u1_,u2_,v1_,v2_,"flip"}]:={Yellow,Point[{u1,u2}]};
 dessin[{u1_,u2_,v1_,v2_,_}]:={Black,Point[{u1,u2}]};
 
 
-Labeled[Graphics[{dessin/@result,{Thick,Black,Line[{{n1,-n1+sol},{n2,-n2+sol}}]}},PlotRange->{{n1,n2},{n1,n2}},Axes->True],mode]
+Labeled[Graphics[{dessin/@result,{Thick,Black,Line[{{10,-10+sol},{-10,-(-10)+sol}}]}},PlotRange->{{-10,10},{-10,10}},Axes->True],mode]
+
+
+)];
+
+pixelInitialValueGraphics[i_, p0_,listv0_,sol_,pyrfunctions_,threshold_,"ConstrainedNewMethod"]:=Block[{result,vx,vy},(
+
+result=Table[(
+Join[v,
+PyrFlow1DIter[i,p0,{v},pyrfunctions,threshold,"ConstrainedNewMethod"][[-1,-1]]
+]
+
+
+),{v,listv0}];
+
+
+Clear[dessin];
+dessin[{u1_,u2_,v1_,v2_,"converged"}]:={Blue,Point[{u1,u2}],PointSize[0.05],Green,Point[{v1,v2}]};
+dessin[{u1_,u2_,v1_,v2_,"mag"}]:={Purple,Point[{u1,u2}]};
+dessin[{u1_,u2_,v1_,v2_,"sign"}]:={Red,Point[{u1,u2}]};
+dessin[{u1_,u2_,v1_,v2_,"flip"}]:={Yellow,Point[{u1,u2}]};
+dessin[{u1_,u2_,v1_,v2_,_}]:={Black,Point[{u1,u2}]};
+
+
+Labeled[Graphics[{dessin/@result,{Thick,Black,Line[{{10,-10+sol},{-10,-(-10)+sol}}]}},PlotRange->{{-10,10},{-10,10}},Axes->True],"ConstrainedNewMethod"]
+
 
 )];
 

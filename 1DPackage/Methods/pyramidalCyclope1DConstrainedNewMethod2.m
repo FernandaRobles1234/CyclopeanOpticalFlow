@@ -71,7 +71,7 @@ PyrUpgrade1D[{v1_,v2_,"flip",e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, 
 (* This will only give values that sum up to the magnitude of v 
 Or if v0 = 0, random values between 10 and -10 *)
 
-newValues[i_,{v1_,v2_},newv0_,"ConstrainedNewMethod"]:=Block[{v,r,rs},(
+newValues[i_,{v1_,v2_},v0_,"ConstrainedNewMethod"]:=Block[{v,r,rs},(
 v=v1+v2;
 
 If[v!=0.,
@@ -80,7 +80,10 @@ r=RandomReal[];
 {r,1-r}*v
 ,{j,i}]
 ,
-newv0
+Table[
+r=RandomReal[];
+{r,1-r}*v0
+,{j,i}]
 ]
 
 )]
@@ -91,8 +94,8 @@ newv0
 
 pickNewValue[tableNewVals_,"ConstrainedNewMethod"]:=Block[{newValCon,newValOk},(
 
-newValCon=Select[tableNewVals,(#[[3]]==("converged")&& #[[1]]*#[[2]]>0 && Abs[#[[2]]+#[[1]]]<10)&,1];
-newValOk=Select[tableNewVals,(#[[3]]==("ok")&& #[[1]]*#[[2]]>0 && Abs[#[[2]]+#[[1]]]<10)&,1];
+newValCon=Select[tableNewVals,#[[3]]==("converged")&,1];
+newValOk=Select[tableNewVals,#[[3]]==("ok")&,1];
 
 If[newValCon=={},
 
@@ -100,8 +103,7 @@ If[newValOk=={},
 Flatten[{0.,0.,tableNewVals[[1,3;;4]]}],
 newValOk[[1]]],
 
-newValCon[[1]]
-]
+newValCon[[1]]]
 )]
 
 
@@ -109,7 +111,7 @@ newValCon[[1]]
 (* Function to find solutions for all levels of pyramid {l1,l2,l3,l4,...} or {l1} *)
 (* Input\[Rule] {number of iterations, pixel of interests, pyrfunctions,threshold *)
 (* Output\[Rule] {v1, v2,status}*)
-PyrFlow1D[i_, p0_,listv0_, pyrfunctions_,threshold_,"ConstrainedNewMethod"]:=Block[{c, updateValues,nV,tableNewValues,tValues},(
+PyrFlow1D[i_, p0_,v0_, pyrfunctions_,threshold_,"ConstrainedNewMethod"]:=Block[{c, updateValues,nV,tableNewValues,tValues},(
 
 c=Length[pyrfunctions]; (* number of levels *)
 
@@ -119,8 +121,8 @@ updateValues={0.,0.,"ok",0};
 Do[
 
 (* This will only give values that sum up to the magnitude of v 
-Or if v0 = 0, list newv0 is created and fed to the function to try all it's contained values *)
-nV=newValues[10,{updateValues[[1]],updateValues[[2]]},listv0,"ConstrainedNewMethod"];
+Or if v0 = 0, random values between 5 and -5 *)
+nV=newValues[10,{updateValues[[1]],updateValues[[2]]},v0,"ConstrainedNewMethod"];
 (* compute at this scale, using current motion estimate *)
 
 (* Flag to stop when e\[GreaterEqual]2 *)
@@ -140,6 +142,7 @@ tValues=PyrUpgrade1D[tValues,p0, pyrfunctions[[-f]],threshold*2^(-c+1),"Constrai
 tValues
 ,{v,nV}];
 
+
 (* We only update updateValues with the tValue that converged *)
 updateValues=pickNewValue[tableNewValues,"ConstrainedNewMethod"];
 
@@ -152,8 +155,9 @@ updateValues[[1;;3]]
 
 (* ::Input::Initialization:: *)
 pickNewValueIter[tableIterNewVals_,"ConstrainedNewMethod"]:=Block[{newIterValCon,newIterValOk},(
-newIterValCon=Select[tableIterNewVals,(Last[#][[3]]==("converged")&&Last[#][[1]]*Last[#][[2]]>0 && Abs[Last[#][[2]]+Last[#][[1]]]<10)&,1];
-newIterValOk=Select[tableIterNewVals,(Last[#][[3]]==("ok")&& Last[#][[1]]*Last[#][[2]]>0 && Abs[Last[#][[2]]+Last[#][[1]]]<10)&,1];
+
+newIterValCon=Select[tableIterNewVals,Last[#][[3]]==("converged")&,1];
+newIterValOk=Select[tableIterNewVals,Last[#][[3]]==("ok")&,1];
 
 If[newIterValCon=={},
 
@@ -172,7 +176,7 @@ newIterValCon[[1]]
 (* Function to find solutions for all levels of pyramid {l1,l2,l3,l4,...} or {l1} *)
 (* Input\[Rule] {number of iterations, pixel of interests, pyrfunctions,threshold *)
 (* Output\[Rule] {v1, v2,status}*)
-PyrFlow1DIter[i_, p0_,newv0_, pyrfunctions_,threshold_,"ConstrainedNewMethod"]:=Block[{c,updateValues,newVals,tableNewValues,tValues,iterTable,goodValIter,nV},(
+PyrFlow1DIter[i_, p0_,v0_, pyrfunctions_,threshold_,"ConstrainedNewMethod"]:=Block[{c,updateValues,newVals,tableNewValues,tValues,iterTable,goodValIter,nV},(
 
 c=Length[pyrfunctions]; (* number of levels *)
 
@@ -182,8 +186,8 @@ updateValues={0.,0.,"ok",0};
 Table[
 
 (* This will only give values that sum up to the magnitude of v 
-Or if v0 = 0, list newv0 is created and fed to the function to try all it's contained values *)
-nV=newValues[10,{updateValues[[1]],updateValues[[2]]},newv0,"ConstrainedNewMethod"];
+Or if v0 = 0, random values between 5 and -5 *)
+nV=newValues[100,{updateValues[[1]],updateValues[[2]]},v0,"ConstrainedNewMethod"];
 
 (* Flag to stop when e\[GreaterEqual]2 *)
 If[updateValues[[4]]<2,updateValues[[3]]="ok", updateValues={0.,0.,updateValues[[3]],2}];

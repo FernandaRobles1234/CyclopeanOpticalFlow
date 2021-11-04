@@ -185,7 +185,7 @@ iterTable=Table[
 updateValues=PyrUpgrade1D[updateValues,p0, pyrfunctions[[-f]],threshold*2^(-c+1),"ConstrainedInitialSign"];
 
 {updateValues[[1]]+updateValues[[-2]], updateValues[[2]]+updateValues[[-1]],updateValues[[3]]}
-,{j,1,i*2}];
+,{j,1,i}];
 
 c=c-1;
 
