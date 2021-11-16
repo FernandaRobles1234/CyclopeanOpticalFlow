@@ -114,7 +114,7 @@ i=1;
 cTable=Table[
 c=(lineia[p]+lineib[p])/2;
 g0=Graphics[{
-PointSize[0.01],
+PointSize[0.001],
 Line[{{p,lineia[p]},{p,lineib[p]}}],
 If[tRun[[i,3]]=="sign",Red,
 If[tRun[[i,3]]=="mag",Purple,
@@ -234,7 +234,7 @@ pixelIterGraphics[i_, p0_,prange_, lvlmax_,pyrfunctions_,threshold_,mode_]:=pixe
 
 pixelIterGraphics::usage="
 Makes plots for the intermediate solutions of a pyramidal level
-Input\[Rule] [i, p0, prange, maxlvl, pyrfunctions threshold,mode]
+Input\[Rule] [i, p0, listv0, prange, maxlvl, pyrfunctions, threshold, mode]
 Output-> list with the dimensions of: {lvls*i, Plot of flineia and flineib with solution v1 and v2}
 ";
 

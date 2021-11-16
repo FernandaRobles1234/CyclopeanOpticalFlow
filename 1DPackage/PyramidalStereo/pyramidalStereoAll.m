@@ -48,7 +48,7 @@ pyrab=Flatten[{pyra, pyrb},{{2},{1},{3}}];
 Table[
 {v1,v2,dd}=PyrFlow1D[10,x,pyrab[[lvlmin;;lvlmax]],thresholdAdj,mode];
 
-{Total[{v1,v2}],dd,v1,v2}
+{Total[{v1,v2}],dd,v1,v2,x}
 ,{x,rangex}]
 
 ,{k, rangey}]
@@ -67,7 +67,7 @@ pyrab=Flatten[{pyra, pyrb},{{2},{1},{3}}];
 Table[
 {v1,v2,dd}=PyrFlow1D[10,x,v0,pyrab[[lvlmin;;lvlmax]],thresholdAdj,"ConstrainedNewMethod"];
 
-{Total[{v1,v2}],dd,v1,v2}
+{Total[{v1,v2}],dd,v1,v2,x}
 ,{x,rangex}]
 
 ,{k, rangey}]
