@@ -51,16 +51,13 @@ If[(Abs[d1]<threshold||Abs[d2]<threshold ),If[e<n,Return[{v1,v2,"mag",e+1}],Retu
 (* dv1,dv2 : step from last {v1,v2} to new {v1,v2} *)
 {dv1,dv2}= {(fline1[p1]-c)/(d1+Sign[d1]*Abs[fric1]),(c-fline2[p2])/(d2+Sign[d2]*Abs[fric2])};
 
-{v1+dv1,v2+dv2,If[Norm[{dv1,dv2}]<0.01,"converged","ok"],e}
+If[e<n,{v1+dv1,v2+dv2,If[Norm[{dv1,dv2}]<0.01,"converged","ok"],e},Return[{0.,0.,status,e}]]
 
 )];
 
 (* No other solution will be calculated when status records an error message in this pyramidal level*)
 (* status: "OK" -> solution respects constraints,  errors: "sign", "mag", "flip" *)
 (* status: "converged" -> we converged!! *)
-
-PyrUpgrade1D[{v1_,v2_,status_,n},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_,"ConstrainedNewMethod"]:=Return[{0.,0.,status,n}];
-
 PyrUpgrade1D[{v1_,v2_,"sign",e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_,"ConstrainedNewMethod"]:=Return[{v1,v2,"sign",e}];
 
 PyrUpgrade1D[{v1_,v2_,"mag",e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_,"ConstrainedNewMethod"]:=Return[{v1,v2,"mag",e}];
@@ -73,8 +70,13 @@ PyrUpgrade1D[{v1_,v2_,"flip",e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, 
 (* This will only give values that sum up to the magnitude of v 
 Or if v0 = 0, random values between 10 and -10 *)
 
-newValues[i_,{v1_,v2_,status_},newv0_,"ConstrainedNewMethod"]:=Block[{v,r,rs},(
+newValues[i_,{v1_,v2_,status_,e_},newv0_,"ConstrainedNewMethod"]:=Block[{v,r,rs},(
 v=v1+v2;
+n=1;
+
+If[e>=n,
+Return[{{0.,0.}}];
+];
 
 If[v!=0. && status=="ok",
 Table[
@@ -135,9 +137,8 @@ If[updateValues[[4]]<n,updateValues[[3]]="ok", updateValues={0.,0.,updateValues[
 
 (* This will only give values that sum up to the magnitude of v 
 Or if v0 = 0, list newv0 is created and fed to the function to try all it's contained values *)
-nV=newValues[10,updateValues[[1;;3]],listv0,"ConstrainedNewMethod"];
+nV=newValues[10,updateValues[[1;;4]],listv0,"ConstrainedNewMethod"];
 (* compute at this scale, using current motion estimate *)
-
 
 tableNewValues=Table[
 
@@ -145,7 +146,6 @@ tableNewValues=Table[
 tValues=Flatten[{v,updateValues[[3;;4]]}];
 
 Do[
-
 tValues=PyrUpgrade1D[tValues,p0, pyrfunctions[[-f]],threshold*2^(-c+1),"ConstrainedNewMethod"]
 
 ,{j,1,i}];
@@ -154,6 +154,7 @@ tValues
 
 (* We only update updateValues with the tValue that converged *)
 updateValues=pickNewValue[tableNewValues,"ConstrainedNewMethod"];
+
 
 c=c-1;
 ,{f,1,Length[pyrfunctions]}];
@@ -206,7 +207,7 @@ If[updateValues[[4]]<n,updateValues[[3]]="ok", updateValues={0.,0.,updateValues[
 
 (* This will only give values that sum up to the magnitude of v 
 Or if v0 = 0, list newv0 is created and fed to the function to try all it's contained values *)
-nV=newValues[10,updateValues[[1;;3]],newv0,"ConstrainedNewMethod"];
+nV=newValues[10,updateValues[[1;;4]],newv0,"ConstrainedNewMethod"];
 
 
 tableNewValues=Table[
