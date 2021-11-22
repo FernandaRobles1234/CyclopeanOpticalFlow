@@ -146,9 +146,11 @@ tableNewValues=Table[
 tValues=Flatten[{v,updateValues[[3;;4]]}];
 
 Do[
-tValues=PyrUpgrade1D[tValues,p0, pyrfunctions[[-f]],threshold*2^(-c+1),"ConstrainedNewMethod"]
+tValues=PyrUpgrade1D[tValues,p0, pyrfunctions[[-f]],threshold*2^(-c+1),"ConstrainedNewMethod"];
+If[tValues[[3]]!="ok",Break[]];
 
 ,{j,1,i}];
+
 tValues
 ,{v,nV}];
 

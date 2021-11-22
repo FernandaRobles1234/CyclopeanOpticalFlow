@@ -46,9 +46,9 @@ pyrb=pyrFuncGen[kb,lvl];
 pyrab=Flatten[{pyra, pyrb},{{2},{1},{3}}];
 
 Table[
-{v1,v2,dd}=PyrFlow1D[10,x,pyrab[[lvlmin;;lvlmax]],thresholdAdj,mode];
+{v1,v2,dd}=PyrFlow1D[20,x,pyrab[[lvlmin;;lvlmax]],thresholdAdj,mode];
 
-{Total[{v1,v2}],dd,v1,v2,x}
+{Total[{v1,v2}],dd,v1,v2,x,k}
 ,{x,rangex}]
 
 ,{k, rangey}]
@@ -58,16 +58,15 @@ stereoDepth[v0_,ia_,ib_,lvl_,{lvlmin_,lvlmax_},rangex_,rangey_,threshold_, "Cons
 thresholdAdj=threshold*2^(-lvlmin+1);
 
 Table[
-
 {ka,kb}=ImageData[#][[k]]&/@{ia,ib};
 pyra=pyrFuncGen[ka,lvl];
 pyrb=pyrFuncGen[kb,lvl];
 pyrab=Flatten[{pyra, pyrb},{{2},{1},{3}}];
 
 Table[
-{v1,v2,dd}=PyrFlow1D[10,x,v0,pyrab[[lvlmin;;lvlmax]],thresholdAdj,"ConstrainedNewMethod"];
+{v1,v2,dd}=PyrFlow1D[20,x,v0,pyrab[[lvlmin;;lvlmax]],thresholdAdj,"ConstrainedNewMethod"];
 
-{Total[{v1,v2}],dd,v1,v2,x}
+{Total[{v1,v2}],dd,v1,v2,x,k}
 ,{x,rangex}]
 
 ,{k, rangey}]
