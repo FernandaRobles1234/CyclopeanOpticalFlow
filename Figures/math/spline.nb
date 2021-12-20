@@ -1,0 +1,459 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     16943,        451]
+NotebookOptionsPosition[     16204,        429]
+NotebookOutlinePosition[     16639,        446]
+CellTagsIndexPosition[     16596,        443]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Plot: Spline interpolation", "Section",
+ CellChangeTimes->{{3.8293587925016713`*^9, 3.8293587937204924`*^9}, {
+   3.8293680507464857`*^9, 3.8293680667410097`*^9}, {3.829414108406925*^9, 
+   3.8294141308858533`*^9}, {3.830536096173051*^9, 3.8305361107954717`*^9}, {
+   3.830572066275168*^9, 3.8305720727999496`*^9}, {3.830955235085718*^9, 
+   3.830955258405538*^9}, 3.8309554799333873`*^9, {3.848489437121402*^9, 
+   3.848489437365039*^9}},ExpressionUUID->"eee23841-9fcc-4202-8f94-\
+a574a65f2164"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"n", "=", "10"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"RandomReal", "[", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "5"}], "}"}], "]"}], "/", "5"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"s0", "=", 
+    RowBox[{"ListPlot", "[", 
+     RowBox[{"a", ",", 
+      RowBox[{"Joined", "\[Rule]", "False"}], ",", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"PointSize", "[", "0.03", "]"}], "}"}]}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"fontsize", "=", "16"}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"f3", "=", 
+   RowBox[{"ListInterpolation", "[", 
+    RowBox[{"a", ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "n"}], "}"}], ",", 
+     RowBox[{"Method", "\[Rule]", "\"\<Spline\>\""}], ",", 
+     RowBox[{"InterpolationOrder", "\[Rule]", "3"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"s3", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"f3", "[", "x", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "1", ",", "n"}], "}"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", "Red"}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Style", "[", 
+         RowBox[{"\"\<x\>\"", ",", 
+          RowBox[{"FontFamily", "\[Rule]", "Times"}], ",", "Italic"}], "]"}], 
+        ",", 
+        RowBox[{"Style", "[", 
+         RowBox[{"\"\<I(x)\>\"", ",", 
+          RowBox[{"FontSize", "\[Rule]", "fontsize"}], ",", 
+          RowBox[{"FontFamily", "\[Rule]", "Times"}], ",", "Italic"}], 
+         "]"}]}], "}"}]}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"1", ",", 
+          RowBox[{"n", "+", "0.2"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "0.5"}], ",", "1.3"}], "}"}]}], "}"}]}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"d3", "=", 
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"f3", "'"}], "[", "x", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "1", ",", "n"}], "}"}], ",", 
+      RowBox[{"PlotStyle", "\[Rule]", "Red"}], ",", 
+      RowBox[{"AxesLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<x\>\"", ",", 
+           RowBox[{"FontSize", "\[Rule]", "fontsize"}], ",", 
+           RowBox[{"FontFamily", "\[Rule]", "Times"}], ",", "Italic"}], "]"}],
+          ",", 
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<I'(x)\>\"", ",", 
+           RowBox[{"FontSize", "\[Rule]", "fontsize"}], ",", 
+           RowBox[{"FontFamily", "\[Rule]", "Times"}], ",", "Italic"}], 
+          "]"}]}], "}"}]}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", 
+           RowBox[{"n", "+", "0.2"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "1.1"}], ",", "1.3"}], "}"}]}], "}"}]}]}], "]"}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f2", "=", 
+   RowBox[{"ListInterpolation", "[", 
+    RowBox[{"a", ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "n"}], "}"}], ",", 
+     RowBox[{"Method", "\[Rule]", "\"\<Spline\>\""}], ",", 
+     RowBox[{"InterpolationOrder", "\[Rule]", "2"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"s2", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"f2", "[", "x", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "1", ",", "n"}], "}"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", "Red"}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Style", "[", 
+         RowBox[{"\"\<x\>\"", ",", 
+          RowBox[{"FontFamily", "\[Rule]", "Times"}], ",", "Italic"}], "]"}], 
+        ",", 
+        RowBox[{"Style", "[", 
+         RowBox[{"\"\<I(x)\>\"", ",", 
+          RowBox[{"FontSize", "\[Rule]", "fontsize"}], ",", 
+          RowBox[{"FontFamily", "\[Rule]", "Times"}], ",", "Italic"}], 
+         "]"}]}], "}"}]}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"1", ",", 
+          RowBox[{"n", "+", "0.2"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "0.5"}], ",", "1.3"}], "}"}]}], "}"}]}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"d2", "=", 
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"f2", "'"}], "[", "x", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "1", ",", "n"}], "}"}], ",", 
+      RowBox[{"PlotStyle", "\[Rule]", "Red"}], ",", 
+      RowBox[{"AxesLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<x\>\"", ",", 
+           RowBox[{"FontSize", "\[Rule]", "fontsize"}], ",", 
+           RowBox[{"FontFamily", "\[Rule]", "Times"}], ",", "Italic"}], "]"}],
+          ",", 
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<I'(x)\>\"", ",", 
+           RowBox[{"FontSize", "\[Rule]", "fontsize"}], ",", 
+           RowBox[{"FontFamily", "\[Rule]", "Times"}], ",", "Italic"}], 
+          "]"}]}], "}"}]}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", 
+           RowBox[{"n", "+", "0.2"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "1.1"}], ",", "1.3"}], "}"}]}], "}"}]}]}], "]"}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f1", "=", 
+   RowBox[{"ListInterpolation", "[", 
+    RowBox[{"a", ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "n"}], "}"}], ",", 
+     RowBox[{"Method", "\[Rule]", "\"\<Spline\>\""}], ",", 
+     RowBox[{"InterpolationOrder", "\[Rule]", "1"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"s1", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"f1", "[", "x", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "1", ",", "n"}], "}"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", "Red"}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Style", "[", 
+         RowBox[{"\"\<x\>\"", ",", 
+          RowBox[{"FontFamily", "\[Rule]", "Times"}], ",", "Italic"}], "]"}], 
+        ",", 
+        RowBox[{"Style", "[", 
+         RowBox[{"\"\<I(x)\>\"", ",", 
+          RowBox[{"FontSize", "\[Rule]", "fontsize"}], ",", 
+          RowBox[{"FontFamily", "\[Rule]", "Times"}], ",", "Italic"}], 
+         "]"}]}], "}"}]}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"1", ",", 
+          RowBox[{"n", "+", "0.2"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "0.5"}], ",", "1.3"}], "}"}]}], "}"}]}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"d1", "=", 
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"f1", "'"}], "[", "x", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "1", ",", "n"}], "}"}], ",", 
+      RowBox[{"PlotStyle", "\[Rule]", "Red"}], ",", 
+      RowBox[{"AxesLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<x\>\"", ",", 
+           RowBox[{"FontSize", "\[Rule]", "fontsize"}], ",", 
+           RowBox[{"FontFamily", "\[Rule]", "Times"}], ",", "Italic"}], "]"}],
+          ",", 
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<I'(x)\>\"", ",", 
+           RowBox[{"FontSize", "\[Rule]", "fontsize"}], ",", 
+           RowBox[{"FontFamily", "\[Rule]", "Times"}], ",", "Italic"}], 
+          "]"}]}], "}"}]}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", 
+           RowBox[{"n", "+", "0.2"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "1.1"}], ",", "1.3"}], "}"}]}], "}"}]}]}], "]"}]}], 
+   ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c3", "=", 
+   RowBox[{"GraphicsColumn", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Show", "[", 
+        RowBox[{"s3", ",", "s0", ",", 
+         RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}], ",", 
+       RowBox[{"Show", "[", 
+        RowBox[{"d3", ",", 
+         RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "}"}], ",", 
+     RowBox[{"Spacings", "\[Rule]", "3"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c2", "=", 
+   RowBox[{"GraphicsColumn", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Show", "[", 
+        RowBox[{"s2", ",", "s0", ",", 
+         RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}], ",", 
+       RowBox[{"Show", "[", 
+        RowBox[{"d2", ",", 
+         RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "}"}], ",", 
+     RowBox[{"Spacings", "\[Rule]", "3"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"c1", "=", 
+    RowBox[{"GraphicsColumn", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Show", "[", 
+         RowBox[{"s1", ",", "s0", ",", 
+          RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}], ",", 
+        RowBox[{"Show", "[", 
+         RowBox[{"d1", ",", 
+          RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "}"}], ",", 
+      RowBox[{"Spacings", "\[Rule]", "3"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"g0", "=", 
+    RowBox[{"GraphicsRow", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Show", "[", 
+         RowBox[{"c1", ",", 
+          RowBox[{"PlotLabel", "->", 
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<Interpolation order 1\>\"", ",", 
+             RowBox[{"FontSize", "\[Rule]", "fontsize"}], ",", 
+             RowBox[{"FontFamily", "\[Rule]", "\"\<Times New Roman\>\""}]}], 
+            "]"}]}]}], "]"}], ",", " ", 
+        RowBox[{"Show", "[", 
+         RowBox[{"c2", ",", 
+          RowBox[{"PlotLabel", "->", 
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<Interpolation order 2\>\"", ",", 
+             RowBox[{"FontSize", "\[Rule]", "fontsize"}], ",", 
+             RowBox[{"FontFamily", "\[Rule]", "\"\<Times New Roman\>\""}]}], 
+            "]"}]}]}], "]"}], ",", 
+        RowBox[{"Show", "[", 
+         RowBox[{"c3", ",", 
+          RowBox[{"PlotLabel", "->", 
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<Interpolation order 3\>\"", ",", 
+             RowBox[{"FontSize", "\[Rule]", "fontsize"}], ",", 
+             RowBox[{"FontFamily", "\[Rule]", "\"\<Times New Roman\>\""}]}], 
+            "]"}]}]}], "]"}]}], "}"}], ",", 
+      RowBox[{"Spacings", "\[Rule]", "0"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"g1", "=", 
+    RowBox[{"Show", "[", 
+     RowBox[{"g0", ",", " ", 
+      RowBox[{"ImageSize", "\[Rule]", 
+       RowBox[{"Scaled", "[", "1", "]"}]}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"figsDirectory", "=", 
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"ParentDirectory", "[", 
+        RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ",", "\"\<figs\>\""}],
+       "}"}], "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"figsDirectory", ",", "\"\<spline.pdf\>\""}], "}"}], "]"}], ",", 
+   RowBox[{"Show", "[", 
+    RowBox[{"g0", ",", " ", 
+     RowBox[{"ImageSize", "\[Rule]", 
+      RowBox[{"Scaled", "[", "1", "]"}]}]}], "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.8305720902045937`*^9, {3.830943475979453*^9, 3.8309434965887313`*^9}, {
+   3.8309435770111017`*^9, 3.8309435985179977`*^9}, {3.8309436957857084`*^9, 
+   3.830943696893873*^9}, {3.8309437594473424`*^9, 3.830943789375265*^9}, {
+   3.830943832198612*^9, 3.8309438750050454`*^9}, {3.830943925684229*^9, 
+   3.8309439283763123`*^9}, {3.830943995625205*^9, 3.830944021617072*^9}, {
+   3.830944066089389*^9, 3.8309441225820737`*^9}, {3.8309441590646086`*^9, 
+   3.8309442776624465`*^9}, {3.8309443325205173`*^9, 3.830944366087365*^9}, {
+   3.830944426529816*^9, 3.8309444465647593`*^9}, {3.830944563586054*^9, 
+   3.8309445875800695`*^9}, {3.8309446381490617`*^9, 
+   3.8309447018660383`*^9}, {3.8309447360492516`*^9, 
+   3.8309447742362156`*^9}, {3.830944805122463*^9, 3.83094480622456*^9}, {
+   3.8309448505339994`*^9, 3.8309449476732206`*^9}, {3.83149794215545*^9, 
+   3.8314983072519617`*^9}, {3.831498340718031*^9, 3.831498360889722*^9}, {
+   3.8314983917028255`*^9, 3.831498517054973*^9}, {3.831498615164539*^9, 
+   3.831498817489315*^9}, {3.831499000437187*^9, 3.8314990289262805`*^9}, {
+   3.8314990605646706`*^9, 3.831499102604429*^9}, {3.8314991363415194`*^9, 
+   3.8314991365110383`*^9}, {3.8314991946955523`*^9, 3.831499446157221*^9}, {
+   3.8314996077057*^9, 3.8314996184690113`*^9}, {3.831500046333787*^9, 
+   3.831500057403689*^9}, {3.8484894613439727`*^9, 3.8484894934580307`*^9}, {
+   3.8484895309532533`*^9, 3.8484896933875513`*^9}, {3.848489729836982*^9, 
+   3.84848974317717*^9}, {3.848489796176876*^9, 3.8484898870236125`*^9}, {
+   3.848489931595169*^9, 3.8484899894619083`*^9}, {3.8484900703125343`*^9, 
+   3.8484901149626703`*^9}, {3.848490155173565*^9, 3.8484901845787077`*^9}, {
+   3.8484905870087605`*^9, 3.848490614268793*^9}, {3.8484906693636723`*^9, 
+   3.848490682088579*^9}, {3.848490728038429*^9, 3.8484907447240214`*^9}, {
+   3.8484907860831413`*^9, 3.848490789444873*^9}, {3.8484908197617474`*^9, 
+   3.8484909861523213`*^9}, 3.8484910282969007`*^9, {3.8484910630780773`*^9, 
+   3.8484911055446267`*^9}, {3.8484912040208015`*^9, 
+   3.8484912204404535`*^9}, {3.8484912560543823`*^9, 3.848491280282305*^9}, {
+   3.848491310709388*^9, 3.848491319374668*^9}, {3.8484913561637106`*^9, 
+   3.848491361545144*^9}},
+ CellLabel->
+  "In[665]:=",ExpressionUUID->"d6e195da-c332-4c19-b7f5-f97085f457cd"],
+
+Cell[BoxData["\<\"D:\\\\MastersMathematica\\\\Matematica\\\\\
+MathematicaOpticalFlow\\\\CyclopeanOpticalFlow\\\\Figures\\\\figs\\\\spline.\
+pdf\"\>"], "Output",
+ CellChangeTimes->{{3.848491021230304*^9, 3.8484910302295275`*^9}, 
+   3.8484910742210703`*^9, {3.848491169231841*^9, 3.8484911780562105`*^9}, 
+   3.8484912259946504`*^9, 3.8484912852210655`*^9, 3.8484913219545307`*^9, 
+   3.8484913633613625`*^9},
+ CellLabel->
+  "Out[684]=",ExpressionUUID->"67d2dc63-65e8-461b-9afa-01e3fd41b154"]
+}, Open  ]],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{
+  3.848489977839578*^9},ExpressionUUID->"8c40438e-08c5-41a6-87c1-\
+c9d26ddd10c3"]
+}, Open  ]]
+},
+WindowSize->{1141.2, 585.6},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>0.9 Inherited,
+FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"ff92e9a9-b3de-402c-be18-682acfaaabe8"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 502, 7, 59, "Section",ExpressionUUID->"eee23841-9fcc-4202-8f94-a574a65f2164"],
+Cell[CellGroupData[{
+Cell[1107, 33, 14425, 377, 733, "Input",ExpressionUUID->"d6e195da-c332-4c19-b7f5-f97085f457cd"],
+Cell[15535, 412, 491, 8, 29, "Output",ExpressionUUID->"67d2dc63-65e8-461b-9afa-01e3fd41b154"]
+}, Open  ]],
+Cell[16041, 423, 147, 3, 43, "Input",ExpressionUUID->"8c40438e-08c5-41a6-87c1-c9d26ddd10c3"]
+}, Open  ]]
+}
+]
+*)
+

@@ -25,7 +25,7 @@
 
 (* Input\[Rule] {{initial values for v1, v2 and status, and counter e}, pixel of interest, {functions f1, df1, f2, df2}, threshold for magnitude error}*)
 (* Output\[Rule] {new values for v1, v2 and status and e} *)
-PyrUpgrade1D[{v1_,v2_,status_,e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_,"ConstrainedNewMethod"]:=Block[{fric1,fric2,p1, p2, c,d1,d2,dv1,dv2},(
+PyrUpgrade1D[{v1_,v2_,status_,e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_,"ConstrainedNewMethod"]:=Block[{n,fric1,fric2,p1, p2, c,d1,d2,dv1,dv2},(
 
 n=1;
 
@@ -70,7 +70,7 @@ PyrUpgrade1D[{v1_,v2_,"flip",e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, 
 (* This will only give values that sum up to the magnitude of v 
 Or if v0 = 0, random values between 10 and -10 *)
 
-newValues[i_,{v1_,v2_,status_,e_},newv0_,"ConstrainedNewMethod"]:=Block[{v,r,rs},(
+newValues[i_,{v1_,v2_,status_,e_},newv0_,"ConstrainedNewMethod"]:=Block[{n,v,r,rs},(
 v=v1+v2;
 n=1;
 
@@ -120,7 +120,7 @@ newValCon[[1]]
 (* Function to find solutions for all levels of pyramid {l1,l2,l3,l4,...} or {l1} *)
 (* Input\[Rule] {number of iterations, pixel of interests, pyrfunctions,threshold *)
 (* Output\[Rule] {v1, v2,status}*)
-PyrFlow1D[i_, p0_,listv0_, pyrfunctions_,threshold_,"ConstrainedNewMethod"]:=Block[{c, updateValues,nV,tableNewValues,tValues},(
+PyrFlow1D[i_, p0_,listv0_, pyrfunctions_,threshold_,"ConstrainedNewMethod"]:=Block[{n,c, updateValues,nV,tableNewValues,tValues},(
 
 n=1;
 
