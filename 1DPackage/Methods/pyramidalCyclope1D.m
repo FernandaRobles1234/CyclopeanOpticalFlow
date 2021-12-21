@@ -89,14 +89,14 @@ e= Counts the amount of times the constraints were not met
 (* ::Input::Initialization:: *)
 lineTest[v0_,rangex_,pyrab_,threshold_,mode_]:=Block[{v1,v2,status},(
 Table[
-{v1,v2,status}=PyrFlow1D[10,x,pyrab,threshold,mode]
+{v1,v2,status}=PyrFlow1D[20,x,pyrab,threshold,mode]
 ,{x,rangex}]
 )]
 
 
 lineTest[rangev0_,rangex_,pyrab_,threshold_,"ConstrainedNewMethod"]:=Block[{v1,v2,status},(
 Table[
-{v1,v2,status}=PyrFlow1D[10,x,rangev0,pyrab,threshold,"ConstrainedNewMethod"];
+{v1,v2,status}=PyrFlow1D[20,x,rangev0,pyrab,threshold,"ConstrainedNewMethod"];
 {v1,v2,status,x}
 ,{x,rangex}]
 )]

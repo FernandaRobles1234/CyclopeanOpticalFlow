@@ -27,7 +27,7 @@
 (* Output\[Rule] {new values for v1, v2 and status and e} *)
 PyrUpgrade1D[{v1_,v2_,status_,e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_,"ConstrainedNewMethod"]:=Block[{n,fric1,fric2,p1, p2, c,d1,d2,dv1,dv2},(
 
-n=1;
+n=0;
 
 p1=p0-v1;
 p2=p0+v2;
@@ -51,7 +51,7 @@ If[(Abs[d1]<threshold||Abs[d2]<threshold ),If[e<n,Return[{v1,v2,"mag",e+1}],Retu
 (* dv1,dv2 : step from last {v1,v2} to new {v1,v2} *)
 {dv1,dv2}= {(fline1[p1]-c)/(d1+Sign[d1]*Abs[fric1]),(c-fline2[p2])/(d2+Sign[d2]*Abs[fric2])};
 
-If[e<n,{v1+dv1,v2+dv2,If[Norm[{dv1,dv2}]<0.01,"converged","ok"],e},Return[{0.,0.,status,e}]]
+If[e<=n,{v1+dv1,v2+dv2,If[Norm[{dv1,dv2}]<0.01,"converged","ok"],e},Return[{0.,0.,status,e}]]
 
 )];
 
@@ -72,9 +72,9 @@ Or if v0 = 0, random values between 10 and -10 *)
 
 newValues[i_,{v1_,v2_,status_,e_},newv0_,"ConstrainedNewMethod"]:=Block[{n,v,r,rs},(
 v=v1+v2;
-n=1;
+n=0;
 
-If[e>=n,
+If[e>n,
 Return[{{0.,0.}}];
 ];
 
@@ -122,7 +122,7 @@ newValCon[[1]]
 (* Output\[Rule] {v1, v2,status}*)
 PyrFlow1D[i_, p0_,listv0_, pyrfunctions_,threshold_,"ConstrainedNewMethod"]:=Block[{n,c, updateValues,nV,tableNewValues,tValues},(
 
-n=1;
+n=0;
 
 c=Length[pyrfunctions]; (* number of levels *)
 
@@ -133,7 +133,7 @@ Do[
 
 
 (* Flag to stop when e\[GreaterEqual]n *)
-If[updateValues[[4]]<n,updateValues[[3]]="ok", updateValues={0.,0.,updateValues[[3]],n}];
+If[updateValues[[4]]<=n,updateValues[[3]]="ok", updateValues={0.,0.,updateValues[[3]],n}];
 
 (* This will only give values that sum up to the magnitude of v 
 Or if v0 = 0, list newv0 is created and fed to the function to try all it's contained values *)
