@@ -54,7 +54,7 @@ Table[
 ,{k, rangey}]
 ]
 
-stereoDepth[v0_,ia_,ib_,lvl_,{lvlmin_,lvlmax_},rangex_,rangey_,threshold_, "ConstrainedNewMethod"]:=Block[{ka,kb,pyra,pyrb,pyrab,thresholdAdj,dd,e,v1,v2},
+stereoDepth[v0_,n_,u_,ia_,ib_,lvl_,{lvlmin_,lvlmax_},rangex_,rangey_,threshold_, "ConstrainedNewMethod"]:=Block[{ka,kb,pyra,pyrb,pyrab,thresholdAdj,dd,e,v1,v2},
 thresholdAdj=threshold*2^(-lvlmin+1);
 
 Table[
@@ -64,7 +64,7 @@ pyrb=pyrFuncGen[kb,lvl];
 pyrab=Flatten[{pyra, pyrb},{{2},{1},{3}}];
 
 Table[
-{v1,v2,dd}=PyrFlow1D[20,x,v0,pyrab[[lvlmin;;lvlmax]],thresholdAdj,"ConstrainedNewMethod"];
+{v1,v2,dd}=PyrFlow1D[10,n,u,x,v0,pyrab[[lvlmin;;lvlmax]],thresholdAdj,"ConstrainedNewMethod"];
 
 {Total[{v1,v2}],dd,v1,v2,x,k}
 ,{x,rangex}]
@@ -73,7 +73,7 @@ Table[
 ]
 
 stereoDepth[ia_,ib_,lvl_,{lvlmin_,lvlmax_},threshold_,mode_]:=stereoDepth[0.,ia,ib,lvl,{lvlmin,lvlmax},Range[1,ImageDimensions[ia][[1]],1],Range[1,ImageDimensions[ia][[2]],1],threshold,mode]
-stereoDepth[v0_,ia_,ib_,lvl_,{lvlmin_,lvlmax_},threshold_, "ConstrainedNewMethod"]:=stereoDepth[v0,ia,ib,lvl,{lvlmin,lvlmax},Range[1,ImageDimensions[ia][[1]],1],Range[1,ImageDimensions[ia][[2]],1],threshold, "ConstrainedNewMethod"]
+stereoDepth[v0_,n_,u_,ia_,ib_,lvl_,{lvlmin_,lvlmax_},threshold_, "ConstrainedNewMethod"]:=stereoDepth[v0,n,u,ia,ib,lvl,{lvlmin,lvlmax},Range[1,ImageDimensions[ia][[1]],1],Range[1,ImageDimensions[ia][[2]],1],threshold, "ConstrainedNewMethod"]
 
 stereoDepth::usage="
 Input=[ia, ib, lvl,{lvlmin,lvlmax},threshold, mode]

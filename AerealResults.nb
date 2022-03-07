@@ -6774,7 +6774,7 @@ Cell[BoxData[
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1905.75, 747.75},
+WindowSize->{1905.75, 735.75},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 TaggingRules->{
  "WelcomeScreenSettings" -> {"FEStarting" -> False}, "TryRealOnly" -> False},
@@ -6995,7 +6995,7 @@ Cell[189212, 4902, 750, 15, 28, "Input",ExpressionUUID->"b4ba1909-ea05-477b-a10e
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[190011, 4923, 330, 5, 66, "Section",ExpressionUUID->"b127eefc-4820-42e2-94b5-6e4a7fc52085"],
-Cell[190344, 4930, 5867, 147, 517, "Input",ExpressionUUID->"a2a6f9f0-e63c-4e98-a8b4-05877b5e36f3"]
+Cell[190344, 4930, 5867, 147, 497, "Input",ExpressionUUID->"a2a6f9f0-e63c-4e98-a8b4-05877b5e36f3"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[196248, 5082, 338, 5, 66, "Section",ExpressionUUID->"aae6cf3c-8a0a-484f-8282-b5ad40960ebc"],

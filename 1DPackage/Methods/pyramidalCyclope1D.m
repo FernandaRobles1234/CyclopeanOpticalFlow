@@ -94,9 +94,9 @@ Table[
 )]
 
 
-lineTest[rangev0_,rangex_,pyrab_,threshold_,"ConstrainedNewMethod"]:=Block[{v1,v2,status},(
+lineTest[n_,u_,rangev0_,rangex_,pyrab_,threshold_,"ConstrainedNewMethod"]:=Block[{v1,v2,status},(
 Table[
-{v1,v2,status}=PyrFlow1D[20,x,rangev0,pyrab,threshold,"ConstrainedNewMethod"];
+{v1,v2,status}=PyrFlow1D[10,n,u,x,rangev0,pyrab,threshold,"ConstrainedNewMethod"];
 {v1,v2,status,x}
 ,{x,rangex}]
 )]
@@ -118,7 +118,7 @@ PointSize[0.001],
 Line[{{p,lineia[p]},{p,lineib[p]}}],
 If[tRun[[i,3]]=="sign",Red,
 If[tRun[[i,3]]=="mag",Purple,
-If[tRun[[i,3]]=="flip",Orange,Black]]
+If[tRun[[i,3]]=="ok"||tRun[[i,3]]=="nosolution",Green,Black]]
 ],
 Point[{p,c}],
 {Arrowheads->Small,Arrow[{{p-tRun[[i,1]],c},{p+tRun[[i,2]],c}}]}
@@ -137,6 +137,41 @@ ImageSize->Scaled[0.5]
 )]
 
 seeAllLine[rangex_,pyrab_,threshold_,mode_]:=seeAllLine[{0.,0.},rangex,pyrab,threshold,mode]
+
+seeAllLine[n_,u_,rangev0_,rangex_,pyrab_,threshold_,"ConstrainedNewMethod"]:=Block[{tRun,lineia,dlineia,lineib,dlineib,cTable,c,g0,i},(
+
+tRun=lineTest[n,u,rangev0,rangex,pyrab,threshold,"ConstrainedNewMethod"];
+
+{lineia,dlineia}=pyrab[[1,1]];
+{lineib,dlineib}=pyrab[[1,2]];
+
+i=1;
+cTable=Table[
+c=(lineia[p]+lineib[p])/2;
+g0=Graphics[{
+PointSize[0.001],
+Line[{{p,lineia[p]},{p,lineib[p]}}],
+If[tRun[[i,3]]=="sign",Red,
+If[tRun[[i,3]]=="mag",Purple,
+If[tRun[[i,3]]=="ok"||tRun[[i,3]]=="nosolution",Green,Black]]
+],
+Point[{p,c}],
+{Arrowheads->Small,Arrow[{{p-tRun[[i,1]],c},{p+tRun[[i,2]],c}}]}
+}];
+i=i+1;
+g0
+,{p,rangex}];
+
+Show[
+Plot[{lineia[x],lineib[x]},{x,rangex[[1]],rangex[[-1]]},PlotLegends->{"ia","ib"},PlotLabel->"ConstrainedNewMethod"],
+cTable,
+(*,
+PlotLabel\[Rule]info,*)
+ImageSize->Scaled[0.5]
+]
+)]
+
+seeAllLine[n_,u_,rangex_,pyrab_,threshold_,"ConstrainedNewMethod"]:=seeAllLine[n,u,{{0.,0.}},rangex,pyrab,threshold,"ConstrainedNewMethod"]
 
 seeAllLine::usage="
 Input\[Rule] [rangex, {lvlmin,lvlmax}, pyrab, threshold]
@@ -187,13 +222,13 @@ Line[{{p0,flineia[p0]},{p0,flineib[p0]}}],
 (*If[iter[[i,4]]\[Equal]2,Blue,*)
 If[iter[[i,3]]=="sign",Red,
 If[iter[[i,3]]=="mag",Purple,
-If[iter[[i,3]]=="flip",Orange,Black](*]*)
+If[iter[[i,3]]=="ok",Orange,Black](*]*)
 ]],
 (* c point *)
 Point[{p0,c}],
 {Arrowheads->Small,Arrow[{{p0-iter[[i,1]],c},{p0+iter[[i,2]],c}}]}
 }],
-ImageSize->Scaled[0.5]
+ImageSize->Scaled[0.2]
 ],
 (* Label *)
 Style[Framed[GraphicsColumn[{
@@ -259,20 +294,20 @@ Clear[dessin];
 dessin[{u1_,u2_,v1_,v2_,"converged"}]:={Blue,Point[{u1,u2}],PointSize[0.05],Green,Point[{v1,v2}]};
 dessin[{u1_,u2_,v1_,v2_,"mag"}]:={Purple,Point[{u1,u2}]};
 dessin[{u1_,u2_,v1_,v2_,"sign"}]:={Red,Point[{u1,u2}]};
-dessin[{u1_,u2_,v1_,v2_,"flip"}]:={Yellow,Point[{u1,u2}]};
+dessin[{u1_,u2_,v1_,v2_,"ok"}]:={Yellow,Point[{u1,u2}]};
 dessin[{u1_,u2_,v1_,v2_,_}]:={Black,Point[{u1,u2}]};
 
 
-Labeled[Graphics[{dessin/@result,{Thick,Black,Line[{{10,-10+sol},{-10,-(-10)+sol}}]}},PlotRange->{{-10,10},{-10,10}},Axes->True],mode]
+Labeled[Graphics[{dessin/@result,{Thick,Black,Line[{{1,-1+sol},{-1,-(-1)+sol}}]}},PlotRange->{{-1,1},{-1,1}},Axes->True],mode]
 
 
 )];
 
-pixelInitialValueGraphics[i_, p0_,listv0_,sol_,pyrfunctions_,threshold_,"ConstrainedNewMethod"]:=Block[{result,vx,vy},(
+pixelInitialValueGraphics[i_,n_,u_, p0_,listv0_,sol_,pyrfunctions_,threshold_,"ConstrainedNewMethod"]:=Block[{result,vx,vy},(
 
 result=Table[(
 Join[v,
-PyrFlow1DIter[i,p0,{v},pyrfunctions,threshold,"ConstrainedNewMethod"][[-1,-1]]
+PyrFlow1DIter[i,n,u,p0,{v},pyrfunctions,threshold,"ConstrainedNewMethod"][[-1,-1]]
 ]
 
 
@@ -280,14 +315,14 @@ PyrFlow1DIter[i,p0,{v},pyrfunctions,threshold,"ConstrainedNewMethod"][[-1,-1]]
 
 
 Clear[dessin];
-dessin[{u1_,u2_,v1_,v2_,"converged"}]:={Blue,Point[{u1,u2}],PointSize[0.05],Green,Point[{v1,v2}]};
+dessin[{u1_,u2_,v1_,v2_,"converged"}]:={Blue,Point[{u1,u2}],PointSize[0.03],Green,Point[{v1,v2}]};
 dessin[{u1_,u2_,v1_,v2_,"mag"}]:={Purple,Point[{u1,u2}]};
 dessin[{u1_,u2_,v1_,v2_,"sign"}]:={Red,Point[{u1,u2}]};
-dessin[{u1_,u2_,v1_,v2_,"flip"}]:={Yellow,Point[{u1,u2}]};
+dessin[{u1_,u2_,v1_,v2_,"ok"}]:={Yellow,Point[{u1,u2}]};
 dessin[{u1_,u2_,v1_,v2_,_}]:={Black,Point[{u1,u2}]};
 
 
-Labeled[Graphics[{dessin/@result,{Thick,Black,Line[{{10,-10+sol},{-10,-(-10)+sol}}]}},PlotRange->{{-10,10},{-10,10}},Axes->True],"ConstrainedNewMethod"]
+Labeled[Graphics[{dessin/@result,{Thick,Black,Line[{{1,-1+sol},{-1,-(-1)+sol}}]}},PlotRange->{{-1,1},{-1,1}},Axes->True],"ConstrainedNewMethod"]
 
 
 )];

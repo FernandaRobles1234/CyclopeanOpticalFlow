@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     16943,        451]
-NotebookOptionsPosition[     16204,        429]
-NotebookOutlinePosition[     16639,        446]
-CellTagsIndexPosition[     16596,        443]
+NotebookDataLength[     16287,        435]
+NotebookOptionsPosition[     15676,        416]
+NotebookOutlinePosition[     16111,        433]
+CellTagsIndexPosition[     16068,        430]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -28,8 +28,6 @@ Cell["Plot: Spline interpolation", "Section",
    3.830955258405538*^9}, 3.8309554799333873`*^9, {3.848489437121402*^9, 
    3.848489437365039*^9}},ExpressionUUID->"eee23841-9fcc-4202-8f94-\
 a574a65f2164"],
-
-Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{
@@ -410,17 +408,6 @@ Cell[BoxData[{
  CellLabel->
   "In[665]:=",ExpressionUUID->"d6e195da-c332-4c19-b7f5-f97085f457cd"],
 
-Cell[BoxData["\<\"D:\\\\MastersMathematica\\\\Matematica\\\\\
-MathematicaOpticalFlow\\\\CyclopeanOpticalFlow\\\\Figures\\\\figs\\\\spline.\
-pdf\"\>"], "Output",
- CellChangeTimes->{{3.848491021230304*^9, 3.8484910302295275`*^9}, 
-   3.8484910742210703`*^9, {3.848491169231841*^9, 3.8484911780562105`*^9}, 
-   3.8484912259946504`*^9, 3.8484912852210655`*^9, 3.8484913219545307`*^9, 
-   3.8484913633613625`*^9},
- CellLabel->
-  "Out[684]=",ExpressionUUID->"67d2dc63-65e8-461b-9afa-01e3fd41b154"]
-}, Open  ]],
-
 Cell[BoxData["\[IndentingNewLine]"], "Input",
  CellChangeTimes->{
   3.848489977839578*^9},ExpressionUUID->"8c40438e-08c5-41a6-87c1-\
@@ -447,11 +434,8 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 502, 7, 59, "Section",ExpressionUUID->"eee23841-9fcc-4202-8f94-a574a65f2164"],
-Cell[CellGroupData[{
-Cell[1107, 33, 14425, 377, 733, "Input",ExpressionUUID->"d6e195da-c332-4c19-b7f5-f97085f457cd"],
-Cell[15535, 412, 491, 8, 29, "Output",ExpressionUUID->"67d2dc63-65e8-461b-9afa-01e3fd41b154"]
-}, Open  ]],
-Cell[16041, 423, 147, 3, 43, "Input",ExpressionUUID->"8c40438e-08c5-41a6-87c1-c9d26ddd10c3"]
+Cell[1085, 31, 14425, 377, 810, "Input",ExpressionUUID->"d6e195da-c332-4c19-b7f5-f97085f457cd"],
+Cell[15513, 410, 147, 3, 43, "Input",ExpressionUUID->"8c40438e-08c5-41a6-87c1-c9d26ddd10c3"]
 }, Open  ]]
 }
 ]
