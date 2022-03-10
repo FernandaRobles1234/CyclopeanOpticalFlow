@@ -93,13 +93,14 @@ newv0
 (* ::Input::Initialization:: *)
 (* This will give back a value that converged or is on "ok" status. If not, error is returned and {v1,v2} goes back to 0. *)
 
-pickNewValue[tableNewVals_,"ConstrainedNewMethod"]:=Block[{newValOk,newValCon,newValAny,noFakeConverge},(
-(* Criterias to select a solution *)
-newValCon=Select[tableNewVals,(#[[3]]=="converged"&& #[[1]]*#[[2]]>0 && 0<(*Abs[*)#[[2]]+#[[1]](*]*)<1)&,1];
-newValAny=Select[tableNewVals,((#[[3]]!= "ok"||#[[3]]!= "oksign"||#[[3]]!= "okmag"||#[[3]]!= "converged")&&#[[1]]*#[[2]]>0 && 0<(*Abs[*)#[[2]]+#[[1]](*]*)<1)&,1];
-newValOk=Select[tableNewVals,((#[[3]]=="ok"||#[[3]]=="oksign"||#[[3]]=="okmag")&& #[[1]]*#[[2]]>0 && 0<(*Abs[*)#[[2]]+#[[1]](*]*)<1)&,1];
+pickNewValue[tableNewVals_,condition_,"ConstrainedNewMethod"]:=Block[{newValOk,newValCon,newValAny,noFakeConverge},(
 
-noFakeConverge=Select[tableNewVals,(#[[3]]!= "ok"||#[[3]]!= "oksign"||#[[3]]!= "okmag"||#[[3]]!= "converged")&,1];
+(* Criterias to select a solution *)
+newValCon=Select[tableNewVals,(#[[3]]=="converged")&&condition[#]&,1];
+newValAny=Select[tableNewVals,(#[[3]]!= "ok"&&#[[3]]!= "oksign"&&#[[3]]!= "okmag"&&#[[3]]!= "converged")&&condition[#]&,1];
+newValOk=Select[tableNewVals,(#[[3]]=="ok"||#[[3]]=="oksign"||#[[3]]=="okmag")&& condition[#]&,1];
+
+noFakeConverge=Select[tableNewVals,(#[[3]]!= "ok"&&#[[3]]!= "oksign"&&#[[3]]!= "okmag"&&#[[3]]!= "converged")&,1];
 
 (* No solution meets criteria *)
 If[newValCon=={}&&newValAny=={}&&newValOk=={},
@@ -132,7 +133,7 @@ newValCon[[1]]
 (* Function to find solutions for all levels of pyramid {l1,l2,l3,l4,...} or {l1} *)
 (* Input\[Rule] {number of iterations, allowed failed levels, shift on v solution through levels, pixel of interests, pyrfunctions,threshold *)
 (* Output\[Rule] {v1, v2,status}*)
-PyrFlow1D[i_,n_,u_, p0_,listv0_, pyrfunctions_,threshold_,"ConstrainedNewMethod"]:=Block[{c, updateValues,nV,tableNewValues,tValues},(
+PyrFlow1D[i_,n_,u_, p0_,listv0_,condition_, pyrfunctions_,threshold_,"ConstrainedNewMethod"]:=Block[{c, updateValues,nV,tableNewValues,tValues},(
 
 c=Length[pyrfunctions]; (* number of levels *)
 
@@ -165,7 +166,7 @@ tValues
 ,{v,nV}];
 
 (* We only update updateValues with the tValue that converged *)
-updateValues=pickNewValue[tableNewValues,"ConstrainedNewMethod"];
+updateValues=pickNewValue[tableNewValues,condition,"ConstrainedNewMethod"];
 
 
 c=c-1;

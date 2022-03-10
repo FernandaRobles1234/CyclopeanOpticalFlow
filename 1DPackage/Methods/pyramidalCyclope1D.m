@@ -94,9 +94,9 @@ Table[
 )]
 
 
-lineTest[n_,u_,rangev0_,rangex_,pyrab_,threshold_,"ConstrainedNewMethod"]:=Block[{v1,v2,status},(
+lineTest[n_,u_,rangev0_,condition_,rangex_,pyrab_,threshold_,"ConstrainedNewMethod"]:=Block[{v1,v2,status},(
 Table[
-{v1,v2,status}=PyrFlow1D[10,n,u,x,rangev0,pyrab,threshold,"ConstrainedNewMethod"];
+{v1,v2,status}=PyrFlow1D[10,n,u,x,rangev0,condition,pyrab,threshold,"ConstrainedNewMethod"];
 {v1,v2,status,x}
 ,{x,rangex}]
 )]
@@ -138,9 +138,9 @@ ImageSize->Scaled[0.5]
 
 seeAllLine[rangex_,pyrab_,threshold_,mode_]:=seeAllLine[{0.,0.},rangex,pyrab,threshold,mode]
 
-seeAllLine[n_,u_,rangev0_,rangex_,pyrab_,threshold_,"ConstrainedNewMethod"]:=Block[{tRun,lineia,dlineia,lineib,dlineib,cTable,c,g0,i},(
+seeAllLine[n_,u_,rangev0_,condition_,rangex_,pyrab_,threshold_,"ConstrainedNewMethod"]:=Block[{tRun,lineia,dlineia,lineib,dlineib,cTable,c,g0,i},(
 
-tRun=lineTest[n,u,rangev0,rangex,pyrab,threshold,"ConstrainedNewMethod"];
+tRun=lineTest[n,u,rangev0,condition,rangex,pyrab,threshold,"ConstrainedNewMethod"];
 
 {lineia,dlineia}=pyrab[[1,1]];
 {lineib,dlineib}=pyrab[[1,2]];
@@ -153,7 +153,7 @@ PointSize[0.001],
 Line[{{p,lineia[p]},{p,lineib[p]}}],
 If[tRun[[i,3]]=="sign",Red,
 If[tRun[[i,3]]=="mag",Purple,
-If[tRun[[i,3]]=="ok"||tRun[[i,3]]=="nosolution",Green,Black]]
+If[(tRun[[i,3]]=="ok"||tRun[[i,3]]=="nosolution"),Green,Black]]
 ],
 Point[{p,c}],
 {Arrowheads->Small,Arrow[{{p-tRun[[i,1]],c},{p+tRun[[i,2]],c}}]}
@@ -171,7 +171,7 @@ ImageSize->Scaled[0.5]
 ]
 )]
 
-seeAllLine[n_,u_,rangex_,pyrab_,threshold_,"ConstrainedNewMethod"]:=seeAllLine[n,u,{{0.,0.}},rangex,pyrab,threshold,"ConstrainedNewMethod"]
+seeAllLine[n_,u_,condition_,rangex_,pyrab_,threshold_,"ConstrainedNewMethod"]:=seeAllLine[n,u,{{0.,0.}},condition,rangex,pyrab,threshold,"ConstrainedNewMethod"]
 
 seeAllLine::usage="
 Input\[Rule] [rangex, {lvlmin,lvlmax}, pyrab, threshold]
