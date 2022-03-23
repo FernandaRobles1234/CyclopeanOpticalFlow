@@ -34,14 +34,14 @@ c = (fline1[p0]+fline2[p0])/2;
 d1=dfline1[p1];
 d2=dfline2[p2];
 
-fric1=1*dfline1'[p1];
-fric2=1*dfline2'[p2];
+fric1=3*dfline1'[p1];
+fric2=3*dfline2'[p2];
 
 (* d1 and d2 have to be the same sign in every iteration *)
-If[d1*d2 <0, If[e<n,Return[{v1,v2,"oksign",e+1}],Return[{0.,0.,"sign",e}]]];
+If[d1*d2 <0, If[e<=n,Return[{v1,v2,"oksign",e+1}],Return[{0.,0.,"sign",e}]]];
 
 (* magnitud *)
-If[(Abs[d1]<threshold||Abs[d2]<threshold ),If[e<n,Return[{v1,v2,"okmag",e+1}],Return[{0.,0.,"mag",e}]]];
+If[(Abs[d1]<threshold||Abs[d2]<threshold ),If[e<=n,Return[{v1,v2,"okmag",e+1}],Return[{0.,0.,"mag",e}]]];
 
 (* Change of sign during iteration *)
 (*If[(dfline1[p0]*d1<0||dfline2[p0]*d2<0),If[e<2,Return[{v1,v2,"flip",e+1}],Return[{0.,0.,"flip",e}]]];*)
@@ -142,7 +142,6 @@ updateValues={0.,0.,"ok",0.};
 
 Do[
 
-
 (* Flag to stop when e\[GreaterEqual]n *)
 If[updateValues[[4]]<=n,updateValues[[3]]="ok", updateValues={0.,0.,updateValues[[3]],updateValues[[4]]}];
 
@@ -171,7 +170,6 @@ updateValues=pickNewValue[tableNewValues,condition,"ConstrainedNewMethod"];
 
 c=c-1;
 ,{f,1,Length[pyrfunctions]}];
-
 updateValues[[1;;3]]
 )];
 
