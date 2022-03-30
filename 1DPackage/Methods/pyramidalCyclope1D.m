@@ -101,6 +101,13 @@ Table[
 ,{x,rangex}]
 )]
 
+lineTest[n_,u_,rangev0_,condition_,rangex_,pyrab_,threshold_,"ConstrainedCorrelation"]:=Block[{v1,v2,status},(
+Table[
+{v1,v2,status}=PyrFlow1D[10,n,u,x,rangev0,condition,pyrab,threshold,"ConstrainedCorrelation"];
+{v1,v2,status,x}
+,{x,rangex}]
+)]
+
 
 (* ::Input::Initialization:: *)
 seeAllLine[rangev0_,rangex_,pyrab_,threshold_,mode_]:=Block[{tRun,lineia,dlineia,lineib,dlineib,cTable,c,g0,i},(
@@ -118,7 +125,7 @@ PointSize[0.001],
 Line[{{p,lineia[p]},{p,lineib[p]}}],
 If[tRun[[i,3]]=="sign",Red,
 If[tRun[[i,3]]=="mag",Purple,
-If[tRun[[i,3]]=="ok"||tRun[[i,3]]=="nosolution",Green,Black]]
+If[tRun[[i,3]]=="ok",Green,Black]]
 ],
 Point[{p,c}],
 {Arrowheads->Small,Arrow[{{p-tRun[[i,1]],c},{p+tRun[[i,2]],c}}]}
@@ -153,7 +160,7 @@ PointSize[0.001],
 Line[{{p,lineia[p]},{p,lineib[p]}}],
 If[tRun[[i,3]]=="sign",Red,
 If[tRun[[i,3]]=="mag",Purple,
-If[(tRun[[i,3]]=="ok"||tRun[[i,3]]=="nosolution"),Green,Black]]
+If[(tRun[[i,3]]=="ok"),Green,Black]]
 ],
 Point[{p,c}],
 {Arrowheads->Small,Arrow[{{p-tRun[[i,1]],c},{p+tRun[[i,2]],c}}]}
@@ -172,6 +179,41 @@ ImageSize->Scaled[0.5]
 )]
 
 seeAllLine[n_,u_,condition_,rangex_,pyrab_,threshold_,"ConstrainedNewMethod"]:=seeAllLine[n,u,{{0.,0.}},condition,rangex,pyrab,threshold,"ConstrainedNewMethod"]
+
+seeAllLine[n_,u_,rangev0_,condition_,rangex_,pyrab_,threshold_,"ConstrainedCorrelation"]:=Block[{tRun,lineia,dlineia,lineib,dlineib,cTable,c,g0,i},(
+
+tRun=lineTest[n,u,rangev0,condition,rangex,pyrab,threshold,"ConstrainedCorrelation"];
+
+{lineia,dlineia}=pyrab[[1,1]];
+{lineib,dlineib}=pyrab[[1,2]];
+
+i=1;
+cTable=Table[
+c=(lineia[p]+lineib[p])/2;
+g0=Graphics[{
+PointSize[0.001],
+Line[{{p,lineia[p]},{p,lineib[p]}}],
+If[tRun[[i,3]]=="sign",Red,
+If[tRun[[i,3]]=="mag",Purple,
+If[(tRun[[i,3]]=="ok"),Green,Black]]
+],
+Point[{p,c}],
+{Arrowheads->Small,Arrow[{{p-tRun[[i,1]],c},{p+tRun[[i,2]],c}}]}
+}];
+i=i+1;
+g0
+,{p,rangex}];
+
+Show[
+Plot[{lineia[x],lineib[x]},{x,rangex[[1]],rangex[[-1]]},PlotLegends->{"ia","ib"},PlotLabel->"ConstrainedCorrelation"],
+cTable,
+(*,
+PlotLabel\[Rule]info,*)
+ImageSize->Scaled[0.5]
+]
+)]
+
+seeAllLine[n_,u_,condition_,rangex_,pyrab_,threshold_,"ConstrainedCorrelation"]:=seeAllLine[n,u,{{0.,0.}},condition,rangex,pyrab,threshold,"ConstrainedCorrelation"]
 
 seeAllLine::usage="
 Input\[Rule] [rangex, {lvlmin,lvlmax}, pyrab, threshold]
@@ -323,6 +365,30 @@ dessin[{u1_,u2_,v1_,v2_,_}]:={Black,Point[{u1,u2}]};
 
 
 Labeled[Graphics[{dessin/@result,{Thick,Black,Line[{{1,-1+sol},{-1,-(-1)+sol}}]}},PlotRange->{{-1,1},{-1,1}},Axes->True],"ConstrainedNewMethod"]
+
+
+)];
+
+pixelInitialValueGraphics[i_,n_,u_, p0_,listv0_,sol_,pyrfunctions_,threshold_,"ConstrainedCorrelation"]:=Block[{result,vx,vy},(
+
+result=Table[(
+Join[v,
+PyrFlow1DIter[i,n,u,p0,{v},pyrfunctions,threshold,"ConstrainedCorrelation"][[-1,-1]]
+]
+
+
+),{v,listv0}];
+
+
+Clear[dessin];
+dessin[{u1_,u2_,v1_,v2_,"converged"}]:={Blue,Point[{u1,u2}],PointSize[0.03],Green,Point[{v1,v2}]};
+dessin[{u1_,u2_,v1_,v2_,"mag"}]:={Purple,Point[{u1,u2}]};
+dessin[{u1_,u2_,v1_,v2_,"sign"}]:={Red,Point[{u1,u2}]};
+dessin[{u1_,u2_,v1_,v2_,"ok"}]:={Yellow,Point[{u1,u2}]};
+dessin[{u1_,u2_,v1_,v2_,_}]:={Black,Point[{u1,u2}]};
+
+
+Labeled[Graphics[{dessin/@result,{Thick,Black,Line[{{1,-1+sol},{-1,-(-1)+sol}}]}},PlotRange->{{-1,1},{-1,1}},Axes->True],"ConstrainedCorrelation"]
 
 
 )];
