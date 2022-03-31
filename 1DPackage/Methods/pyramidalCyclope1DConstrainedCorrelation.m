@@ -43,6 +43,10 @@ If[d1*d2 <0, If[e<n,Return[{v1,v2,"oksign",e+1}],Return[{0.,0.,"sign",e}]]];
 (* magnitud *)
 If[(Abs[d1]<threshold||Abs[d2]<threshold ),If[e<n,Return[{v1,v2,"okmag",e+1}],Return[{0.,0.,"mag",e}]]];
 
+(* We can compare multiple values, by steps or anything *)
+(* Range is related to scale of the image *)
+(* It's not related to movement *)
+(* Note that this is just an acceptance criteria that will decide if a computed motion is coeherent to it's neighbors. It's not enforcing a common motion to multiple neighbor pixels, so, depth discontinuities will be preserved. Pas comme Lukas-Kanade *)
 rangeVector=Range[-4,4];
 
 p1set=p1+rangeVector;
