@@ -190,10 +190,10 @@ updateValues[[1;;3]]
 
 
 (* ::Input::Initialization:: *)
-pickNewValueIter[tableIterNewVals_,"ConstrainedCorrelation"]:=Block[{newIterValCon,newIterValAny,newIterValOk,noIterFakeConverge},(
-newIterValCon=Select[tableIterNewVals,(Last[#][[3]]=="converged"&&Last[#][[1]]*Last[#][[2]]>0 && 0<Last[#][[2]]+Last[#][[1]]<1)&,1];
-newIterValAny=Select[tableIterNewVals,((Last[#][[3]]!= "ok" ||Last[#][[3]]!= "okcorr"||Last[#][[3]]!= "oksign"||Last[#][[3]]!= "okmag"||Last[#][[3]]!= "converged")&&Last[#][[1]]*Last[#][[2]]>0 && 0<Last[#][[2]]+Last[#][[1]]<1)&,1];
-newIterValOk=Select[tableIterNewVals,((Last[#][[3]]=="ok" ||Last[#][[3]]!= "okcorr"||Last[#][[3]]=="oksign"||Last[#][[3]]=="okmag")&&Last[#][[1]]*Last[#][[2]]>0 && 0<Last[#][[2]]+Last[#][[1]]<1)&,1];
+pickNewValueIter[tableIterNewVals_,condition_,"ConstrainedCorrelation"]:=Block[{newIterValCon,newIterValAny,newIterValOk,noIterFakeConverge},(
+newIterValCon=Select[tableIterNewVals,(Last[#][[3]]=="converged"&&condition[Last[#]])&,1];
+newIterValAny=Select[tableIterNewVals,((Last[#][[3]]!= "ok" ||Last[#][[3]]!= "okcorr"||Last[#][[3]]!= "oksign"||Last[#][[3]]!= "okmag"||Last[#][[3]]!= "converged")&&condition[Last[#]])&,1];
+newIterValOk=Select[tableIterNewVals,((Last[#][[3]]=="ok" ||Last[#][[3]]!= "okcorr"||Last[#][[3]]=="oksign"||Last[#][[3]]=="okmag")&&condition[Last[#]])&,1];
 noIterFakeConverge=Select[tableIterNewVals,(Last[#][[3]]!= "ok" ||Last[#][[3]]!= "okcorr"||Last[#][[3]]!= "oksign"||Last[#][[3]]!= "okmag"||Last[#][[3]]!= "converged")&,1];
 
 (* No solution meets criteria *)
@@ -226,7 +226,7 @@ newIterValCon[[1]]
 (* Function to find solutions for all levels of pyramid {l1,l2,l3,l4,...} or {l1} *)
 (* Input\[Rule] {number of iterations, allowed failed levels, shift on v solution through levels, pixel of interests, pyrfunctions,threshold *)
 (* Output\[Rule] {v1, v2,status}*)
-PyrFlow1DIter[i_,n_,u_, p0_,newv0_, pyrfunctions_,threshold_,"ConstrainedCorrelation"]:=Block[{c,updateValues,newVals,tableNewValues,tValues,iterTable,goodValIter,nV},(
+PyrFlow1DIter[i_,n_,u_, p0_,newv0_, condition_,pyrfunctions_,threshold_,"ConstrainedCorrelation"]:=Block[{c,updateValues,newVals,tableNewValues,tValues,iterTable,goodValIter,nV},(
 
 
 c=Length[pyrfunctions]; (* number of levels *)
@@ -259,7 +259,7 @@ tValues=PyrUpgrade1D[tValues,p0, pyrfunctions[[-f]],threshold*2^(-c+1),n,"Constr
 
 c=c-1;
 
-goodValIter=pickNewValueIter[tableNewValues,"ConstrainedCorrelation"];
+goodValIter=pickNewValueIter[tableNewValues,condition,"ConstrainedCorrelation"];
 updateValues=Last[goodValIter];
 
 goodValIter[[All,1;;3]]

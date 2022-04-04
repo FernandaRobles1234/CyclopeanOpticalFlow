@@ -191,11 +191,13 @@ i=1;
 cTable=Table[
 c=(lineia[p]+lineib[p])/2;
 g0=Graphics[{
-PointSize[0.001],
+PointSize[0.05],
 Line[{{p,lineia[p]},{p,lineib[p]}}],
+If[tRun[[i,3]]=="converged",Green,
 If[tRun[[i,3]]=="sign",Red,
 If[tRun[[i,3]]=="mag",Purple,
-If[(tRun[[i,3]]=="ok"),Green,Black]]
+If[tRun[[i,3]]=="corr",Black,
+If[(tRun[[i,3]]=="ok"),Gray,Black]]]]
 ],
 Point[{p,c}],
 {Arrowheads->Small,Arrow[{{p-tRun[[i,1]],c},{p+tRun[[i,2]],c}}]}
@@ -204,8 +206,9 @@ i=i+1;
 g0
 ,{p,rangex}];
 
+fontsize=16;
 Show[
-Plot[{lineia[x],lineib[x]},{x,rangex[[1]],rangex[[-1]]},PlotLegends->{"ia","ib"},PlotLabel->"ConstrainedCorrelation"],
+Plot[{lineia[x],lineib[x]},{x,rangex[[1]],rangex[[-1]]},AxesLabel->{Style["x",FontSize->fontsize,FontFamily->"Times",Italic],Style["I(x)",FontSize->fontsize,FontFamily->"Times",Italic]}],
 cTable,
 (*,
 PlotLabel\[Rule]info,*)
@@ -369,11 +372,11 @@ Labeled[Graphics[{dessin/@result,{Thick,Black,Line[{{1,-1+sol},{-1,-(-1)+sol}}]}
 
 )];
 
-pixelInitialValueGraphics[i_,n_,u_, p0_,listv0_,sol_,pyrfunctions_,threshold_,"ConstrainedCorrelation"]:=Block[{result,vx,vy},(
+pixelInitialValueGraphics[i_,n_,u_, p0_,listv0_,condition_,sol_,pyrfunctions_,threshold_,"ConstrainedCorrelation"]:=Block[{result,vx,vy},(
 
 result=Table[(
 Join[v,
-PyrFlow1DIter[i,n,u,p0,{v},pyrfunctions,threshold,"ConstrainedCorrelation"][[-1,-1]]
+PyrFlow1DIter[i,n,u,p0,{v},condition,pyrfunctions,threshold,"ConstrainedCorrelation"][[-1,-1]]
 ]
 
 
@@ -384,11 +387,13 @@ Clear[dessin];
 dessin[{u1_,u2_,v1_,v2_,"converged"}]:={Blue,Point[{u1,u2}],PointSize[0.03],Green,Point[{v1,v2}]};
 dessin[{u1_,u2_,v1_,v2_,"mag"}]:={Purple,Point[{u1,u2}]};
 dessin[{u1_,u2_,v1_,v2_,"sign"}]:={Red,Point[{u1,u2}]};
-dessin[{u1_,u2_,v1_,v2_,"ok"}]:={Yellow,Point[{u1,u2}]};
+dessin[{u1_,u2_,v1_,v2_,"corr"}]:={Black,Point[{u1,u2}]};
+dessin[{u1_,u2_,v1_,v2_,"ok"}]:={Gray,Point[{u1,u2}]};
 dessin[{u1_,u2_,v1_,v2_,_}]:={Black,Point[{u1,u2}]};
 
 
-Labeled[Graphics[{dessin/@result,{Thick,Black,Line[{{1,-1+sol},{-1,-(-1)+sol}}]}},PlotRange->{{-1,1},{-1,1}},Axes->True],"ConstrainedCorrelation"]
+fontsize=16;
+Graphics[{dessin/@result,{Thick,Black,Line[{{sol,0},{0,sol}}]}},PlotRange->{{-(Abs[sol]+1),(Abs[sol]+1)},{-(Abs[sol]+1),(Abs[sol]+1)}},Axes->True,AxesLabel->{Style["\!\(\*SubscriptBox[\(v\), \(1\)]\)",FontSize->fontsize,FontFamily->"Times",Italic],Style["\!\(\*SubscriptBox[\(v\), \(2\)]\)",FontSize->fontsize,FontFamily->"Times",Italic]}]
 
 
 )];
