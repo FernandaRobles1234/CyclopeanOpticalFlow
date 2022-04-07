@@ -70,6 +70,22 @@ flowHornSchunck[40,Length[rangex],pyrab[[1]],lamda]
 
 )]
 
+stereoDepth[ia_,ib_,lamda_,"HornSchunck"]:=stereoDepth[ia,ib,lamda,Range[1,ImageDimensions[ia][[1]],1],Range[1,ImageDimensions[ia][[2]],1],"LukasKanade"]
+
+stereoDepth[ia_,ib_,lamda_,rangex_,rangey_,"LukasKanade"]:=Block[{ka,kb,pyra,pyrb,pyrab},(
+
+Table[
+{ka,kb}=ImageData[#][[k,rangex]]&/@{ia,ib};
+pyra=pyrFuncGen[ka,1];
+pyrb=pyrFuncGen[kb,1];
+pyrab=Flatten[{pyra, pyrb},{{2},{1},{3}}];
+
+flowLukasKanade[40,Length[rangex],pyrab[[1]],lamda]
+
+,{k, rangey}]
+
+)]
+
 stereoDepth[ia_,ib_,lamda_,"HornSchunck"]:=stereoDepth[ia,ib,lamda,Range[1,ImageDimensions[ia][[1]],1],Range[1,ImageDimensions[ia][[2]],1],"HornSchunck"]
 
 
