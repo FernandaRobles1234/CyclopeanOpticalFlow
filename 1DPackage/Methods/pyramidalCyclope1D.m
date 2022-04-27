@@ -191,7 +191,7 @@ i=1;
 cTable=Table[
 c=(lineia[p]+lineib[p])/2;
 g0=Graphics[{
-PointSize[0.05],
+PointSize[0.008],
 Line[{{p,lineia[p]},{p,lineib[p]}}],
 If[tRun[[i,3]]=="converged",Green,
 If[tRun[[i,3]]=="sign",Red,
