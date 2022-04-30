@@ -47,11 +47,11 @@ If[(Abs[d1]<threshold||Abs[d2]<threshold ),If[e<n,Return[{v1,v2,"okmag",e+1}],Re
 (* Range is related to scale of the image *)
 (* It's not related to movement *)
 (* Note that this is just an acceptance criteria that will decide if a computed motion is coeherent to it's neighbors. It's not enforcing a common motion to multiple neighbor pixels, so, depth discontinuities will be preserved. Pas comme Lukas-Kanade *)
-rangeVector=Range[-1,1,0.2];
+rangeVector=Range[-2,2,0.2];
 
 p1set=p1+rangeVector;
 p2set=p2+rangeVector;
-cCriteria=0.5;
+cCriteria=0.9;
 
 (* Correlation *)
 If[Correlation[fline1[#]&/@p1set,fline2[#]&/@p2set]<cCriteria,If[e<n,Return[{v1,v2,"okcorr",e+1}],Return[{0.,0.,"corr",e}]]];

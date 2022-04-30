@@ -80,7 +80,7 @@ pyra=pyrFuncGen[ka,1];
 pyrb=pyrFuncGen[kb,1];
 pyrab=Flatten[{pyra, pyrb},{{2},{1},{3}}];
 
-flowLukasKanade[40,Length[rangex],pyrab[[1]],lamda]
+flowLukasKanade[100,Length[rangex],pyrab[[1]],lamda]
 
 ,{k, rangey}]
 

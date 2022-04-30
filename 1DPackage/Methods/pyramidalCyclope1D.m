@@ -312,6 +312,20 @@ oneLevelPixelIterGraphics[lvlmax-j+1,iter[[j]], p0,prange,  pyrfunctions[[-j ;;-
 
 pixelIterGraphics[i_, p0_,prange_, lvlmax_,pyrfunctions_,threshold_,mode_]:=pixelIterGraphics[i, p0,{0.,0.},prange, lvlmax,pyrfunctions,threshold,mode];
 
+pixelIterGraphics[i_,n_,u_,p0_,v0_,condition_,prange_, lvlmax_,pyrfunctions_,threshold_,"ConstrainedCorrelation"]:=Block[{iter},(
+(* Makes iterations by saving all the values *)
+iter=PyrFlow1DIter[i,n,u,p0,v0, condition,pyrfunctions,threshold,"ConstrainedCorrelation"];
+
+Flatten[Table[
+(* Makes plots only for one level *)
+oneLevelPixelIterGraphics[lvlmax-j+1,iter[[j]], p0,prange,  pyrfunctions[[-j ;;-j]][[1]],mode]
+
+,{j,1,Length[iter]}]]
+)];
+
+pixelIterGraphics[i_,n_,u_, p0_,condition_,prange_, lvlmax_,pyrfunctions_,threshold_,"ConstrainedCorrelation"]:=pixelIterGraphics[i,n,u, p0,{0.,0.},condition,prange, lvlmax,pyrfunctions,threshold,"ConstrainedCorrelation"];
+
+
 pixelIterGraphics::usage="
 Makes plots for the intermediate solutions of a pyramidal level
 Input\[Rule] [i, p0, listv0, prange, maxlvl, pyrfunctions, threshold, mode]
