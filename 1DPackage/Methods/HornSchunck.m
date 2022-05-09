@@ -47,5 +47,10 @@ u=u1;
 u
 )]
 
+flowHornSchunck::usage="
+Input\[Rule] [i,length,{{f1,f1x},{f2,f2x}},lamda]
+Output-> {1D OpticalFlow}
+";
+
 
 

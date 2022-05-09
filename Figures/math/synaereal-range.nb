@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     86016,       1952]
-NotebookOptionsPosition[     80732,       1864]
-NotebookOutlinePosition[     81278,       1883]
-CellTagsIndexPosition[     81235,       1880]
+NotebookDataLength[     84508,       1926]
+NotebookOptionsPosition[     79345,       1839]
+NotebookOutlinePosition[     79867,       1858]
+CellTagsIndexPosition[     79824,       1855]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1832,38 +1832,13 @@ Cell[BoxData[
    3.855832830873332*^9}, {3.855833042633805*^9, 3.855833046509434*^9}, {
    3.8558439406484065`*^9, 3.855843942143319*^9}, {3.8602028979352455`*^9, 
    3.8602028996102114`*^9}},
- CellLabel->"In[71]:=",ExpressionUUID->"3fa166c9-c6f7-408f-82f5-e9e4490428b3"],
-
-Cell[BoxData[
- RowBox[{"seeAllLine", "[", 
-  RowBox[{"n", ",", "u", ",", "listv0", ",", "condition", ",", 
-   RowBox[{"Range", "[", 
-    RowBox[{"1", ",", "103"}], "]"}], ",", 
-   RowBox[{"pyrab", "[", 
-    RowBox[{"[", 
-     RowBox[{"1", ";;", "1"}], "]"}], "]"}], ",", "e", ",", 
-   "\"\<ConstrainedNewMethod\>\""}], "]"}]], "Input",
- CellChangeTimes->{{3.8557747589476194`*^9, 3.8557748305809383`*^9}, {
-   3.855774865413357*^9, 3.855774956621029*^9}, 3.8557755490233335`*^9, {
-   3.8557765162055545`*^9, 3.8557765539454603`*^9}, {3.8557766055145493`*^9, 
-   3.855776619960021*^9}, {3.855831438581865*^9, 3.8558314977500224`*^9}, {
-   3.8558315892268405`*^9, 3.855831590350517*^9}, {3.8558328792267036`*^9, 
-   3.8558328841980753`*^9}, {3.8558329255539064`*^9, 
-   3.8558329282523375`*^9}, {3.8558329817577114`*^9, 
-   3.8558330308118577`*^9}, {3.855833086810701*^9, 3.8558330898968005`*^9}, {
-   3.855833134266712*^9, 3.8558332113276477`*^9}, {3.8558332712794485`*^9, 
-   3.8558332761368637`*^9}, {3.855843829783242*^9, 3.855843861966798*^9}, {
-   3.855843898734892*^9, 3.855843899066742*^9}, {3.8558439306587644`*^9, 
-   3.8558439358558893`*^9}, {3.855844015078504*^9, 3.855844022029312*^9}, {
-   3.8558441411113076`*^9, 3.8558441717821693`*^9}, {3.8558442258229904`*^9, 
-   3.8558442441623187`*^9}},
- CellLabel->"In[72]:=",ExpressionUUID->"9942b60e-65d9-48cc-89d6-989b6d44a48b"]
+ CellLabel->"In[71]:=",ExpressionUUID->"3fa166c9-c6f7-408f-82f5-e9e4490428b3"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1152., 592.8},
-WindowMargins->{{-1157.4, Automatic}, {-132.89999999999998`, Automatic}},
+WindowSize->{1141.2, 581.4},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 TaggingRules->{
  "WelcomeScreenSettings" -> {"FEStarting" -> False}, "TryRealOnly" -> False},
 CellContext->Notebook,
@@ -1949,8 +1924,7 @@ Cell[73634, 1685, 262, 5, 28, "Input",ExpressionUUID->"b5dbe1ba-5b06-4183-a849-c
 Cell[73899, 1692, 1863, 47, 107, "Input",ExpressionUUID->"852989b3-1208-48de-86a8-c0d75f93a8e2"],
 Cell[75765, 1741, 1131, 26, 49, "Input",ExpressionUUID->"b83a6d4a-0370-4c5f-9ae5-24455ed98461"],
 Cell[76899, 1769, 1564, 46, 88, "Input",ExpressionUUID->"0fbed4e2-5061-4309-a7ab-01b575ae8514"],
-Cell[78466, 1817, 839, 17, 28, "Input",ExpressionUUID->"3fa166c9-c6f7-408f-82f5-e9e4490428b3"],
-Cell[79308, 1836, 1384, 23, 28, "Input",ExpressionUUID->"9942b60e-65d9-48cc-89d6-989b6d44a48b"]
+Cell[78466, 1817, 839, 17, 28, "Input",ExpressionUUID->"3fa166c9-c6f7-408f-82f5-e9e4490428b3"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]

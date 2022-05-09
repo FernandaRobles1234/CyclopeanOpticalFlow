@@ -20,7 +20,7 @@
 
 
 (* ::Input::Initialization:: *)
-flowLukasKanade[i_,length_,{{f1_,f1x_},{f2_,f2x_}},lamda_]:=Block[{u,mask,fx,ft,uav,p,d},(
+flowLukasKanade[i_,length_,{{f1_,f1x_},{f2_,f2x_}},lamda_]:=Block[{u,mask,fx,ft,uav,p,d,x1,t,u1},(
 
 (*We define fx*)
 fx[x_]:=0.5*(f1x[x]+f2x[x]);
@@ -37,7 +37,16 @@ u1=-Total[t]/Total[x1];
 u[[x]]=u1;
 ,{x,Range[1,length]}];
 u
-)]
+)
+]
+
+flowLukasKanade::usage="
+Input\[Rule] [i,length,{{f1,f1x},{f2,f2x}},lamda]
+lamda->window size
+Output-> {1D OpticalFlow}
+";
+
+
 
 
 

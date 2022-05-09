@@ -35,7 +35,7 @@ Output-> Manipulate object deplacing ia in range of lowdx and highdx with static
 
 
 (* ::Input::Initialization:: *)
-stereoDepth[ia_,ib_,id_,lamda_,rangex_,rangey_,"HornSchunck"]:=Block[{ka,kb,pyra,pyrb,pyrab},(
+stereoDepth[ia_,ib_,id_,lamda_,rangex_,rangey_,"HornSchunck"]:=Block[{ka,kb,kd,pyra,pyrb,pyrab},(
 
 ParallelTable[
 {ka,kb,kd}=ImageData[#][[k]]&/@{ia,ib,id};
@@ -53,7 +53,7 @@ stereoDepth[ia_,ib_,id_,lamda_,"HornSchunck"]:=stereoDepth[ia,ib,id,lamda,Range[
 
 (*//////////////////////////////////////////////////*)
 
-stereoDepth[ia_,ib_,id_,lamda_,rangex_,rangey_,"LukasKanade"]:=Block[{ka,kb,pyra,pyrb,pyrab},(
+stereoDepth[ia_,ib_,id_,lamda_,rangex_,rangey_,"LukasKanade"]:=Block[{ka,kb,kd,pyra,pyrb,pyrab},(
 
 ParallelTable[
 {ka,kb,kd}=ImageData[#][[k]]&/@{ia,ib,id};
@@ -71,7 +71,7 @@ stereoDepth[ia_,ib_,id_,lamda_,"LukasKanade"]:=stereoDepth[ia,ib,id,lamda,Range[
 
 (*//////////////////////////////////////////////////*)
 
-stereoDepth[n_,u_,v0_,condition_,ia_,ib_,id_,lvl_,{lvlmin_,lvlmax_},rangex_,rangey_,threshold_, "ConstrainedCorrelation"]:=Block[{ka,kb,pyra,pyrb,pyrab,thresholdAdj,dd,e,v1,v2},
+stereoDepth[n_,u_,v0_,condition_,ia_,ib_,id_,lvl_,{lvlmin_,lvlmax_},rangex_,rangey_,threshold_, "ConstrainedCorrelation"]:=Block[{ka,kb,kd,pyra,pyrb,pyrbb,pyrab,thresholdAdj,dd,e,v1,v2},
 thresholdAdj=threshold*2^(-lvlmin+1);
 
 ParallelTable[

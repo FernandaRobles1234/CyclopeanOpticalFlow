@@ -55,7 +55,7 @@ v2= Solution for b
 
 PyrUpgrade1D::usage="
 Function to update values of v1 and v2.
-Input\[Rule] [{v1,v2,status,___},p0,{{f1,df1},{f2,df2},threshold,mode}
+Input\[Rule] [{v1,v2,status,___},p0,{{f1,df1},{f2,df2},threshold,mode,___}
 Output-> {v1,v2,status,___}
 v1= Solution of f1
 v2= Solution of f2
@@ -72,7 +72,7 @@ threshold= threshold to respect magnitude constraint
 
 PyrFlow1D::usage="
 Function to update values of v1 and v2 over all levels of a function's pyramidal representation.
-Input\[Rule] [i, p0, pyrfunctions, threshold]
+Input\[Rule] [i, p0, pyrfunctions, threshold,...]
 Output-> {v1, v2, status, ___}
 i= number of iterations
 p0= point of interest
@@ -93,13 +93,7 @@ Table[
 ,{x,rangex}]
 )]
 
-
-lineTest[n_,u_,rangev0_,condition_,rangex_,pyrab_,threshold_,"ConstrainedNewMethod"]:=Block[{v1,v2,status},(
-Table[
-{v1,v2,status}=PyrFlow1D[10,n,u,x,rangev0,condition,pyrab,threshold,"ConstrainedNewMethod"];
-{v1,v2,status,x}
-,{x,rangex}]
-)]
+(*********************************************************************************************************)
 
 lineTest[n_,u_,rangev0_,condition_,rangex_,pyrab_,threshold_,"ConstrainedCorrelation"]:=Block[{v1,v2,status},(
 Table[
@@ -121,11 +115,12 @@ i=1;
 cTable=Table[
 c=(lineia[p]+lineib[p])/2;
 g0=Graphics[{
-PointSize[0.001],
+PointSize[0.008],
 Line[{{p,lineia[p]},{p,lineib[p]}}],
+If[tRun[[i,3]]=="converged",Green,
 If[tRun[[i,3]]=="sign",Red,
 If[tRun[[i,3]]=="mag",Purple,
-If[tRun[[i,3]]=="ok",Green,Black]]
+If[(tRun[[i,3]]=="ok"),Gray,Black]]]
 ],
 Point[{p,c}],
 {Arrowheads->Small,Arrow[{{p-tRun[[i,1]],c},{p+tRun[[i,2]],c}}]}
@@ -145,42 +140,9 @@ ImageSize->Scaled[0.5]
 
 seeAllLine[rangex_,pyrab_,threshold_,mode_]:=seeAllLine[{0.,0.},rangex,pyrab,threshold,mode]
 
-seeAllLine[n_,u_,rangev0_,condition_,rangex_,pyrab_,threshold_,"ConstrainedNewMethod"]:=Block[{tRun,lineia,dlineia,lineib,dlineib,cTable,c,g0,i},(
+(**********************************************************************************************************)
 
-tRun=lineTest[n,u,rangev0,condition,rangex,pyrab,threshold,"ConstrainedNewMethod"];
-
-{lineia,dlineia}=pyrab[[1,1]];
-{lineib,dlineib}=pyrab[[1,2]];
-
-i=1;
-cTable=Table[
-c=(lineia[p]+lineib[p])/2;
-g0=Graphics[{
-PointSize[0.001],
-Line[{{p,lineia[p]},{p,lineib[p]}}],
-If[tRun[[i,3]]=="sign",Red,
-If[tRun[[i,3]]=="mag",Purple,
-If[(tRun[[i,3]]=="ok"),Green,Black]]
-],
-Point[{p,c}],
-{Arrowheads->Small,Arrow[{{p-tRun[[i,1]],c},{p+tRun[[i,2]],c}}]}
-}];
-i=i+1;
-g0
-,{p,rangex}];
-
-Show[
-Plot[{lineia[x],lineib[x]},{x,rangex[[1]],rangex[[-1]]},PlotLegends->{"ia","ib"},PlotLabel->"ConstrainedNewMethod"],
-cTable,
-(*,
-PlotLabel\[Rule]info,*)
-ImageSize->Scaled[0.5]
-]
-)]
-
-seeAllLine[n_,u_,condition_,rangex_,pyrab_,threshold_,"ConstrainedNewMethod"]:=seeAllLine[n,u,{{0.,0.}},condition,rangex,pyrab,threshold,"ConstrainedNewMethod"]
-
-seeAllLine[n_,u_,rangev0_,condition_,rangex_,pyrab_,threshold_,"ConstrainedCorrelation"]:=Block[{tRun,lineia,dlineia,lineib,dlineib,cTable,c,g0,i},(
+seeAllLine[n_,u_,rangev0_,condition_,rangex_,pyrab_,threshold_,"ConstrainedCorrelation"]:=Block[{tRun,lineia,dlineia,lineib,dlineib,cTable,c,g0,i,fontsize},(
 
 tRun=lineTest[n,u,rangev0,condition,rangex,pyrab,threshold,"ConstrainedCorrelation"];
 
@@ -218,8 +180,11 @@ ImageSize->Scaled[0.5]
 
 seeAllLine[n_,u_,condition_,rangex_,pyrab_,threshold_,"ConstrainedCorrelation"]:=seeAllLine[n,u,{{0.,0.}},condition,rangex,pyrab,threshold,"ConstrainedCorrelation"]
 
+(***************************************************************************************************************)
+
 seeAllLine::usage="
 Input\[Rule] [rangex, {lvlmin,lvlmax}, pyrab, threshold]
+Input*->[n, u, rangev0, condition, rangex, pyrab, threshold, \"ConstrainedCorrelation\"]
 Output-> Plot with solutions in rangex
 ";
 
@@ -312,13 +277,15 @@ oneLevelPixelIterGraphics[lvlmax-j+1,iter[[j]], p0,prange,  pyrfunctions[[-j ;;-
 
 pixelIterGraphics[i_, p0_,prange_, lvlmax_,pyrfunctions_,threshold_,mode_]:=pixelIterGraphics[i, p0,{0.,0.},prange, lvlmax,pyrfunctions,threshold,mode];
 
+(*******************************************)
+
 pixelIterGraphics[i_,n_,u_,p0_,v0_,condition_,prange_, lvlmax_,pyrfunctions_,threshold_,"ConstrainedCorrelation"]:=Block[{iter},(
 (* Makes iterations by saving all the values *)
 iter=PyrFlow1DIter[i,n,u,p0,v0, condition,pyrfunctions,threshold,"ConstrainedCorrelation"];
 
 Flatten[Table[
 (* Makes plots only for one level *)
-oneLevelPixelIterGraphics[lvlmax-j+1,iter[[j]], p0,prange,  pyrfunctions[[-j ;;-j]][[1]],mode]
+oneLevelPixelIterGraphics[lvlmax-j+1,iter[[j]], p0,prange,  pyrfunctions[[-j ;;-j]][[1]],"ConstrainedCorrelation"]
 
 ,{j,1,Length[iter]}]]
 )];
@@ -329,6 +296,7 @@ pixelIterGraphics[i_,n_,u_, p0_,condition_,prange_, lvlmax_,pyrfunctions_,thresh
 pixelIterGraphics::usage="
 Makes plots for the intermediate solutions of a pyramidal level
 Input\[Rule] [i, p0, listv0, prange, maxlvl, pyrfunctions, threshold, mode]
+Input*->[i, n, u, p0, v0, condition, prange, lvlmax,pyrfunctions,threshold,\"ConstrainedCorrelation\"]
 Output-> list with the dimensions of: {lvls*i, Plot of flineia and flineib with solution v1 and v2}
 ";
 
@@ -338,7 +306,7 @@ Output-> list with the dimensions of: {lvls*i, Plot of flineia and flineib with 
 (* iterations, pixel of interest, plot range from pixel, max lvl,lvl's functions, 
 threshold}*)
 
-pixelInitialValueGraphics[i_, p0_,listv0_,sol_,pyrfunctions_,threshold_,mode_]:=Block[{result,vx,vy},(
+pixelInitialValueGraphics[i_, p0_,listv0_,sol_,pyrfunctions_,threshold_,mode_]:=Block[{result,vx,vy,dessin},(
 
 result=Table[(
 Join[v,
@@ -362,31 +330,8 @@ Labeled[Graphics[{dessin/@result,{Thick,Black,Line[{{1,-1+sol},{-1,-(-1)+sol}}]}
 
 )];
 
-pixelInitialValueGraphics[i_,n_,u_, p0_,listv0_,sol_,pyrfunctions_,threshold_,"ConstrainedNewMethod"]:=Block[{result,vx,vy},(
-
-result=Table[(
-Join[v,
-PyrFlow1DIter[i,n,u,p0,{v},pyrfunctions,threshold,"ConstrainedNewMethod"][[-1,-1]]
-]
-
-
-),{v,listv0}];
-
-
-Clear[dessin];
-dessin[{u1_,u2_,v1_,v2_,"converged"}]:={Blue,Point[{u1,u2}],PointSize[0.03],Green,Point[{v1,v2}]};
-dessin[{u1_,u2_,v1_,v2_,"mag"}]:={Purple,Point[{u1,u2}]};
-dessin[{u1_,u2_,v1_,v2_,"sign"}]:={Red,Point[{u1,u2}]};
-dessin[{u1_,u2_,v1_,v2_,"ok"}]:={Yellow,Point[{u1,u2}]};
-dessin[{u1_,u2_,v1_,v2_,_}]:={Black,Point[{u1,u2}]};
-
-
-Labeled[Graphics[{dessin/@result,{Thick,Black,Line[{{1,-1+sol},{-1,-(-1)+sol}}]}},PlotRange->{{-1,1},{-1,1}},Axes->True],"ConstrainedNewMethod"]
-
-
-)];
-
-pixelInitialValueGraphics[i_,n_,u_, p0_,listv0_,condition_,sol_,pyrfunctions_,threshold_,"ConstrainedCorrelation"]:=Block[{result,vx,vy},(
+(***********************************************)
+pixelInitialValueGraphics[i_,n_,u_, p0_,listv0_,condition_,sol_,pyrfunctions_,threshold_,"ConstrainedCorrelation"]:=Block[{result,vx,vy,dessin},(
 
 result=Table[(
 Join[v,
