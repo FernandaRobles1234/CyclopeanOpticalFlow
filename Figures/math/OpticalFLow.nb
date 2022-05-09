@@ -1,0 +1,211 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7770,        203]
+NotebookOptionsPosition[      6906,        183]
+NotebookOutlinePosition[      7349,        200]
+CellTagsIndexPosition[      7306,        197]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{"im", "=", 
+  RowBox[{"ImagePad", "[", 
+   RowBox[{
+    RowBox[{"RandomImage", "[", 
+     RowBox[{"1", ",", 
+      RowBox[{"{", 
+       RowBox[{"4", ",", "4"}], "}"}]}], "]"}], ",", "1"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"im2", "=", 
+  RowBox[{"ImageTransformation", "[", 
+   RowBox[{"im", ",", 
+    RowBox[{
+     RowBox[{"#", "-", "0.15"}], "&"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.8607704850069003`*^9, 3.8607705217723556`*^9}, {
+   3.8607706191165686`*^9, 3.86077064647451*^9}, {3.860770775317032*^9, 
+   3.860770789639011*^9}, {3.860770853025565*^9, 3.8607708574833016`*^9}, {
+   3.860770902178012*^9, 3.860770911610399*^9}, {3.8607709772970247`*^9, 
+   3.8607710444631567`*^9}, {3.8607713027363453`*^9, 3.860771305126071*^9}, {
+   3.860771385386218*^9, 3.86077141483654*^9}, {3.8607714546462984`*^9, 
+   3.8607714749820538`*^9}, 3.860771527241148*^9, 3.860773156494494*^9, {
+   3.860835612314202*^9, 3.860835617689707*^9}},
+ CellLabel->
+  "In[145]:=",ExpressionUUID->"5a91e087-1c14-4ce3-b928-a20f06e5de93"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"seqflow", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"x", "\[Equal]", "6"}], "||", 
+          RowBox[{"y", "\[Equal]", "6"}]}], ")"}], "||", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"x", "==", "1"}], "||", 
+          RowBox[{"y", "==", "1"}]}], ")"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "1"}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "6"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", "6"}], "}"}]}], "]"}]}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.860771675832601*^9, 3.8607717063595057`*^9}, {
+  3.8607719686343594`*^9, 3.860772016805846*^9}, {3.8607720527483144`*^9, 
+  3.8607720704861965`*^9}, {3.860772180905671*^9, 3.860772262900349*^9}, {
+  3.8607723212191315`*^9, 3.8607723463146615`*^9}, {3.860772379938678*^9, 
+  3.860772435359833*^9}, {3.8607730206485806`*^9, 3.8607731221406956`*^9}, {
+  3.8608350654681616`*^9, 3.860835099128251*^9}, {3.8608353434640837`*^9, 
+  3.8608353534124312`*^9}, {3.860835623163912*^9, 3.860835638637159*^9}},
+ CellLabel->
+  "In[147]:=",ExpressionUUID->"ba562b33-33de-4fb4-b6ab-cc82e89eff79"],
+
+Cell[BoxData[
+ RowBox[{"ListVectorPlot", "[", 
+  RowBox[{"seqflow", ",", 
+   RowBox[{"VectorPoints", "\[Rule]", "All"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "False"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8607720284194956`*^9, 3.860772045843601*^9}, {
+  3.8608350326455984`*^9, 3.8608350403214607`*^9}, {3.8608354406245995`*^9, 
+  3.8608354454117603`*^9}},
+ CellLabel->
+  "In[148]:=",ExpressionUUID->"f10faec4-718b-48c0-9bab-c7c180b6e2c2"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"ConformImages", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"im", ",", "im2", ",", 
+       RowBox[{"Image", "[", 
+        RowBox[{"ListVectorPlot", "[", 
+         RowBox[{
+          RowBox[{"Transpose", "[", "seqflow", "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"VectorPoints", "\[Rule]", "All"}], ",", 
+          RowBox[{"Frame", "\[Rule]", "False"}]}], "]"}], "]"}]}], "}"}], ",",
+      "100"}], "]"}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"imFinal", "=", 
+  RowBox[{"Grid", "[", 
+   RowBox[{"{", 
+    RowBox[{"ConformImages", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"Rasterize", "[", 
+         RowBox[{
+          RowBox[{"Image", "[", "#", "]"}], ",", 
+          RowBox[{"ImageResolution", "\[Rule]", "200"}]}], "]"}], "&"}], "/@", 
+       RowBox[{"{", 
+        RowBox[{"im", ",", "im2", ",", 
+         RowBox[{"Image", "[", 
+          RowBox[{"ListVectorPlot", "[", 
+           RowBox[{
+            RowBox[{"Transpose", "[", "seqflow", "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"VectorPoints", "\[Rule]", "All"}], ",", 
+            RowBox[{"Frame", "\[Rule]", "False"}], ",", 
+            RowBox[{"Prolog", "\[Rule]", 
+             RowBox[{"Inset", "[", 
+              RowBox[{"im", ",", " ", 
+               RowBox[{"{", 
+                RowBox[{"0.5", ",", "0.5"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", "0"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"6", ",", " ", "6"}], "}"}]}], "]"}]}]}], "]"}], 
+          "]"}]}], "}"}]}], ",", 
+      RowBox[{"{", "900", "}"}]}], "]"}], "}"}], "]"}]}]}], "Input",
+ CellChangeTimes->{
+  3.8607712751712494`*^9, {3.8607713490242643`*^9, 3.860771354825252*^9}, {
+   3.860835193192012*^9, 3.86083523156851*^9}, {3.86083532351327*^9, 
+   3.860835327834417*^9}, 3.8608353717553043`*^9, {3.860835456031265*^9, 
+   3.860835517891226*^9}, {3.8608355481983547`*^9, 3.8608356008788953`*^9}, {
+   3.8608357575975904`*^9, 3.860835779914812*^9}, {3.860835813083372*^9, 
+   3.8608358606702137`*^9}, {3.8608359414217296`*^9, 3.8608359460098095`*^9}},
+ CellLabel->
+  "In[169]:=",ExpressionUUID->"8f978d05-7b54-4f5e-a9c4-6ee13dc8107e"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"nbname", "=", 
+   RowBox[{"StringDelete", "[", 
+    RowBox[{
+     RowBox[{"Last", "@", 
+      RowBox[{"FileNameSplit", "@", 
+       RowBox[{"NotebookFileName", "[", "]"}]}]}], ",", "\"\<.nb\>\""}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"figsDirectory", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"ParentDirectory", "[", 
+       RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ",", "\"\<figs\>\""}], 
+     "}"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{3.8608358967910194`*^9},
+ CellLabel->
+  "In[171]:=",ExpressionUUID->"26c08877-6ccb-4678-8a05-4025bf27cf0b"],
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"figsDirectory", ",", 
+      RowBox[{"nbname", "<>", "\"\<-im.pdf\>\""}]}], "}"}], "]"}], ",", 
+   RowBox[{"Rasterize", "[", 
+    RowBox[{"imFinal", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "1000"}], ",", 
+     RowBox[{"ImageResolution", "\[Rule]", "200"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{3.860835916683529*^9},
+ CellLabel->
+  "In[173]:=",ExpressionUUID->"b359dd64-d803-452e-8f23-79e2fe6255cf"]
+},
+WindowSize->{1152., 592.8},
+WindowMargins->{{Automatic, -5.399999999999864}, {
+  Automatic, -5.3999999999999995`}},
+FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"5e723236-607d-4fbd-a690-ca9ed7714f8f"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1059, 23, 49, "Input",ExpressionUUID->"5a91e087-1c14-4ce3-b928-a20f06e5de93"],
+Cell[1620, 45, 1343, 33, 49, "Input",ExpressionUUID->"ba562b33-33de-4fb4-b6ab-cc82e89eff79"],
+Cell[2966, 80, 444, 9, 28, "Input",ExpressionUUID->"f10faec4-718b-48c0-9bab-c7c180b6e2c2"],
+Cell[3413, 91, 2287, 54, 107, "Input",ExpressionUUID->"8f978d05-7b54-4f5e-a9c4-6ee13dc8107e"],
+Cell[5703, 147, 670, 19, 49, "Input",ExpressionUUID->"26c08877-6ccb-4678-8a05-4025bf27cf0b"],
+Cell[6376, 168, 526, 13, 28, "Input",ExpressionUUID->"b359dd64-d803-452e-8f23-79e2fe6255cf"]
+}
+]
+*)
+

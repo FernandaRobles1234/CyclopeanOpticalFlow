@@ -28,12 +28,11 @@ fx[x_]:=0.5*(f1x[x]+f2x[x]);
 (*We define ft*)
 ft[x_]:=f2[x]-f1[x];
 
-mask={1,-2,1};
 u=Table[0.,{k,length}];
 
 Do[
-x1=fx[#]&/@Range[x-2,x+2];
-t=ft[#]&/@Range[x-2,x+2];
+x1=fx[#]&/@Range[x-lamda,x+lamda];
+t=ft[#]&/@Range[x-lamda,x+lamda];
 u1=-Total[t]/Total[x1];
 u[[x]]=u1;
 ,{x,Range[1,length]}];

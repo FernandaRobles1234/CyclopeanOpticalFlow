@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   3209305,      53111]
-NotebookOptionsPosition[   3204773,      53033]
-NotebookOutlinePosition[   3205266,      53052]
-CellTagsIndexPosition[   3205223,      53049]
+NotebookDataLength[   3204006,      52992]
+NotebookOptionsPosition[   3199458,      52914]
+NotebookOutlinePosition[   3199967,      52933]
+CellTagsIndexPosition[   3199924,      52930]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -51975,136 +51975,48 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"stereoDepth", "[", 
-    RowBox[{"v0_", ",", "ia_", ",", "ib_", ",", "lvl_", ",", 
-     RowBox[{"{", 
-      RowBox[{"lvlmin_", ",", "lvlmax_"}], "}"}], ",", "rangex_", ",", 
-     "rangey_", ",", "threshold_", ",", " ", "mode_"}], "]"}], ":=", 
-   RowBox[{"Block", "[", 
     RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-      "ka", ",", "kb", ",", "pyra", ",", "pyrb", ",", "pyrab", ",", 
-       "thresholdAdj", ",", "dd", ",", "e", ",", "v1", ",", "v2"}], "}"}], 
-     ",", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"thresholdAdj", "=", 
-       RowBox[{"threshold", "*", 
-        RowBox[{"2", "^", 
-         RowBox[{"(", 
-          RowBox[{
-           RowBox[{"-", "lvlmin"}], "+", "1"}], ")"}]}]}]}], ";", 
-      "\[IndentingNewLine]", "\[IndentingNewLine]", 
-      RowBox[{"Table", "[", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{
-         RowBox[{
-          RowBox[{"{", 
-           RowBox[{"ka", ",", "kb"}], "}"}], "=", 
-          RowBox[{
-           RowBox[{
-            RowBox[{
-             RowBox[{"ImageData", "[", "#", "]"}], "[", 
-             RowBox[{"[", "k", "]"}], "]"}], "&"}], "/@", 
-           RowBox[{"{", 
-            RowBox[{"ia", ",", "ib"}], "}"}]}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{"pyra", "=", 
-          RowBox[{"pyrFuncGen", "[", 
-           RowBox[{"ka", ",", "lvl"}], "]"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{"pyrb", "=", 
-          RowBox[{"pyrFuncGen", "[", 
-           RowBox[{"kb", ",", "lvl"}], "]"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{"pyrab", "=", 
-          RowBox[{"Flatten", "[", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{"pyra", ",", " ", "pyrb"}], "}"}], ",", 
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"{", "2", "}"}], ",", 
-              RowBox[{"{", "1", "}"}], ",", 
-              RowBox[{"{", "3", "}"}]}], "}"}]}], "]"}]}], ";", 
-         "\[IndentingNewLine]", "\[IndentingNewLine]", 
-         RowBox[{"Table", "[", "\[IndentingNewLine]", 
-          RowBox[{
-           RowBox[{
-            RowBox[{
-             RowBox[{"{", 
-              RowBox[{"v1", ",", "v2", ",", "dd"}], "}"}], "=", 
-             RowBox[{"PyrFlow1D", "[", 
-              RowBox[{"10", ",", "x", ",", 
-               RowBox[{"pyrab", "[", 
-                RowBox[{"[", 
-                 RowBox[{"lvlmin", ";;", "lvlmax"}], "]"}], "]"}], ",", 
-               "thresholdAdj", ",", "mode"}], "]"}]}], ";", 
-            "\[IndentingNewLine]", "\[IndentingNewLine]", 
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"Total", "[", 
-               RowBox[{"{", 
-                RowBox[{"v1", ",", "v2"}], "}"}], "]"}], ",", "dd", ",", "v1",
-               ",", "v2", ",", "x", ",", "k"}], "}"}]}], 
-           "\[IndentingNewLine]", ",", 
-           RowBox[{"{", 
-            RowBox[{"x", ",", "rangex"}], "}"}]}], "]"}]}], 
-        "\[IndentingNewLine]", "\[IndentingNewLine]", ",", 
-        RowBox[{"{", 
-         RowBox[{"k", ",", " ", "rangey"}], "}"}]}], "]"}]}]}], 
-    "\[IndentingNewLine]", "]"}]}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"stereoDepth", "[", 
-    RowBox[{"ia_", ",", "ib_", ",", "lvl_", ",", 
-     RowBox[{"{", 
-      RowBox[{"lvlmin_", ",", "lvlmax_"}], "}"}], ",", "threshold_", ",", 
-     "mode_"}], "]"}], ":=", 
-   RowBox[{"stereoDepth", "[", 
-    RowBox[{"0.", ",", "ia", ",", "ib", ",", "lvl", ",", 
-     RowBox[{"{", 
-      RowBox[{"lvlmin", ",", "lvlmax"}], "}"}], ",", 
-     RowBox[{"Range", "[", 
-      RowBox[{"1", ",", 
-       RowBox[{
-        RowBox[{"ImageDimensions", "[", "ia", "]"}], "[", 
-        RowBox[{"[", "1", "]"}], "]"}], ",", "1"}], "]"}], ",", 
-     RowBox[{"Range", "[", 
-      RowBox[{"1", ",", 
-       RowBox[{
-        RowBox[{"ImageDimensions", "[", "ia", "]"}], "[", 
-        RowBox[{"[", "2", "]"}], "]"}], ",", "1"}], "]"}], ",", "threshold", 
-     ",", "mode"}], "]"}]}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"stereoDepth", "[", 
-    RowBox[{
-    "ia_", ",", "ib_", ",", "lamda_", ",", "rangex_", ",", "rangey_", ",", 
-     "\"\<HornSchunck\>\""}], "]"}], ":=", 
+    "ia_", ",", "ib_", ",", "id_", ",", "lamda_", ",", "rangex_", ",", 
+     "rangey_", ",", "\"\<HornSchunck\>\""}], "]"}], ":=", 
    RowBox[{"Block", "[", 
     RowBox[{
      RowBox[{"{", 
       RowBox[{"ka", ",", "kb", ",", "pyra", ",", "pyrb", ",", "pyrab"}], 
       "}"}], ",", 
      RowBox[{"(", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-      RowBox[{"Table", "[", "\[IndentingNewLine]", 
+      RowBox[{"ParallelTable", "[", "\[IndentingNewLine]", 
        RowBox[{
         RowBox[{
          RowBox[{
           RowBox[{"{", 
-           RowBox[{"ka", ",", "kb"}], "}"}], "=", 
+           RowBox[{"ka", ",", "kb", ",", "kd"}], "}"}], "=", 
           RowBox[{
            RowBox[{
             RowBox[{
              RowBox[{"ImageData", "[", "#", "]"}], "[", 
-             RowBox[{"[", 
-              RowBox[{"k", ",", "rangex"}], "]"}], "]"}], "&"}], "/@", 
+             RowBox[{"[", "k", "]"}], "]"}], "&"}], "/@", 
            RowBox[{"{", 
-            RowBox[{"ia", ",", "ib"}], "}"}]}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{"pyra", "=", 
-          RowBox[{"pyrFuncGen", "[", 
-           RowBox[{"ka", ",", "1"}], "]"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"ia", ",", "ib", ",", "id"}], "}"}]}]}], ";", 
+         "\[IndentingNewLine]", 
          RowBox[{"pyrb", "=", 
           RowBox[{"pyrFuncGen", "[", 
            RowBox[{"kb", ",", "1"}], "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"pyrb", "=", 
+          RowBox[{"pyrFuncGen", "[", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"pyrb", "[", 
+                RowBox[{"[", 
+                 RowBox[{"1", ",", "1"}], "]"}], "]"}], "[", 
+               RowBox[{"xx", "-", 
+                RowBox[{
+                 RowBox[{"kd", "[", 
+                  RowBox[{"[", "xx", "]"}], "]"}], "*", "0.9"}]}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"xx", ",", "rangex"}], "}"}]}], "]"}], ",", "1"}], 
+           "]"}]}], ";", "\[IndentingNewLine]", 
          RowBox[{"pyrab", "=", 
           RowBox[{"Flatten", "[", 
            RowBox[{
@@ -52117,7 +52029,7 @@ Cell[BoxData[{
               RowBox[{"{", "3", "}"}]}], "}"}]}], "]"}]}], ";", 
          "\[IndentingNewLine]", "\[IndentingNewLine]", 
          RowBox[{"flowHornSchunck", "[", 
-          RowBox[{"40", ",", 
+          RowBox[{"10", ",", 
            RowBox[{"Length", "[", "rangex", "]"}], ",", 
            RowBox[{"pyrab", "[", 
             RowBox[{"[", "1", "]"}], "]"}], ",", "lamda"}], "]"}]}], 
@@ -52129,10 +52041,11 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"stereoDepth", "[", 
-    RowBox[{"ia_", ",", "ib_", ",", "lamda_", ",", "\"\<HornSchunck\>\""}], 
-    "]"}], ":=", 
+    RowBox[{
+    "ia_", ",", "ib_", ",", "id_", ",", "lamda_", ",", 
+     "\"\<HornSchunck\>\""}], "]"}], ":=", 
    RowBox[{"stereoDepth", "[", 
-    RowBox[{"ia", ",", "ib", ",", "lamda", ",", 
+    RowBox[{"ia", ",", "ib", ",", "id", ",", "lamda", ",", 
      RowBox[{"Range", "[", 
       RowBox[{"1", ",", 
        RowBox[{
@@ -52143,40 +52056,82 @@ Cell[BoxData[{
        RowBox[{
         RowBox[{"ImageDimensions", "[", "ia", "]"}], "[", 
         RowBox[{"[", "2", "]"}], "]"}], ",", "1"}], "]"}], ",", 
-     "\"\<LukasKanade\>\""}], "]"}]}], 
+     "\"\<HornSchunck\>\""}], "]"}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"//", "//"}], "//"}], "//"}], "//"}], "//"}], 
+                    "//"}], "//"}], "//"}], "//"}], "//"}], "//"}], "//"}], 
+               "//"}], "//"}], "//"}], "//"}], "//"}], "//"}], "//"}], "//"}],
+        "//"}], "//"}], "//"}], "//"}], "*)"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"stereoDepth", "[", 
     RowBox[{
-    "ia_", ",", "ib_", ",", "lamda_", ",", "rangex_", ",", "rangey_", ",", 
-     "\"\<LukasKanade\>\""}], "]"}], ":=", 
+    "ia_", ",", "ib_", ",", "id_", ",", "lamda_", ",", "rangex_", ",", 
+     "rangey_", ",", "\"\<LukasKanade\>\""}], "]"}], ":=", 
    RowBox[{"Block", "[", 
     RowBox[{
      RowBox[{"{", 
       RowBox[{"ka", ",", "kb", ",", "pyra", ",", "pyrb", ",", "pyrab"}], 
       "}"}], ",", 
      RowBox[{"(", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-      RowBox[{"Table", "[", "\[IndentingNewLine]", 
+      RowBox[{"ParallelTable", "[", "\[IndentingNewLine]", 
        RowBox[{
         RowBox[{
          RowBox[{
           RowBox[{"{", 
-           RowBox[{"ka", ",", "kb"}], "}"}], "=", 
+           RowBox[{"ka", ",", "kb", ",", "kd"}], "}"}], "=", 
           RowBox[{
            RowBox[{
             RowBox[{
              RowBox[{"ImageData", "[", "#", "]"}], "[", 
-             RowBox[{"[", 
-              RowBox[{"k", ",", "rangex"}], "]"}], "]"}], "&"}], "/@", 
+             RowBox[{"[", "k", "]"}], "]"}], "&"}], "/@", 
            RowBox[{"{", 
-            RowBox[{"ia", ",", "ib"}], "}"}]}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{"pyra", "=", 
-          RowBox[{"pyrFuncGen", "[", 
-           RowBox[{"ka", ",", "1"}], "]"}]}], ";", "\[IndentingNewLine]", 
+            RowBox[{"ia", ",", "ib", ",", "id"}], "}"}]}]}], ";", 
+         "\[IndentingNewLine]", 
          RowBox[{"pyrb", "=", 
           RowBox[{"pyrFuncGen", "[", 
            RowBox[{"kb", ",", "1"}], "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"pyrb", "=", 
+          RowBox[{"pyrFuncGen", "[", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"pyrb", "[", 
+                RowBox[{"[", 
+                 RowBox[{"1", ",", "1"}], "]"}], "]"}], "[", 
+               RowBox[{"xx", "-", 
+                RowBox[{
+                 RowBox[{"kd", "[", 
+                  RowBox[{"[", "xx", "]"}], "]"}], "*", "0.9"}]}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"xx", ",", "rangex"}], "}"}]}], "]"}], ",", "1"}], 
+           "]"}]}], ";", "\[IndentingNewLine]", 
          RowBox[{"pyrab", "=", 
           RowBox[{"Flatten", "[", 
            RowBox[{
@@ -52189,7 +52144,7 @@ Cell[BoxData[{
               RowBox[{"{", "3", "}"}]}], "}"}]}], "]"}]}], ";", 
          "\[IndentingNewLine]", "\[IndentingNewLine]", 
          RowBox[{"flowLukasKanade", "[", 
-          RowBox[{"100", ",", 
+          RowBox[{"50", ",", 
            RowBox[{"Length", "[", "rangex", "]"}], ",", 
            RowBox[{"pyrab", "[", 
             RowBox[{"[", "1", "]"}], "]"}], ",", "lamda"}], "]"}]}], 
@@ -52201,10 +52156,11 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"stereoDepth", "[", 
-    RowBox[{"ia_", ",", "ib_", ",", "lamda_", ",", "\"\<LukasKanade\>\""}], 
-    "]"}], ":=", 
+    RowBox[{
+    "ia_", ",", "ib_", ",", "id_", ",", "lamda_", ",", 
+     "\"\<LukasKanade\>\""}], "]"}], ":=", 
    RowBox[{"stereoDepth", "[", 
-    RowBox[{"ia", ",", "ib", ",", "lamda", ",", 
+    RowBox[{"ia", ",", "ib", ",", "id", ",", "lamda", ",", 
      RowBox[{"Range", "[", 
       RowBox[{"1", ",", 
        RowBox[{
@@ -52216,113 +52172,35 @@ Cell[BoxData[{
         RowBox[{"ImageDimensions", "[", "ia", "]"}], "[", 
         RowBox[{"[", "2", "]"}], "]"}], ",", "1"}], "]"}], ",", 
      "\"\<LukasKanade\>\""}], "]"}]}], "\[IndentingNewLine]", 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"stereoDepth", "[", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
     RowBox[{
-    "n_", ",", "u_", ",", "v0_", ",", "condition_", ",", "ia_", ",", "ib_", 
-     ",", "lvl_", ",", 
-     RowBox[{"{", 
-      RowBox[{"lvlmin_", ",", "lvlmax_"}], "}"}], ",", "rangex_", ",", 
-     "rangey_", ",", "threshold_", ",", " ", "\"\<ConstrainedNewMethod\>\""}],
-     "]"}], ":=", 
-   RowBox[{"Block", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-      "ka", ",", "kb", ",", "pyra", ",", "pyrb", ",", "pyrab", ",", 
-       "thresholdAdj", ",", "dd", ",", "e", ",", "v1", ",", "v2"}], "}"}], 
-     ",", "\[IndentingNewLine]", 
      RowBox[{
-      RowBox[{"thresholdAdj", "=", 
-       RowBox[{"threshold", "*", 
-        RowBox[{"2", "^", 
-         RowBox[{"(", 
-          RowBox[{
-           RowBox[{"-", "lvlmin"}], "+", "1"}], ")"}]}]}]}], ";", 
-      "\[IndentingNewLine]", "\[IndentingNewLine]", 
-      RowBox[{"ParallelTable", "[", "\[IndentingNewLine]", 
+      RowBox[{
        RowBox[{
         RowBox[{
          RowBox[{
-          RowBox[{"{", 
-           RowBox[{"ka", ",", "kb"}], "}"}], "=", 
           RowBox[{
            RowBox[{
             RowBox[{
-             RowBox[{"ImageData", "[", "#", "]"}], "[", 
-             RowBox[{"[", "k", "]"}], "]"}], "&"}], "/@", 
-           RowBox[{"{", 
-            RowBox[{"ia", ",", "ib"}], "}"}]}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{"pyra", "=", 
-          RowBox[{"pyrFuncGen", "[", 
-           RowBox[{"ka", ",", "lvl"}], "]"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{"pyrb", "=", 
-          RowBox[{"pyrFuncGen", "[", 
-           RowBox[{"kb", ",", "lvl"}], "]"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{"pyrab", "=", 
-          RowBox[{"Flatten", "[", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{"pyra", ",", " ", "pyrb"}], "}"}], ",", 
-            RowBox[{"{", 
              RowBox[{
-              RowBox[{"{", "2", "}"}], ",", 
-              RowBox[{"{", "1", "}"}], ",", 
-              RowBox[{"{", "3", "}"}]}], "}"}]}], "]"}]}], ";", 
-         "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"{", 
-           RowBox[{"v1", ",", "v2", ",", "dd"}], "}"}], "=", 
-          RowBox[{"PyrFlow1D", "[", 
-           RowBox[{
-           "10", ",", "n", ",", "u", ",", "x", ",", "v0", ",", "condition", 
-            ",", 
-            RowBox[{"pyrab", "[", 
-             RowBox[{"[", 
-              RowBox[{"lvlmin", ";;", "lvlmax"}], "]"}], "]"}], ",", 
-            "thresholdAdj", ",", "\"\<ConstrainedNewMethod\>\""}], "]"}]}], 
-         ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"Total", "[", 
-            RowBox[{"{", 
-             RowBox[{"v1", ",", "v2"}], "}"}], "]"}], ",", "dd", ",", "v1", 
-           ",", "v2", ",", "x", ",", "k"}], "}"}]}], "\[IndentingNewLine]", 
-        "\[IndentingNewLine]", ",", 
-        RowBox[{"{", 
-         RowBox[{"k", ",", " ", "rangey"}], "}"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"x", ",", "rangex"}], "}"}]}], "]"}]}]}], 
-    "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"stereoDepth", "[", 
-    RowBox[{
-    "n_", ",", "u_", ",", "v0_", ",", "condition_", ",", "ia_", ",", "ib_", 
-     ",", "lvl_", ",", 
-     RowBox[{"{", 
-      RowBox[{"lvlmin_", ",", "lvlmax_"}], "}"}], ",", "threshold_", ",", 
-     " ", "\"\<ConstrainedNewMethod\>\""}], "]"}], ":=", 
-   RowBox[{"stereoDepth", "[", 
-    RowBox[{
-    "n", ",", "u", ",", "v0", ",", "condition", ",", "ia", ",", "ib", ",", 
-     "lvl", ",", 
-     RowBox[{"{", 
-      RowBox[{"lvlmin", ",", "lvlmax"}], "}"}], ",", 
-     RowBox[{"Range", "[", 
-      RowBox[{"1", ",", 
-       RowBox[{
-        RowBox[{"ImageDimensions", "[", "ia", "]"}], "[", 
-        RowBox[{"[", "1", "]"}], "]"}], ",", "1"}], "]"}], ",", 
-     RowBox[{"Range", "[", 
-      RowBox[{"1", ",", 
-       RowBox[{
-        RowBox[{"ImageDimensions", "[", "ia", "]"}], "[", 
-        RowBox[{"[", "2", "]"}], "]"}], ",", "1"}], "]"}], ",", "threshold", 
-     ",", " ", "\"\<ConstrainedNewMethod\>\""}], "]"}]}], 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"//", "//"}], "//"}], "//"}], "//"}], "//"}], 
+                    "//"}], "//"}], "//"}], "//"}], "//"}], "//"}], "//"}], 
+               "//"}], "//"}], "//"}], "//"}], "//"}], "//"}], "//"}], "//"}],
+        "//"}], "//"}], "//"}], "//"}], "*)"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -52515,8 +52393,11 @@ optical flow\n\>\""}], ";"}]}], "Input",
    3.8602605657582655`*^9, 3.8602605918417096`*^9}, {3.860260660315571*^9, 
    3.8602606626958723`*^9}, 3.860260699752356*^9, {3.86026105003248*^9, 
    3.860261051441245*^9}, 3.8602611050271077`*^9, {3.860264582175454*^9, 
-   3.860264622144353*^9}, {3.8602666810751605`*^9, 
-   3.860266681477251*^9}},ExpressionUUID->"41d2cae4-1b19-4cd8-b62b-\
+   3.860264622144353*^9}, {3.8602666810751605`*^9, 3.860266681477251*^9}, {
+   3.8611105671335926`*^9, 3.86111061126254*^9}, {3.8611106789836206`*^9, 
+   3.861110682870147*^9}, {3.8611112336682777`*^9, 3.8611112584188843`*^9}, {
+   3.8611118199028597`*^9, 
+   3.8611118207196436`*^9}},ExpressionUUID->"41d2cae4-1b19-4cd8-b62b-\
 295ed1615aa4"],
 
 Cell[CellGroupData[{
@@ -53032,8 +52913,8 @@ Cell[BoxData["\[IndentingNewLine]"], "Input",
 }, Open  ]]
 },
 AutoGeneratedPackage->Automatic,
-WindowSize->{1920., 755.25},
-WindowMargins->{{-6, Automatic}, {Automatic, -6}},
+WindowSize->{574.8, 586.8},
+WindowMargins->{{Automatic, -4.7999999999999545`}, {Automatic, 0}},
 CellContext->Notebook,
 Magnification:>0.9 Inherited,
 FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
@@ -53052,64 +52933,64 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 238, 4, 88, "Title",ExpressionUUID->"14c3877d-1769-4651-8939-ed78144de1c4"],
+Cell[580, 22, 238, 4, 89, "Title",ExpressionUUID->"14c3877d-1769-4651-8939-ed78144de1c4"],
 Cell[821, 28, 397, 6, 31, "Text",ExpressionUUID->"6c117d9f-5f97-4eb0-a9ed-10426f606f4d"],
 Cell[1221, 36, 781, 13, 25, "Input",ExpressionUUID->"caad138e-b1b8-4f6b-b2c1-6bb2ac430a24"],
-Cell[2005, 51, 749, 19, 44, "Input",ExpressionUUID->"953f8605-a378-482b-b2a3-a069ecc62af7"],
-Cell[2757, 72, 2375, 41, 151, "Input",ExpressionUUID->"4cf937b4-9275-413a-8e6b-eef1a6a2ca6d"],
+Cell[2005, 51, 749, 19, 43, "Input",ExpressionUUID->"953f8605-a378-482b-b2a3-a069ecc62af7"],
+Cell[2757, 72, 2375, 41, 164, "Input",ExpressionUUID->"4cf937b4-9275-413a-8e6b-eef1a6a2ca6d"],
 Cell[CellGroupData[{
 Cell[5157, 117, 213, 4, 59, "Section",ExpressionUUID->"2ed378ac-f104-441f-b72b-653a6951950a"],
-Cell[5373, 123, 1923, 49, 237, "Input",ExpressionUUID->"fcf5f951-603e-4e6e-a684-51ece7fe871e",
+Cell[5373, 123, 1923, 49, 316, "Input",ExpressionUUID->"fcf5f951-603e-4e6e-a684-51ece7fe871e",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[7321, 176, 156, 3, 49, "Subsection",ExpressionUUID->"4d7cbfef-967d-434d-a40a-2aed19aba224"],
+Cell[7321, 176, 156, 3, 48, "Subsection",ExpressionUUID->"4d7cbfef-967d-434d-a40a-2aed19aba224"],
 Cell[7480, 181, 3148043, 51652, 291, "Input",ExpressionUUID->"37fcdd31-3aa0-400b-8bc5-3af0a5806b45"],
 Cell[3155526, 51835, 369, 9, 25, "Input",ExpressionUUID->"ca0c2684-704c-443c-af84-ad346ffea9b4"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[3155932, 51849, 158, 3, 35, "Subsection",ExpressionUUID->"8e73c772-b2b0-4ca8-b68a-83ce7c6d3f11"],
+Cell[3155932, 51849, 158, 3, 34, "Subsection",ExpressionUUID->"8e73c772-b2b0-4ca8-b68a-83ce7c6d3f11"],
 Cell[3156093, 51854, 2333, 71, 181, "Input",ExpressionUUID->"4ce833b4-d4d9-4051-bc31-76d9a09a4311"],
 Cell[3158429, 51927, 1332, 34, 95, "Input",ExpressionUUID->"d71d4743-fd50-4a17-bc40-fb404cb2221a"]
 }, Closed]]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[3159810, 51967, 282, 4, 59, "Section",ExpressionUUID->"755d80c2-83b1-4f5c-9cf0-ef2690398c10"],
-Cell[3160095, 51973, 23762, 546, 1911, "Input",ExpressionUUID->"41d2cae4-1b19-4cd8-b62b-295ed1615aa4",
+Cell[3160095, 51973, 18447, 427, 1524, "Input",ExpressionUUID->"41d2cae4-1b19-4cd8-b62b-295ed1615aa4",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[3183882, 52523, 210, 4, 49, "Subsection",ExpressionUUID->"57fac3ad-bc3d-4cc9-a1d2-4e6abe3119f0"],
-Cell[3184095, 52529, 1683, 52, 43, "Input",ExpressionUUID->"08ef4bc3-61cc-43d1-9f17-f2b27d0b706f"]
+Cell[3178567, 52404, 210, 4, 48, "Subsection",ExpressionUUID->"57fac3ad-bc3d-4cc9-a1d2-4e6abe3119f0"],
+Cell[3178780, 52410, 1683, 52, 43, "Input",ExpressionUUID->"08ef4bc3-61cc-43d1-9f17-f2b27d0b706f"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[3185815, 52586, 313, 5, 35, "Subsection",ExpressionUUID->"6cb0245c-4094-4726-9dbd-d76df892de72"],
-Cell[3186131, 52593, 2308, 35, 44, "Input",ExpressionUUID->"b97164b8-9ac5-4587-a008-1d4b4cd88123"],
-Cell[3188442, 52630, 847, 23, 44, "Input",ExpressionUUID->"518d2827-f0ba-477f-8989-2d0a4fb11eee"]
+Cell[3180500, 52467, 313, 5, 34, "Subsection",ExpressionUUID->"6cb0245c-4094-4726-9dbd-d76df892de72"],
+Cell[3180816, 52474, 2308, 35, 43, "Input",ExpressionUUID->"b97164b8-9ac5-4587-a008-1d4b4cd88123"],
+Cell[3183127, 52511, 847, 23, 43, "Input",ExpressionUUID->"518d2827-f0ba-477f-8989-2d0a4fb11eee"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3189326, 52658, 266, 4, 49, "Subsection",ExpressionUUID->"87b0dad4-f8af-4aac-ad4b-f8967cc0a22a"],
-Cell[3189595, 52664, 897, 26, 44, "Input",ExpressionUUID->"6e420cb3-a3f2-493f-9971-79d54fbdae81"],
-Cell[3190495, 52692, 561, 15, 44, "Input",ExpressionUUID->"ce5c7d43-dbe4-42ef-82f6-a87bed627057"],
-Cell[3191059, 52709, 2574, 42, 44, "Input",ExpressionUUID->"2a10bce6-f026-4fb2-8a2c-49cb07067dcd"],
-Cell[3193636, 52753, 355, 8, 25, "Input",ExpressionUUID->"79dc6f8c-ebfb-4e2b-92dc-b4db5286a534"],
-Cell[3193994, 52763, 924, 25, 44, "Input",ExpressionUUID->"e8fed863-1b89-4c84-9d2e-5b98166a81a9"]
+Cell[3184011, 52539, 266, 4, 48, "Subsection",ExpressionUUID->"87b0dad4-f8af-4aac-ad4b-f8967cc0a22a"],
+Cell[3184280, 52545, 897, 26, 61, "Input",ExpressionUUID->"6e420cb3-a3f2-493f-9971-79d54fbdae81"],
+Cell[3185180, 52573, 561, 15, 43, "Input",ExpressionUUID->"ce5c7d43-dbe4-42ef-82f6-a87bed627057"],
+Cell[3185744, 52590, 2574, 42, 61, "Input",ExpressionUUID->"2a10bce6-f026-4fb2-8a2c-49cb07067dcd"],
+Cell[3188321, 52634, 355, 8, 25, "Input",ExpressionUUID->"79dc6f8c-ebfb-4e2b-92dc-b4db5286a534"],
+Cell[3188679, 52644, 924, 25, 61, "Input",ExpressionUUID->"e8fed863-1b89-4c84-9d2e-5b98166a81a9"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3194955, 52793, 224, 4, 49, "Subsection",ExpressionUUID->"1223d387-7f1a-4986-9b1f-b5c7d5dc0528"],
-Cell[3195182, 52799, 290, 10, 90, "Input",ExpressionUUID->"6f8427c1-fe6d-4b81-820b-a886534717b3"],
-Cell[3195475, 52811, 844, 25, 44, "Input",ExpressionUUID->"ae78087f-a9d0-4d7f-8ed0-44241d463292"],
-Cell[3196322, 52838, 2456, 40, 44, "Input",ExpressionUUID->"11e97973-09b5-4273-83af-1b6bbc8bef72"],
-Cell[3198781, 52880, 924, 25, 44, "Input",ExpressionUUID->"136f4bd6-7a29-4a1c-909d-52b0bb7cf31a"]
+Cell[3189640, 52674, 224, 4, 48, "Subsection",ExpressionUUID->"1223d387-7f1a-4986-9b1f-b5c7d5dc0528"],
+Cell[3189867, 52680, 290, 10, 85, "Input",ExpressionUUID->"6f8427c1-fe6d-4b81-820b-a886534717b3"],
+Cell[3190160, 52692, 844, 25, 44, "Input",ExpressionUUID->"ae78087f-a9d0-4d7f-8ed0-44241d463292"],
+Cell[3191007, 52719, 2456, 40, 44, "Input",ExpressionUUID->"11e97973-09b5-4273-83af-1b6bbc8bef72"],
+Cell[3193466, 52761, 924, 25, 44, "Input",ExpressionUUID->"136f4bd6-7a29-4a1c-909d-52b0bb7cf31a"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3199742, 52910, 224, 4, 49, "Subsection",ExpressionUUID->"a77b77f6-bc67-46e2-8c7f-37fabf3364d6"],
-Cell[3199969, 52916, 616, 13, 44, "Input",ExpressionUUID->"ea2abc56-798f-4888-b164-0478bcfe61ca"],
-Cell[3200588, 52931, 873, 24, 44, "Input",ExpressionUUID->"8bb48e18-d708-4d59-9b0e-6d0f87421030"]
+Cell[3194427, 52791, 224, 4, 49, "Subsection",ExpressionUUID->"a77b77f6-bc67-46e2-8c7f-37fabf3364d6"],
+Cell[3194654, 52797, 616, 13, 44, "Input",ExpressionUUID->"ea2abc56-798f-4888-b164-0478bcfe61ca"],
+Cell[3195273, 52812, 873, 24, 44, "Input",ExpressionUUID->"8bb48e18-d708-4d59-9b0e-6d0f87421030"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3201498, 52960, 222, 4, 49, "Subsection",ExpressionUUID->"b3ba4485-b7d9-404f-bb59-c000a341f13c"],
-Cell[3201723, 52966, 1937, 31, 44, "Input",ExpressionUUID->"6dfdc3c7-bc8c-4cb6-811a-bf393c8dc724"],
-Cell[3203663, 52999, 895, 24, 44, "Input",ExpressionUUID->"33b60eed-9c9a-4745-9316-6f54d8f40dd8"],
-Cell[3204561, 53025, 172, 3, 44, "Input",ExpressionUUID->"e54691a8-e022-4ace-8321-7685a34afcb0"]
+Cell[3196183, 52841, 222, 4, 49, "Subsection",ExpressionUUID->"b3ba4485-b7d9-404f-bb59-c000a341f13c"],
+Cell[3196408, 52847, 1937, 31, 44, "Input",ExpressionUUID->"6dfdc3c7-bc8c-4cb6-811a-bf393c8dc724"],
+Cell[3198348, 52880, 895, 24, 44, "Input",ExpressionUUID->"33b60eed-9c9a-4745-9316-6f54d8f40dd8"],
+Cell[3199246, 52906, 172, 3, 44, "Input",ExpressionUUID->"e54691a8-e022-4ace-8321-7685a34afcb0"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]

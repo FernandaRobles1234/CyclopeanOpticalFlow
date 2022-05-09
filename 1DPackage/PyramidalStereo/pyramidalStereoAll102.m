@@ -35,79 +35,41 @@ Output-> Manipulate object deplacing ia in range of lowdx and highdx with static
 
 
 (* ::Input::Initialization:: *)
-stereoDepth[v0_,ia_,ib_,lvl_,{lvlmin_,lvlmax_},rangex_,rangey_,threshold_, mode_]:=Block[{ka,kb,pyra,pyrb,pyrab,thresholdAdj,dd,e,v1,v2},
-thresholdAdj=threshold*2^(-lvlmin+1);
-
-Table[
-
-{ka,kb}=ImageData[#][[k]]&/@{ia,ib};
-pyra=pyrFuncGen[ka,lvl];
-pyrb=pyrFuncGen[kb,lvl];
-pyrab=Flatten[{pyra, pyrb},{{2},{1},{3}}];
-
-Table[
-{v1,v2,dd}=PyrFlow1D[10,x,pyrab[[lvlmin;;lvlmax]],thresholdAdj,mode];
-
-{Total[{v1,v2}],dd,v1,v2,x,k}
-,{x,rangex}]
-
-,{k, rangey}]
-]
-
-stereoDepth[ia_,ib_,lvl_,{lvlmin_,lvlmax_},threshold_,mode_]:=stereoDepth[0.,ia,ib,lvl,{lvlmin,lvlmax},Range[1,ImageDimensions[ia][[1]],1],Range[1,ImageDimensions[ia][[2]],1],threshold,mode]
-
-stereoDepth[ia_,ib_,lamda_,rangex_,rangey_,"HornSchunck"]:=Block[{ka,kb,pyra,pyrb,pyrab},(
-
-Table[
-{ka,kb}=ImageData[#][[k,rangex]]&/@{ia,ib};
-pyra=pyrFuncGen[ka,1];
-pyrb=pyrFuncGen[kb,1];
-pyrab=Flatten[{pyra, pyrb},{{2},{1},{3}}];
-
-flowHornSchunck[40,Length[rangex],pyrab[[1]],lamda]
-
-,{k, rangey}]
-
-)]
-
-stereoDepth[ia_,ib_,lamda_,"HornSchunck"]:=stereoDepth[ia,ib,lamda,Range[1,ImageDimensions[ia][[1]],1],Range[1,ImageDimensions[ia][[2]],1],"LukasKanade"]
-
-stereoDepth[ia_,ib_,lamda_,rangex_,rangey_,"LukasKanade"]:=Block[{ka,kb,pyra,pyrb,pyrab},(
-
-Table[
-{ka,kb}=ImageData[#][[k,rangex]]&/@{ia,ib};
-pyra=pyrFuncGen[ka,1];
-pyrb=pyrFuncGen[kb,1];
-pyrab=Flatten[{pyra, pyrb},{{2},{1},{3}}];
-
-flowLukasKanade[100,Length[rangex],pyrab[[1]],lamda]
-
-,{k, rangey}]
-
-)]
-
-stereoDepth[ia_,ib_,lamda_,"LukasKanade"]:=stereoDepth[ia,ib,lamda,Range[1,ImageDimensions[ia][[1]],1],Range[1,ImageDimensions[ia][[2]],1],"LukasKanade"]
-
-
-stereoDepth[n_,u_,v0_,condition_,ia_,ib_,lvl_,{lvlmin_,lvlmax_},rangex_,rangey_,threshold_, "ConstrainedNewMethod"]:=Block[{ka,kb,pyra,pyrb,pyrab,thresholdAdj,dd,e,v1,v2},
-thresholdAdj=threshold*2^(-lvlmin+1);
+stereoDepth[ia_,ib_,id_,lamda_,rangex_,rangey_,"HornSchunck"]:=Block[{ka,kb,pyra,pyrb,pyrab},(
 
 ParallelTable[
-{ka,kb}=ImageData[#][[k]]&/@{ia,ib};
-pyra=pyrFuncGen[ka,lvl];
-pyrb=pyrFuncGen[kb,lvl];
+{ka,kb,kd}=ImageData[#][[k]]&/@{ia,ib,id};
+pyrb=pyrFuncGen[kb,1];
+pyrb=pyrFuncGen[Table[pyrb[[1,1]][xx-kd[[xx]]*0.9],{xx,rangex}],1];
 pyrab=Flatten[{pyra, pyrb},{{2},{1},{3}}];
 
+flowHornSchunck[10,Length[rangex],pyrab[[1]],lamda]
 
-{v1,v2,dd}=PyrFlow1D[10,n,u,x,v0,condition,pyrab[[lvlmin;;lvlmax]],thresholdAdj,"ConstrainedNewMethod"];
+,{k, rangey}]
 
-{Total[{v1,v2}],dd,v1,v2,x,k}
+)]
 
-,{k, rangey},{x,rangex}]
-]
+stereoDepth[ia_,ib_,id_,lamda_,"HornSchunck"]:=stereoDepth[ia,ib,id,lamda,Range[1,ImageDimensions[ia][[1]],1],Range[1,ImageDimensions[ia][[2]],1],"HornSchunck"]
 
+(*//////////////////////////////////////////////////*)
 
-stereoDepth[n_,u_,v0_,condition_,ia_,ib_,lvl_,{lvlmin_,lvlmax_},threshold_, "ConstrainedNewMethod"]:=stereoDepth[n,u,v0,condition,ia,ib,lvl,{lvlmin,lvlmax},Range[1,ImageDimensions[ia][[1]],1],Range[1,ImageDimensions[ia][[2]],1],threshold, "ConstrainedNewMethod"]
+stereoDepth[ia_,ib_,id_,lamda_,rangex_,rangey_,"LukasKanade"]:=Block[{ka,kb,pyra,pyrb,pyrab},(
+
+ParallelTable[
+{ka,kb,kd}=ImageData[#][[k]]&/@{ia,ib,id};
+pyrb=pyrFuncGen[kb,1];
+pyrb=pyrFuncGen[Table[pyrb[[1,1]][xx-kd[[xx]]*0.9],{xx,rangex}],1];
+pyrab=Flatten[{pyra, pyrb},{{2},{1},{3}}];
+
+flowLukasKanade[50,Length[rangex],pyrab[[1]],lamda]
+
+,{k, rangey}]
+
+)]
+
+stereoDepth[ia_,ib_,id_,lamda_,"LukasKanade"]:=stereoDepth[ia,ib,id,lamda,Range[1,ImageDimensions[ia][[1]],1],Range[1,ImageDimensions[ia][[2]],1],"LukasKanade"]
+
+(*//////////////////////////////////////////////////*)
 
 stereoDepth[n_,u_,v0_,condition_,ia_,ib_,id_,lvl_,{lvlmin_,lvlmax_},rangex_,rangey_,threshold_, "ConstrainedCorrelation"]:=Block[{ka,kb,pyra,pyrb,pyrab,thresholdAdj,dd,e,v1,v2},
 thresholdAdj=threshold*2^(-lvlmin+1);
