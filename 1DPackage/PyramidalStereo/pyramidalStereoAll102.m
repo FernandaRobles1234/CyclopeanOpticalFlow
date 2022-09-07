@@ -39,11 +39,14 @@ stereoDepth[ia_,ib_,id_,lamda_,rangex_,rangey_,"HornSchunck"]:=Block[{ka,kb,kd,p
 
 ParallelTable[
 {ka,kb,kd}=ImageData[#][[k]]&/@{ia,ib,id};
+pyra=pyrFuncGen[ka,1];
 pyrb=pyrFuncGen[kb,1];
 pyrb=pyrFuncGen[Table[pyrb[[1,1]][xx-kd[[xx]]*0.9],{xx,rangex}],1];
+
 pyrab=Flatten[{pyra, pyrb},{{2},{1},{3}}];
 
 flowHornSchunck[10,Length[rangex],pyrab[[1]],lamda]
+
 
 ,{k, rangey}]
 
@@ -57,11 +60,12 @@ stereoDepth[ia_,ib_,id_,lamda_,rangex_,rangey_,"LukasKanade"]:=Block[{ka,kb,kd,p
 
 ParallelTable[
 {ka,kb,kd}=ImageData[#][[k]]&/@{ia,ib,id};
+pyra=pyrFuncGen[ka,1];
 pyrb=pyrFuncGen[kb,1];
 pyrb=pyrFuncGen[Table[pyrb[[1,1]][xx-kd[[xx]]*0.9],{xx,rangex}],1];
 pyrab=Flatten[{pyra, pyrb},{{2},{1},{3}}];
 
-flowLukasKanade[50,Length[rangex],pyrab[[1]],lamda]
+flowLukasKanade[10,Length[rangex],pyrab[[1]],lamda]
 
 ,{k, rangey}]
 
@@ -80,8 +84,7 @@ pyra=pyrFuncGen[ka,lvl];
 pyrb=pyrFuncGen[kb,lvl];
 pyrbb=pyrFuncGen[Table[pyrb[[1,1]][xx-kd[[xx]]*0.9],{xx,rangex}],lvl];
 pyrab=Flatten[{pyra, pyrbb},{{2},{1},{3}}];
-
-{v1,v2,dd}=PyrFlow1D[10,n,u,x,v0,condition,pyrab[[lvlmin;;lvlmax]],thresholdAdj,"ConstrainedCorrelation"];
+{v1,v2,dd}=PyrFlow1D[5,n,u,x,v0,condition,pyrab[[lvlmin;;lvlmax]],thresholdAdj,"ConstrainedCorrelation"];
 
 {Total[{v1,v2}],dd,v1,v2,x,k}
 

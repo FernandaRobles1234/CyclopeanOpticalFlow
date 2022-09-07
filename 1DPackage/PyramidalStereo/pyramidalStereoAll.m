@@ -66,7 +66,7 @@ pyra=pyrFuncGen[ka,1];
 pyrb=pyrFuncGen[kb,1];
 pyrab=Flatten[{pyra, pyrb},{{2},{1},{3}}];
 
-flowHornSchunck[40,Length[rangex],pyrab[[1]],lamda]
+flowHornSchunck[10,Length[rangex],pyrab[[1]],lamda]
 
 ,{k, rangey}]
 
@@ -84,7 +84,7 @@ pyra=pyrFuncGen[ka,1];
 pyrb=pyrFuncGen[kb,1];
 pyrab=Flatten[{pyra, pyrb},{{2},{1},{3}}];
 
-flowLukasKanade[100,Length[rangex],pyrab[[1]],lamda]
+flowLukasKanade[10,Length[rangex],pyrab[[1]],lamda]
 
 ,{k, rangey}]
 

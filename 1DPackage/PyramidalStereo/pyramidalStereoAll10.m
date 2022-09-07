@@ -82,7 +82,9 @@ pyra=pyrFuncGen[ka,lvl];
 pyrb=pyrFuncGen[Table[pyra[[1,1]][xx+kd[[xx]]*0.1],{xx,rangex}],lvl];
 pyrab=Flatten[{pyra, pyrb},{{2},{1},{3}}];
 
-{v1,v2,dd}=PyrFlow1D[10,n,u,x,v0,condition,pyrab[[lvlmin;;lvlmax]],thresholdAdj,"ConstrainedCorrelation"];
+{v1,v2,dd}=PyrFlow1D[5,n,u,x,v0,condition,pyrab[[lvlmin;;lvlmax]],thresholdAdj,"ConstrainedCorrelation"];
+
+If[(Mod[k,rangey[[-1]]]==0)&&(Mod[x,rangex[[-1]]]==0),Print[{x,k}]];
 
 {Total[{v1,v2}],dd,v1,v2,x,k}
 

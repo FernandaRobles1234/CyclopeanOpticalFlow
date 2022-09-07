@@ -89,7 +89,7 @@ e= Counts the amount of times the constraints were not met
 (* ::Input::Initialization:: *)
 lineTest[v0_,rangex_,pyrab_,threshold_,mode_]:=Block[{v1,v2,status},(
 Table[
-{v1,v2,status}=PyrFlow1D[20,x,pyrab,threshold,mode]
+{v1,v2,status}=PyrFlow1D[10,x,pyrab,threshold,mode]
 ,{x,rangex}]
 )]
 
@@ -153,7 +153,7 @@ i=1;
 cTable=Table[
 c=(lineia[p]+lineib[p])/2;
 g0=Graphics[{
-PointSize[0.008],
+PointSize[0.02],
 Line[{{p,lineia[p]},{p,lineib[p]}}],
 If[tRun[[i,3]]=="converged",Green,
 If[tRun[[i,3]]=="sign",Red,
@@ -223,17 +223,19 @@ iterTable=Table[
 Labeled[
 Show[
 (* Plot Graphic *)
-Plot[{flineia[x],flineib[x]},{x,p0-prange,p0+prange},PlotLegends->{"ia","ib"},PlotLabel->info],
+Plot[{flineia[x],flineib[x]},{x,p0-prange,p0+prange}],
 
 Graphics[{
 PointSize[0.01],
 (* c line *)
 Line[{{p0,flineia[p0]},{p0,flineib[p0]}}],
 (*If[iter[[i,4]]\[Equal]2,Blue,*)
+If[iter[[i,3]]=="converged",Green,
 If[iter[[i,3]]=="sign",Red,
 If[iter[[i,3]]=="mag",Purple,
-If[iter[[i,3]]=="ok",Orange,Black](*]*)
-]],
+If[iter[[i,3]]=="corr",Black,
+If[iter[[i,3]]=="ok",Gray,Gray](*]*)
+]]]],
 (* c point *)
 Point[{p0,c}],
 {Arrowheads->Small,Arrow[{{p0-iter[[i,1]],c},{p0+iter[[i,2]],c}}]}
@@ -343,16 +345,17 @@ PyrFlow1DIter[i,n,u,p0,{v},condition,pyrfunctions,threshold,"ConstrainedCorrelat
 
 
 Clear[dessin];
-dessin[{u1_,u2_,v1_,v2_,"converged"}]:={Blue,Point[{u1,u2}],PointSize[0.03],Green,Point[{v1,v2}]};
+dessin[{u1_,u2_,v1_,v2_,"converged"}]:={Blue,Point[{u1,u2}],PointSize[0.05],Green,Point[{v1,v2}]};
 dessin[{u1_,u2_,v1_,v2_,"mag"}]:={Purple,Point[{u1,u2}]};
 dessin[{u1_,u2_,v1_,v2_,"sign"}]:={Red,Point[{u1,u2}]};
 dessin[{u1_,u2_,v1_,v2_,"corr"}]:={Black,Point[{u1,u2}]};
-dessin[{u1_,u2_,v1_,v2_,"ok"}]:={Gray,Point[{u1,u2}]};
-dessin[{u1_,u2_,v1_,v2_,_}]:={Black,Point[{u1,u2}]};
+dessin[{u1_,u2_,v1_,v2_,"fakeconverged"}]:={Gray,Point[{u1,u2}]};
+dessin[{u1_,u2_,v1_,v2_,"ok"}]:={Gray,Point[{u1,u2}],PointSize[0.02],Orange,Point[{v1,v2}]};
+dessin[{u1_,u2_,v1_,v2_,_}]:={Yellow,Point[{u1,u2}]};
 
 
 fontsize=16;
-Graphics[{dessin/@result,{Thick,Black,Line[{{sol,0},{0,sol}}]}},PlotRange->{{-(Abs[sol]+1),(Abs[sol]+1)},{-(Abs[sol]+1),(Abs[sol]+1)}},Axes->True,AxesLabel->{Style["\!\(\*SubscriptBox[\(v\), \(1\)]\)",FontSize->fontsize,FontFamily->"Times",Italic],Style["\!\(\*SubscriptBox[\(v\), \(2\)]\)",FontSize->fontsize,FontFamily->"Times",Italic]}]
+Graphics[{dessin/@result,{Thick,Black,Line[{{sol,0},{0,sol}}]}},PlotRange->{{-(Abs[sol]+2),(Abs[sol]+2)},{-(Abs[sol]+2),(Abs[sol]+2)}},Axes->True,AxesLabel->{Style["\!\(\*SubscriptBox[\(v\), \(1\)]\)",FontSize->fontsize,FontFamily->"Times",Italic],Style["\!\(\*SubscriptBox[\(v\), \(2\)]\)",FontSize->fontsize,FontFamily->"Times",Italic]}]
 
 
 )];

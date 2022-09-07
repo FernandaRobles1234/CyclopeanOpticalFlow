@@ -25,7 +25,7 @@
 
 (* Input\[Rule] {{initial values for v1, v2 and status, and counter e}, pixel of interest, {functions f1, df1, f2, df2}, threshold for magnitude error}*)
 (* Output\[Rule] {new values for v1, v2 and status and e} *)
-PyrUpgrade1D[{v1_,v2_,status_,e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_,n_,"ConstrainedCorrelation"]:=Block[{fric1,fric2,p1, p2, c,d1,d2,dv1,dv2,p1set,p2set,cCriteria},(
+PyrUpgrade1D[{v1_,v2_,status_,e_},p0_, {{fline1_,dfline1_} ,{fline2_,dfline2_}}, threshold_,n_,"ConstrainedCorrelation"]:=Block[{fric1,fric2,p1, p2, c,d1,d2,dv1,dv2,p1set,p2set,cCriteria, rangeVector},(
 
 p1=p0-v1;
 p2=p0+v2;
@@ -37,17 +37,17 @@ d2=dfline2[p2];
 fric1=1*dfline1'[p1];
 fric2=1*dfline2'[p2];
 
-(* d1 and d2 have to be the same sign in every iteration *)
-If[d1*d2 <0, If[e<n,Return[{v1,v2,"oksign",e+1}],Return[{0.,0.,"sign",e}]]];
-
 (* magnitud *)
 If[(Abs[d1]<threshold||Abs[d2]<threshold ),If[e<n,Return[{v1,v2,"okmag",e+1}],Return[{0.,0.,"mag",e}]]];
+
+(* d1 and d2 have to be the same sign in every iteration *)
+If[d1*d2 <0, If[e<n,Return[{v1,v2,"oksign",e+1}],Return[{0.,0.,"sign",e}]]];
 
 (* We can compare multiple values, by steps or anything *)
 (* Range is related to scale of the image *)
 (* It's not related to movement *)
 (* Note that this is just an acceptance criteria that will decide if a computed motion is coeherent to it's neighbors. It's not enforcing a common motion to multiple neighbor pixels, so, depth discontinuities will be preserved. Pas comme Lukas-Kanade *)
-rangeVector=Range[-2,2,0.2];
+rangeVector=Range[-5,5,0.2];
 
 p1set=p1+rangeVector;
 p2set=p2+rangeVector;
@@ -112,9 +112,8 @@ pickNewValue[tableNewVals_,condition_,"ConstrainedCorrelation"]:=Block[{newValOk
 
 (* Criterias to select a solution *)
 newValCon=Select[tableNewVals,(#[[3]]=="converged")&&condition[#]&,1];
-newValAny=Select[tableNewVals,(#[[3]]!= "ok"&&#[[3]]!= "okcorr"&&#[[3]]!= "oksign"&&#[[3]]!= "okmag"&&#[[3]]!= "converged")&&condition[#]&,1];
 newValOk=Select[tableNewVals,(#[[3]]=="ok"||#[[3]]=="oksign"||#[[3]]=="okmag"||#[[3]]=="okcorr")&& condition[#]&,1];
-
+newValAny=Select[tableNewVals,(#[[3]]!= "ok"&&#[[3]]!= "okcorr"&&#[[3]]!= "oksign"&&#[[3]]!= "okmag"&&#[[3]]!= "converged")&&condition[#]&,1];
 noFakeConverge=Select[tableNewVals,(#[[3]]!= "ok"&&#[[3]]!= "oksign"&&#[[3]]!= "okmag"&&#[[3]]!= "okcorr"&&#[[3]]!= "converged")&,1];
 
 (* No solution meets criteria *)
@@ -131,7 +130,8 @@ Flatten[{0.,0.,noFakeConverge[[1,3]],noFakeConverge[[1,4]]}]
 If[newValCon=={},
 (* solution meets criteria but isn't ok or converged *)
 If[newValOk=={},
-newValAny[[1]]
+(*newValAny[[1]]*)
+Flatten[{0.,0.,newValAny[[1,3]],newValAny[[1,4]]}]
 ,
 
 Flatten[{newValOk[[1,1;;2]],"ok",newValOk[[1,4]]}]
@@ -191,17 +191,21 @@ updateValues[[1;;3]]
 
 (* ::Input::Initialization:: *)
 pickNewValueIter[tableIterNewVals_,condition_,"ConstrainedCorrelation"]:=Block[{newIterValCon,newIterValAny,newIterValOk,noIterFakeConverge},(
+
 newIterValCon=Select[tableIterNewVals,(Last[#][[3]]=="converged"&&condition[Last[#]])&,1];
-newIterValAny=Select[tableIterNewVals,((Last[#][[3]]!= "ok" ||Last[#][[3]]!= "okcorr"||Last[#][[3]]!= "oksign"||Last[#][[3]]!= "okmag"||Last[#][[3]]!= "converged")&&condition[Last[#]])&,1];
-newIterValOk=Select[tableIterNewVals,((Last[#][[3]]=="ok" ||Last[#][[3]]!= "okcorr"||Last[#][[3]]=="oksign"||Last[#][[3]]=="okmag")&&condition[Last[#]])&,1];
-noIterFakeConverge=Select[tableIterNewVals,(Last[#][[3]]!= "ok" ||Last[#][[3]]!= "okcorr"||Last[#][[3]]!= "oksign"||Last[#][[3]]!= "okmag"||Last[#][[3]]!= "converged")&,1];
+
+newIterValOk=Select[tableIterNewVals,((Last[#][[3]]=="ok" ||Last[#][[3]]== "okcorr"||Last[#][[3]]=="oksign"||Last[#][[3]]=="okmag")&&condition[Last[#]])&,1];
+
+newIterValAny=Select[tableIterNewVals,((Last[#][[3]]!= "ok" && Last[#][[3]]!= "okcorr" && Last[#][[3]]!= "oksign" && Last[#][[3]]!= "okmag" && Last[#][[3]]!= "converged")&&condition[Last[#]])&,1];
+
+noIterFakeConverge=Select[tableIterNewVals,(Last[#][[3]]!= "ok" &&Last[#][[3]]!= "okcorr"&&Last[#][[3]]!= "oksign"&&Last[#][[3]]!= "okmag"&&Last[#][[3]]!= "converged")&,1];
 
 (* No solution meets criteria *)
 If[newIterValCon=={}&&newIterValAny=={}&&newIterValOk=={},
 
 If[noIterFakeConverge=={},
 (* If any kind of ok does not meet the criteria, there is no solution in this lvl*)
-Join[tableIterNewVals[[1]],{Flatten[{0.,0.,"fakeconverge",Last[tableIterNewVals[[1]]][[4]]+1}]}]
+Join[tableIterNewVals[[1]],{Flatten[{0.,0.,"fakeconverged",Last[tableIterNewVals[[1]]][[4]]+1}]}]
 ,
 Join[noIterFakeConverge[[1]],{Flatten[{0.,0.,Last[noIterFakeConverge[[1]]][[3]],Last[noIterFakeConverge[[1]]][[4]]}]}]
 ]
@@ -215,9 +219,12 @@ newIterValAny[[1]]
 ,
 Join[newIterValOk[[1]],{Flatten[{Last[newIterValOk[[1]]][[1;;2]],"ok",Last[newIterValOk[[1]]][[4]]}]}]
 ],
+
 newIterValCon[[1]]
 ]
 ]
+
+
 
 )]
 
@@ -252,7 +259,9 @@ tValues=Flatten[{v,updateValues[[3;;4]]}];
 
 iterTable=Table[
 
-tValues=PyrUpgrade1D[tValues,p0, pyrfunctions[[-f]],threshold*2^(-c+1),n,"ConstrainedCorrelation"]
+tValues=PyrUpgrade1D[tValues,p0, pyrfunctions[[-f]],threshold*2^(-c+1),n,"ConstrainedCorrelation"];
+If[tValues[[3]]!="ok",Return[{tValues},Table],tValues]
+
 ,{j,1,i}]
 
 ,{v,nV}];
