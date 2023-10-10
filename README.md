@@ -1,4 +1,4 @@
-# Assignment: Three.js tree recursion
+# Cyclopean Optical Flow
 ## By: Fernanda Robles
 
 ## Table of Contents
